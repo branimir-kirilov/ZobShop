@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZobShop.Data", "ZobShop.Data\ZobShop.Data.csproj", "{D5E53BD4-FE25-4DF2-BC9B-C43EC0BDC64C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZobShop.Tests", "ZobShop.Tests\ZobShop.Tests.csproj", "{7A9B1F98-DCFA-4A5B-9132-FC0A1AF5463E}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5E53BD4-FE25-4DF2-BC9B-C43EC0BDC64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E53BD4-FE25-4DF2-BC9B-C43EC0BDC64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E53BD4-FE25-4DF2-BC9B-C43EC0BDC64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E53BD4-FE25-4DF2-BC9B-C43EC0BDC64C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A9B1F98-DCFA-4A5B-9132-FC0A1AF5463E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9B1F98-DCFA-4A5B-9132-FC0A1AF5463E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9B1F98-DCFA-4A5B-9132-FC0A1AF5463E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9B1F98-DCFA-4A5B-9132-FC0A1AF5463E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
