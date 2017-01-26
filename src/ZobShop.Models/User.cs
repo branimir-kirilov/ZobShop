@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ZobShop.Models
 {
@@ -9,5 +12,11 @@ namespace ZobShop.Models
         public string Address { get; set; }
 
         public string Phone { get; set; }
+
+
+        public Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
+        {
+            return manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+        }
     }
 }

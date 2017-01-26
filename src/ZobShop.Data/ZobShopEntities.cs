@@ -6,7 +6,7 @@ namespace ZobShop.Data
     public class ZobShopEntities : IdentityDbContext<User>
     {
         public ZobShopEntities()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("ZobShopDb", throwIfV1Schema: false)
         {
         }
 

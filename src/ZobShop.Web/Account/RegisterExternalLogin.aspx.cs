@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using ZobShop.Web.Models;
+using ZobShop.Models;
 
 namespace ZobShop.Web.Account
 {
@@ -78,8 +78,8 @@ namespace ZobShop.Web.Account
                     email.Text = loginInfo.Email;
                 }
             }
-        }        
-        
+        }
+
         protected void LogIn_Click(object sender, EventArgs e)
         {
             CreateAndLoginUser();
@@ -93,8 +93,8 @@ namespace ZobShop.Web.Account
             }
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = email.Text, Email = email.Text };
-            IdentityResult result = manager.Create(user);
+            var user = new User() { UserName = email.Text, Email = email.Text };
+            var result = manager.Create(user);
             if (result.Succeeded)
             {
                 var loginInfo = Context.GetOwinContext().Authentication.GetExternalLoginInfo();
@@ -119,9 +119,9 @@ namespace ZobShop.Web.Account
             AddErrors(result);
         }
 
-        private void AddErrors(IdentityResult result) 
+        private void AddErrors(IdentityResult result)
         {
-            foreach (var error in result.Errors) 
+            foreach (var error in result.Errors)
             {
                 ModelState.AddModelError("", error);
             }
