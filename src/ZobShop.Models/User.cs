@@ -13,7 +13,6 @@ namespace ZobShop.Models
 
         public string Phone { get; set; }
 
-
         public Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
             return manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
