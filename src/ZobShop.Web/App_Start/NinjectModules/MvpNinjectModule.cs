@@ -2,9 +2,12 @@
 using System.Linq;
 using Ninject;
 using Ninject.Activation;
+using Ninject.Extensions.Factory;
 using Ninject.Modules;
 using Ninject.Parameters;
 using WebFormsMvp;
+using WebFormsMvp.Binder;
+using ZobShop.Web.App_Start.Factories;
 
 namespace ZobShop.Web.App_Start.NinjectModules
 {
@@ -14,7 +17,11 @@ namespace ZobShop.Web.App_Start.NinjectModules
 
         public override void Load()
         {
-            throw new System.NotImplementedException();
+            this.Bind<IPresenterFactory>().To<WebFormsMvpPresenterFactory>().InSingletonScope();
+            this.Bind<ICustomPresenterFactory>().ToFactory().InSingletonScope();
+            this.Bind<IPresenter>()
+                .ToMethod(this.GetPresenter)
+                .NamedLikeFactoryMethod((ICustomPresenterFactory factory) => factory.GetPresenter(null, null));
         }
 
         private IPresenter GetPresenter(IContext context)
@@ -22,9 +29,9 @@ namespace ZobShop.Web.App_Start.NinjectModules
             var parameters = context.Parameters.ToList();
 
             var presenterType = (Type)parameters[0].GetValue(context, null);
-            var view = (IView)parameters[1].GetValue(context, null);
+            var viewInstance = (IView)parameters[1].GetValue(context, null);
 
-            var constructorParameter = new ConstructorArgument(ViewConstructorArgumentName, view);
+            var constructorParameter = new ConstructorArgument(ViewConstructorArgumentName, viewInstance);
 
             var presenter = (IPresenter)context.Kernel.Get(presenterType, constructorParameter);
             return presenter;
