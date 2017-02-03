@@ -65,6 +65,7 @@ namespace ZobShop.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Load(new MvpNinjectModule());
+            kernel.Load(new DataNinjectModule());
 
             PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
         }
