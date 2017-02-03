@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using ZobShop.Authentication;
 using ZobShop.Models;
 
 namespace ZobShop.Web.Account

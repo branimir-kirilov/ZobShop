@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
+using ZobShop.Authentication;
 using ZobShop.Models;
 
 namespace ZobShop.Web.Account

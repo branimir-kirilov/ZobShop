@@ -7,6 +7,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
+using ZobShop.Authentication;
 using ZobShop.Data;
 using ZobShop.Models;
 

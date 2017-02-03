@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZobShop.Services", "ZobShop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZobShop.Web", "ZobShop.Web\ZobShop.Web.csproj", "{F7B8B5AA-115D-4087-AF96-25053FC2473D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZobShop.ModelViewPresenter", "ZobShop.ModelViewPresenter\ZobShop.ModelViewPresenter.csproj", "{A80F56D5-69D7-40AA-9A32-C458FA9DBE13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZobShop.Authentication", "ZobShop.Authentication\ZobShop.Authentication.csproj", "{7A53F585-72D3-41AC-B131-415D8E021DAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{F7B8B5AA-115D-4087-AF96-25053FC2473D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7B8B5AA-115D-4087-AF96-25053FC2473D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7B8B5AA-115D-4087-AF96-25053FC2473D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A80F56D5-69D7-40AA-9A32-C458FA9DBE13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80F56D5-69D7-40AA-9A32-C458FA9DBE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80F56D5-69D7-40AA-9A32-C458FA9DBE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80F56D5-69D7-40AA-9A32-C458FA9DBE13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A53F585-72D3-41AC-B131-415D8E021DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A53F585-72D3-41AC-B131-415D8E021DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A53F585-72D3-41AC-B131-415D8E021DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A53F585-72D3-41AC-B131-415D8E021DAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

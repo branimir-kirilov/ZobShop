@@ -402,7 +402,6 @@
     </Compile>
     <Compile Include="App_Start\Factories\ICustomPresenterFactory.cs" />
     <Compile Include="App_Start\Factories\WebFormsMvpPresenterFactory.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectModules\MvpNinjectModule.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
@@ -453,6 +452,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ZobShop.Authentication\ZobShop.Authentication.csproj">
+      <Project>{7A53F585-72D3-41AC-B131-415D8E021DAC}</Project>
+      <Name>ZobShop.Authentication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZobShop.Data\ZobShop.Data.csproj">
       <Project>{D5E53BD4-FE25-4DF2-BC9B-C43EC0BDC64C}</Project>
       <Name>ZobShop.Data</Name>
