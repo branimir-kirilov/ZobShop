@@ -464,6 +464,10 @@
       <Project>{601a83b5-681c-42c3-a67a-5e0eaf5d0ebe}</Project>
       <Name>ZobShop.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZobShop.ModelViewPresenter\ZobShop.ModelViewPresenter.csproj">
+      <Project>{A80F56D5-69D7-40AA-9A32-C458FA9DBE13}</Project>
+      <Name>ZobShop.ModelViewPresenter</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
