@@ -22,3 +22,24 @@ Products have:
  - Quantity 
  - Price
  - Volume / Size
+ - Reviews
+ - Rating
+ 
+ Category:
+  - Name
+  
+ Review:
+  - Comments
+  - Rating
+  - Product
+  - Product rating
+  - Text
+  - Date
+  - Author
+  
+  Comment:
+   - Date
+   - Review
+   - Author
+   - Text
+  
