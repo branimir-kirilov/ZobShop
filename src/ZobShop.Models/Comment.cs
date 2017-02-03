@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ZobShop.Models
 {
@@ -27,5 +23,15 @@ namespace ZobShop.Models
         public int ReviewId { get; set; }
 
         public virtual Review Review { get; set; }
+
+        [ForeignKey("ProductId")]
+        public int ProductId { get; set; }
+
+        public Product Product { get; set; }
+
+        [ForeignKey("Id")]
+        public int AuthorId { get; set; }
+
+        public User Author { get; set; }
     }
 }
