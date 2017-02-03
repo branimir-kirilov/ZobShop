@@ -84,6 +84,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Login\ILoginView.cs" />
+    <Compile Include="Account\Login\LoginEventArgs.cs" />
+    <Compile Include="Account\Login\LoginPresenter.cs" />
+    <Compile Include="Account\Login\LoginViewModel.cs" />
     <Compile Include="Account\Register\IRegisterView.cs" />
     <Compile Include="Account\Register\RegisterEventArgs.cs" />
     <Compile Include="Account\Register\RegisterPresenter.cs" />

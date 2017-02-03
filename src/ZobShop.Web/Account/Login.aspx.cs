@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Web;
-using System.Web.UI;
-using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Owin;
+using WebFormsMvp;
+using WebFormsMvp.Web;
 using ZobShop.Authentication;
+using ZobShop.ModelViewPresenter.Account.Login;
 
 namespace ZobShop.Web.Account
 {
-    public partial class Login : Page
+    [PresenterBinding(typeof(LoginPresenter))]
+    public partial class Login : MvpPage<LoginViewModel>, ILoginView
     {
+        public event EventHandler<LoginEventArgs> MyLogin;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterHyperLink.NavigateUrl = "Register";
@@ -27,15 +30,10 @@ namespace ZobShop.Web.Account
         {
             if (IsValid)
             {
-                // Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+                var args = new LoginEventArgs(this.Context, this.Email.Text, this.Password.Text, this.RememberMe.Checked);
+                this.MyLogin?.Invoke(this, args);
 
-                // This doen't count login failures towards account lockout
-                // To enable password failures to trigger lockout, change to shouldLockout: true
-                var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
-
-                switch (result)
+                switch (this.Model.SignInStatus)
                 {
                     case SignInStatus.Success:
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
@@ -44,7 +42,7 @@ namespace ZobShop.Web.Account
                         Response.Redirect("/Account/Lockout");
                         break;
                     case SignInStatus.RequiresVerification:
-                        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}", 
+                        Response.Redirect(string.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}",
                                                         Request.QueryString["ReturnUrl"],
                                                         RememberMe.Checked),
                                           true);
