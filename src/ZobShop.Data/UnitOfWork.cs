@@ -4,11 +4,11 @@ using ZobShop.Data.Contracts;
 
 namespace ZobShop.Data
 {
-    public class EntityFrameworkUnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly DbContext dbContext;
 
-        public EntityFrameworkUnitOfWork(DbContext context)
+        public UnitOfWork(DbContext context)
         {
             if (context == null)
             {

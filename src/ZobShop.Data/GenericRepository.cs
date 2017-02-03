@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace ZobShop.Data
 {
-    public class EntityFrameworkRepository<T> : IRepository<T>
+    public class GenericRepository<T> : IRepository<T>
         where T : class
     {
-        public EntityFrameworkRepository(DbContext dbContext)
+        public GenericRepository(DbContext dbContext)
         {
             if (dbContext == null)
             {
