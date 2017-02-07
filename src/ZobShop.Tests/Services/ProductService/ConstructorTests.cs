@@ -62,5 +62,19 @@ namespace ZobShop.Tests.Services.ProductService
                         new ZobShop.Services.ProductService(factory.Object, repository.Object, service.Object,
                            null));
         }
+
+        [Test]
+        public void TestConstructor_PassEverything_ShouldNotThrow()
+        {
+            var factory = new Mock<IProductFactory>();
+            var repository = new Mock<IRepository<Product>>();
+            var service = new Mock<ICategoryService>();
+            var unitOfWork = new Mock<IUnitOfWork>();
+
+            Assert.DoesNotThrow(
+                    () =>
+                        new ZobShop.Services.ProductService(factory.Object, repository.Object, service.Object,
+                           unitOfWork.Object));
+        }
     }
 }
