@@ -37,7 +37,12 @@
             </Scripts>  
         </asp:ScriptManager>
     
+        <%--Navigation Menu JavaScript--%>
         <script src="/Scripts/Navigation/navigation.js"></script> 
+        
+        <div id="logo-wrapper">
+        </div>
+
         <%--Navigation Menu--%>
         <div id='cssmenu'>
           <ul class="active">
@@ -47,23 +52,26 @@
                 <%--Is user logged in templates--%>
                 <asp:LoginView runat="server" ViewStateMode="Disabled">
                     <AnonymousTemplate>
-                            <li><a runat="server" href="~/Account/Register">Register</a></li>
-                            <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            <li class="navbar navbar-right"><a runat="server" href="~/Account/Register">Register</a></li>
+                            <li class="navbar navbar-right"><a runat="server" href="~/Account/Login">Log in</a></li>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                            <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                            <li>
+                            <li class="navbar navbar-right"><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                            <li class="navbar navbar-right">
                                 <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                             </li>
                     </LoggedInTemplate>
                 </asp:LoginView>
           </ul>
         </div>
-
+        
+         <%--Main container--%>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
+
+            <%--Footer--%>
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>

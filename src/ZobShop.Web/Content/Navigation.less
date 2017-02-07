@@ -1,4 +1,8 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Raleway);
+﻿/*Variables*/
+@primary-navigation-color: #13a817;
+
+
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -33,7 +37,7 @@
   line-height: 1;
 }
 #cssmenu > ul {
-  background: #3db2e1;
+  background: @primary-navigation-color;
 }
 #cssmenu > ul > li {
   float: left;
@@ -59,7 +63,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  background: #3db2e1;
+  background: @primary-navigation-color;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   -o-transition: all .3s;
@@ -94,7 +98,7 @@
   height: 100%;
   padding: 16px 20px;
   color: #dff2fa;
-  background: #19799f;
+  background: @primary-navigation-color;
   content: attr(data-title);
   -webkit-transition: background 0.3s;
   -moz-transition: background 0.3s;
@@ -109,7 +113,7 @@
 }
 #cssmenu > ul > li:hover > a::before,
 #cssmenu > ul > li > a:hover::before {
-  background: #3db2e1;
+  background: @primary-navigation-color;
 }
 #cssmenu.small-screen {
   width: 100%;
@@ -145,7 +149,7 @@
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: #3db2e1;
+  background: @primary-navigation-color;
 }
 #cssmenu.small-screen #menu-button:after {
   content: "";
