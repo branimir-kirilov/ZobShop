@@ -27,20 +27,13 @@ namespace ZobShop.Services
 
         public Product CreateProduct(string name, string categoryName, int quantity, decimal price, double volume, string maker)
         {
-            var category = this.categoryRepository
-                .GetAll((Category c) => c.Name == categoryName)
-                .FirstOrDefault();
+            var category = new Category { Name = categoryName };
 
-            if (category != null)
-            {
-                var product = this.factory.CreateProduct(name, category, quantity, price, volume, maker);
-                this.productRepository.Add(product);
-                this.unitOfWork.Commit();
+            var product = this.factory.CreateProduct(name, category, quantity, price, volume, maker);
+            this.productRepository.Add(product);
+            this.unitOfWork.Commit();
 
-                return product;
-            }
-
-            return null;
+            return product;
         }
     }
 }

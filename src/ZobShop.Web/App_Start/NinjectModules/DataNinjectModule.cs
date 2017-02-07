@@ -1,8 +1,12 @@
 ﻿using System.Data.Entity;
+using Ninject.Extensions.Factory;
 using Ninject.Modules;
 using Ninject.Web.Common;
 using ZobShop.Data;
 using ZobShop.Data.Contracts;
+using ZobShop.Factories;
+using ZobShop.Services;
+using ZobShop.Services.Contracts;
 
 namespace ZobShop.Web.App_Start.NinjectModules
 {
@@ -14,6 +18,10 @@ namespace ZobShop.Web.App_Start.NinjectModules
             this.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
 
             this.Bind<DbContext>().To<ZobShopEntities>().InRequestScope();
+
+            this.Bind<IProductService>().To<ProductService>();
+
+            this.Bind<IProductFactory>().ToFactory();
         }
     }
 }
