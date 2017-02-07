@@ -19,19 +19,19 @@ namespace ZobShop.Models
 
         public DateTime DateAnswered { get; set; }
 
-        [ForeignKey("Review")]
         public int ReviewId { get; set; }
 
+        [ForeignKey("ReviewId")]
         public virtual Review Review { get; set; }
 
-        [ForeignKey("ProductId")]
         public int ProductId { get; set; }
 
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
 
-        [ForeignKey("Id")]
-        public int AuthorId { get; set; }
+        public string Id { get; set; }
 
+        [ForeignKey("Id")]
         public User Author { get; set; }
     }
 }
