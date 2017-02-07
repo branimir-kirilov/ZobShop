@@ -51,6 +51,11 @@ namespace ZobShop.Services
 
         public Category CreateCategory(string name)
         {
+            if (name == null)
+            {
+                throw new ArgumentNullException("name cannot be null");
+            }
+
             var category = this.factory.CreateCategory(name);
 
             this.repository.Add(category);
