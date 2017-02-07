@@ -233,7 +233,14 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\Navigation.css">
+      <DependentUpon>Navigation.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Navigation.less" />
     <None Include="Content\Site.less" />
+    <Content Include="Content\Navigation.min.css">
+      <DependentUpon>Navigation.css</DependentUpon>
+    </Content>
     <Content Include="Content\Site.css">
       <DependentUpon>Site.less</DependentUpon>
     </Content>
@@ -254,6 +261,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Navigation\navigation.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
