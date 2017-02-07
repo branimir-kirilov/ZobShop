@@ -5,6 +5,7 @@ using Ninject.Web.Common;
 using ZobShop.Data;
 using ZobShop.Data.Contracts;
 using ZobShop.Factories;
+using ZobShop.ModelViewPresenter;
 using ZobShop.Services;
 using ZobShop.Services.Contracts;
 
@@ -24,6 +25,8 @@ namespace ZobShop.Web.App_Start.NinjectModules
 
             this.Bind<IProductFactory>().ToFactory();
             this.Bind<ICategoryFactory>().ToFactory();
+
+            this.Bind<IViewModelFactory>().ToFactory();
         }
     }
 }
