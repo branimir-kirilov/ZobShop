@@ -15,6 +15,17 @@ namespace ZobShop.Models
             this.productRatings = new HashSet<ProductRating>();
         }
 
+        public Product(string name, Category category, int quantity, decimal price, double volume, string maker)
+            : this()
+        {
+            this.Name = name;
+            this.Category = category;
+            this.Quantity = quantity;
+            this.Price = price;
+            this.Volume = volume;
+            this.Maker = maker;
+        }
+
         [Key]
         public int ProductId { get; set; }
 
@@ -31,10 +42,7 @@ namespace ZobShop.Models
 
         public double Volume { get; set; }
 
-        [ForeignKey("MakerId")]
-        public int MakerId { get; set; }
-
-        public Maker Maker { get; set; }
+        public string Maker { get; set; }
 
         public virtual ICollection<Review> Reviews
         {
