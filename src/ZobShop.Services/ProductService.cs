@@ -59,5 +59,12 @@ namespace ZobShop.Services
 
             return product;
         }
+
+        public Product GetById(int id)
+        {
+            var product = this.productRepository.GetById(id);
+
+            return product;
+        }
     }
 }

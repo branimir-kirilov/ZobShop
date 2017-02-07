@@ -92,10 +92,15 @@
     <Compile Include="Account\Register\RegisterEventArgs.cs" />
     <Compile Include="Account\Register\RegisterPresenter.cs" />
     <Compile Include="Account\Register\RegisterViewModel.cs" />
+    <Compile Include="IViewModelFactory.cs" />
     <Compile Include="Product\Create\CreateProductEventArgs.cs" />
     <Compile Include="Product\Create\CreateProductPresenter.cs" />
     <Compile Include="Product\Create\CreateProductViewModel.cs" />
     <Compile Include="Product\Create\ICreateProductView.cs" />
+    <Compile Include="Product\Details\ProductDetailsEventArgs.cs" />
+    <Compile Include="Product\Details\IProductDetailsView.cs" />
+    <Compile Include="Product\Details\ProductDetailsPresenter.cs" />
+    <Compile Include="Product\Details\ProductDetailsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
