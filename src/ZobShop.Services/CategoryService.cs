@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using ZobShop.Data.Contracts;
 using ZobShop.Factories;
 using ZobShop.Models;
@@ -14,6 +15,21 @@ namespace ZobShop.Services
 
         public CategoryService(IRepository<Category> repository, IUnitOfWork unitOfWork, ICategoryFactory factory)
         {
+            if (repository == null)
+            {
+                throw new ArgumentNullException("repository cannot be null");
+            }
+
+            if (factory == null)
+            {
+                throw new ArgumentNullException("factory cannot be null");
+            }
+
+            if (unitOfWork == null)
+            {
+                throw new ArgumentNullException("unit of work cannot be null");
+            }
+
             this.repository = repository;
             this.unitOfWork = unitOfWork;
             this.factory = factory;
