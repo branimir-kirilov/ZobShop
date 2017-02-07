@@ -9,7 +9,7 @@ namespace ZobShop.Web.App_Start.NinjectModules
     {
         public override void Load()
         {
-            Kernel.Bind(x =>
+            this.Bind(x =>
             {
                 x.FromAssembliesInPath(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location))
                 .SelectAllClasses()
