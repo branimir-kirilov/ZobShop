@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using ZobShop.ModelViewPresenter.Product.Details;
@@ -19,9 +20,8 @@ namespace ZobShop.Web.Product
             var args = new ProductDetailsEventArgs(id);
 
             this.MyProductDetails?.Invoke(this, args);
-
-            this.DetailsView.DataSource = this.Model;
-            this.DataBind();
+            
+            // TODO: Bind to model
         }
     }
 }

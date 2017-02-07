@@ -8,6 +8,8 @@ namespace ZobShop.Web.Product
     [PresenterBinding(typeof(CreateProductPresenter))]
     public partial class CreateProduct : MvpPage<CreateProductViewModel>, ICreateProductView
     {
+        private const string RedirectUrl = "/Product/ProductDetails?id={0}";
+
         public event EventHandler<CreateProductEventArgs> MyCreateProduct;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -27,6 +29,9 @@ namespace ZobShop.Web.Product
 
             var args = new CreateProductEventArgs(name, category, quantity, price, volume, maker);
             this.MyCreateProduct?.Invoke(this, args);
+
+            var redirectLink = string.Format(RedirectUrl, this.Model.Id);
+            this.Response.Redirect(redirectLink);
         }
     }
 }
