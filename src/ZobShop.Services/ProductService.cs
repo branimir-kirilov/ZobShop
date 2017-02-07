@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ZobShop.Data.Contracts;
 using ZobShop.Factories;
 using ZobShop.Models;
@@ -70,13 +71,14 @@ namespace ZobShop.Services
 
         public IEnumerable<Product> GetProducts()
         {
-            return this.productRepository.Entities;
+            return this.productRepository.Entities.ToList();
         }
 
         public IEnumerable<Product> GetProductsByCategory(string categoryName)
         {
             var products = this.productRepository
-                .GetAll((Product p) => p.Category.Name == categoryName);
+                .GetAll((Product p) => p.Category.Name == categoryName)
+                .ToList();
 
             return products;
         }
