@@ -108,7 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZobShop.Authentication\ZobShop.Authentication.csproj">
-      <Project>{7A53F585-72D3-41AC-B131-415D8E021DAC}</Project>
+      <Project>{7a53f585-72d3-41ac-b131-415d8e021dac}</Project>
       <Name>ZobShop.Authentication</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZobShop.Models\ZobShop.Models.csproj">
