@@ -92,6 +92,9 @@
     <Compile Include="Account\Register\RegisterEventArgs.cs" />
     <Compile Include="Account\Register\RegisterPresenter.cs" />
     <Compile Include="Account\Register\RegisterViewModel.cs" />
+    <Compile Include="Administration\UsersList\IUserListView.cs" />
+    <Compile Include="Administration\UsersList\UserListPresenter.cs" />
+    <Compile Include="Administration\UsersList\UserListViewModel.cs" />
     <Compile Include="IViewModelFactory.cs" />
     <Compile Include="Product\Create\CreateProductEventArgs.cs" />
     <Compile Include="Product\Create\CreateProductPresenter.cs" />
