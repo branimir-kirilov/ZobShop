@@ -11,7 +11,7 @@
 
         return this.each(function () {
             cssmenu.find('li ul').parent().addClass('has-sub');
-            if (settings.format != 'select') {
+            if (settings.format !== 'select') {
                 cssmenu.prepend('<div id="menu-button">' + settings.title + '</div>');
                 $(this).find("#menu-button").on('click', function () {
                     $(this).toggleClass('menu-opened');
