@@ -66,6 +66,8 @@ namespace ZobShop.Web.App_Start
         {
             kernel.Load(new MvpNinjectModule());
             kernel.Load(new DataNinjectModule());
+            kernel.Load(new DefaultNinjectModule());
+            kernel.Load(new FactoryNinjectModule());
 
             PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
         }
