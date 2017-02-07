@@ -13,7 +13,6 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
 <body>
     <form runat="server">
@@ -37,8 +36,8 @@
                 <%--Site Scripts--%>
             </Scripts>  
         </asp:ScriptManager>
-        <script src="Scripts/Navigation/navigation.js"></script> 
-
+    
+        <script src="/Scripts/Navigation/navigation.js"></script> 
         <%--Navigation Menu--%>
         <div id='cssmenu'>
           <ul class="active">

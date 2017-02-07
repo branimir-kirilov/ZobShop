@@ -57,6 +57,12 @@
                         indentation += '-';
                     }
                     selectList.append('<option value="' + $(this).attr('href') + '">' + indentation + element.text() + '</option');
+                    console.log('<option value="' +
+                        $(this).attr('href') +
+                        '">' +
+                        indentation +
+                        element.text() +
+                        '</option');
                 });
                 selectList.on('change', function () {
                     window.location = $(this).find("option:selected").val();
