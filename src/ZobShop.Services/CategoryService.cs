@@ -37,6 +37,11 @@ namespace ZobShop.Services
 
         public Category GetCategoryByName(string name)
         {
+            if (name == null)
+            {
+                throw new ArgumentNullException("name cannot be null");
+            }
+
             var category = this.repository
                 .GetAll((Category c) => c.Name == name)
                 .FirstOrDefault();
