@@ -8,7 +8,6 @@ namespace ZobShop.Models
     {
         public Comment()
         {
-            this.DateAnswered = DateTime.Now;
         }
 
         [Key]

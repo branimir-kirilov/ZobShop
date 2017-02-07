@@ -22,7 +22,7 @@ namespace ZobShop.Models
         [Key]
         public int CategoryId { get; set; }
 
-        //[Index(IsUnique = true)]
+        [Index(IsUnique = true)]
         public string Name { get; set; }
 
         public virtual ICollection<Product> Products
