@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
-    <Compile Include="Maker.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
