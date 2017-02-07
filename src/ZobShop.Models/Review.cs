@@ -23,7 +23,7 @@ namespace ZobShop.Models
         public int ProductId { get; set; }
 
         [ForeignKey("ProductId")]
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
         public virtual ICollection<Comment> Comments
         {
@@ -34,11 +34,11 @@ namespace ZobShop.Models
         public string Content { get; set; }
 
         public DateTime Date { get; set; }
-        
+
         [ForeignKey("Author")]
         public string AuthorId { get; set; }
 
         [ForeignKey("Id")]
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
     }
 }

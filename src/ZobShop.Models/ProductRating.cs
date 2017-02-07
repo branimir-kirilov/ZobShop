@@ -11,12 +11,12 @@ namespace ZobShop.Models
         public int ProductId { get; set; }
 
         [ForeignKey("ProductId")]
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
         [ForeignKey("Author")]
         public string AuthorId { get; set; }
 
         [ForeignKey("Id")]
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
     }
 }
