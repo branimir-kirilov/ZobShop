@@ -8,14 +8,15 @@ namespace ZobShop.Models
         [Key]
         public int ProductRatingId { get; set; }
 
-        [ForeignKey("ProductId")]
         public int ProductId { get; set; }
 
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
 
-        [ForeignKey("Id")]
+        [ForeignKey("Author")]
         public string AuthorId { get; set; }
 
+        [ForeignKey("Id")]
         public User Author { get; set; }
     }
 }

@@ -40,7 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="Contracts\ICategoryService.cs" />
+    <Compile Include="Contracts\IProductService.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZobShop.Data\ZobShop.Data.csproj">
+      <Project>{D5E53BD4-FE25-4DF2-BC9B-C43EC0BDC64C}</Project>
+      <Name>ZobShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZobShop.Factories\ZobShop.Factories.csproj">
+      <Project>{1959CD6F-B7C4-4A1C-A7E8-53811F0AC5CD}</Project>
+      <Name>ZobShop.Factories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZobShop.Models\ZobShop.Models.csproj">
+      <Project>{601A83B5-681C-42C3-A67A-5E0EAF5D0EBE}</Project>
+      <Name>ZobShop.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

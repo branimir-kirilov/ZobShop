@@ -92,6 +92,10 @@
     <Compile Include="Account\Register\RegisterEventArgs.cs" />
     <Compile Include="Account\Register\RegisterPresenter.cs" />
     <Compile Include="Account\Register\RegisterViewModel.cs" />
+    <Compile Include="Product\Create\CreateProductEventArgs.cs" />
+    <Compile Include="Product\Create\CreateProductPresenter.cs" />
+    <Compile Include="Product\Create\CreateProductViewModel.cs" />
+    <Compile Include="Product\Create\ICreateProductView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +109,10 @@
     <ProjectReference Include="..\ZobShop.Models\ZobShop.Models.csproj">
       <Project>{601A83B5-681C-42C3-A67A-5E0EAF5D0EBE}</Project>
       <Name>ZobShop.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZobShop.Services\ZobShop.Services.csproj">
+      <Project>{FFDE1559-F1EC-45FD-812F-E0CDE1C64B32}</Project>
+      <Name>ZobShop.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

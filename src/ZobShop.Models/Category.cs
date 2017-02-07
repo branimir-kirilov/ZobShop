@@ -13,6 +13,12 @@ namespace ZobShop.Models
             this.products = new HashSet<Product>();
         }
 
+        public Category(string name)
+            : this()
+        {
+            this.Name = name;
+        }
+
         [Key]
         public int CategoryId { get; set; }
 
