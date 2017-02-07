@@ -10,6 +10,10 @@ namespace ZobShop.Data
         public ZobShopEntities()
             : base("ZobShopDb", throwIfV1Schema: false)
         {
+            this.Configuration.AutoDetectChangesEnabled = true;
+
+            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.ProxyCreationEnabled = true;
         }
 
         public static ZobShopEntities Create()
