@@ -2,46 +2,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/Branimir123/ZobShop/badge.svg?branch=master)](https://coveralls.io/github/Branimir123/ZobShop?branch=master)
 # ZobShop
 
-Administrator:
-- Create product
-- Edit product
-- Delete product
-- Manage users
-- Add product reviews
-
-User:
-- Browse products
-- Add to cart
-- Manage profile
-- Give review about product
-- Finish order
-- Comment on product reviews
-
-Products have:
- - Name
- - Maker
- - Category
- - Quantity 
- - Price
- - Volume / Size
- - Reviews
- - Rating
- 
- Category:
-  - Name
-  
- Review:
-  - Comments
-  - Rating
-  - Product
-  - Product rating
-  - Text
-  - Date
-  - Author
-  
-  Comment:
-   - Date
-   - Review
-   - Author
-   - Text
-  
+## TODO
+- Administration editing
+- Administration delete
+- Product comments
+- Product reviews
+- Fix UI !
+- Create view models for lists
