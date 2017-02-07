@@ -5,6 +5,6 @@ namespace ZobShop.Services.Contracts
 {
     public interface IUserService
     {
-        ICollection<User> GetUsers();
+        IEnumerable<User> GetUsers();
     }
 }

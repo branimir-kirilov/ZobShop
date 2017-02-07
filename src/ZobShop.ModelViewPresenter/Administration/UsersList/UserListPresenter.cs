@@ -18,7 +18,7 @@ namespace ZobShop.ModelViewPresenter.Administration.UsersList
 
         private void View_MyInit(object sender, EventArgs e)
         {
-            this.View.Model.Users = this.service.GetUsers().ToList();
+            this.View.Model.Users = this.service.GetUsers();
         }
     }
 }

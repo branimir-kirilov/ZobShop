@@ -5,6 +5,6 @@ namespace ZobShop.ModelViewPresenter.Administration.UsersList
 {
     public class UserListViewModel
     {
-        public ICollection<User> Users { get; set; }
+        public IEnumerable<User> Users { get; set; }
     }
 }

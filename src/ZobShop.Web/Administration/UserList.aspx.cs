@@ -13,6 +13,9 @@ namespace ZobShop.Web.Administration
         protected void Page_Load(object sender, EventArgs e)
         {
             this.MyInit?.Invoke(sender, e);
+
+            this.UsersList.DataSource = this.Model.Users;
+            this.DataBind();
         }
     }
 }
