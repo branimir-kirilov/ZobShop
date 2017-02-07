@@ -13,12 +13,12 @@ namespace ZobShop.Web.Product {
     public partial class ProductsList {
         
         /// <summary>
-        /// DetailsView control.
+        /// ProductList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView;
+        protected global::System.Web.UI.WebControls.GridView ProductList;
     }
 }

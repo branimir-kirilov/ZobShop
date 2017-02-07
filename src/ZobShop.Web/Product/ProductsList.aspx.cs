@@ -19,7 +19,7 @@ namespace ZobShop.Web.Product
             var args = new ProductListEventArgs(category);
             this.MyInit?.Invoke(this, args);
 
-            this.DetailsView.DataSource = this.Model.Products;
+            this.ProductList.DataSource = this.Model.Products;
             this.DataBind();
         }
     }
