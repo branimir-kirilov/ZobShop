@@ -101,6 +101,10 @@
     <Compile Include="Product\Details\IProductDetailsView.cs" />
     <Compile Include="Product\Details\ProductDetailsPresenter.cs" />
     <Compile Include="Product\Details\ProductDetailsViewModel.cs" />
+    <Compile Include="Product\List\IProductListView.cs" />
+    <Compile Include="Product\List\ProductListEventArgs.cs" />
+    <Compile Include="Product\List\ProductListPresenter.cs" />
+    <Compile Include="Product\List\ProductListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
