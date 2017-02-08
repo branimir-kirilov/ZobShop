@@ -5,7 +5,11 @@ branches:
   
 before_build:
 - ps: nuget restore src\ZobShop.sln
-  
+
+build:
+  project: src\ZobShop.sln
+  verbosity: minimal  
+
 environment:
   COVERALLS:
     secure: mLkXDDiKucaZPaKBrZMDuc9Xqxru4aG8apig3 
