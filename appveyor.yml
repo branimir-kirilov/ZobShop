@@ -3,7 +3,7 @@ branches:
   only:
   - master
 before_build:
-- ps: nuget restore ./ZobShop/ZopShop.sln
+- ps: nuget restore
 build:
   project: ./ZobShop/ZobShop.sln
   verbosity: minimal
