@@ -13,14 +13,21 @@ namespace ZobShop.Services
 
         public UserService(IRepository<User> repository)
         {
+            if (repository == null)
+            {
+                throw new ArgumentNullException("repository cannot be null");
+            }
+
             this.repository = repository;
         }
 
         public IEnumerable<User> GetUsers()
         {
-            return this.repository
+            var result = this.repository
                 .Entities
                 .ToList();
+
+            return result;
         }
     }
 }

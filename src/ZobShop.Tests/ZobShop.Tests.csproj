@@ -94,6 +94,8 @@
     <Compile Include="Services\ProductService\GetProductsByCategoryTests.cs" />
     <Compile Include="Services\ProductService\GetProductsTests.cs" />
     <Compile Include="Services\ProductService\GetByIdTests.cs" />
+    <Compile Include="Services\UserServiceTests\ConstructorTests.cs" />
+    <Compile Include="Services\UserServiceTests\GetUsersTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
