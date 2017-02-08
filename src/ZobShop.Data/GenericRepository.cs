@@ -18,7 +18,7 @@ namespace ZobShop.Data
             }
 
             this.Context = dbContext;
-            this.Set = this.Context.Set<T>();
+            this.Set = this.Context.Set<T>(); 
         }
 
         protected IDbSet<T> Set { get; set; }
