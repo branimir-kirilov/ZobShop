@@ -10,10 +10,6 @@ build:
   project: src\ZobShop.sln
   verbosity: minimal  
 
-environment:
-  COVERALLS:
-    secure: mLkXDDiKucaZPaKBrZMDuc9Xqxru4aG8apig3 
-
 after_test: 
   - src\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"src\packages\NUnit.ConsoleRunner.3.6.0\tools\nunit3-console.exe" -targetargs:"/domain:single  src\ZobShop.Tests\bin\Debug\ZobShop.Tests.dll" -output:coverage.xml
 
