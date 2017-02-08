@@ -15,6 +15,6 @@ environment:
     secure: mLkXDDiKucaZPaKBrZMDuc9Xqxru4aG8apig3 
 
 after_test: 
-  - ZobShop\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"ZobShop\packages\NUnit.ConsoleRunner.3.6.0\tools\nunit3-console.exe" -targetargs:"/domain:single  ZobShop\ZobShop.Tests\bin\Debug\ZobShop.Tests.dll" -output:coverage.xml
+  - src\ZobShop\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"src\ZobShop\packages\NUnit.ConsoleRunner.3.6.0\tools\nunit3-console.exe" -targetargs:"/domain:single  src\ZobShop\ZobShop.Tests\bin\Debug\ZobShop.Tests.dll" -output:coverage.xml
 
-  - ZobShop\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover coverage.xml
+  - src\ZobShop\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover coverage.xml
