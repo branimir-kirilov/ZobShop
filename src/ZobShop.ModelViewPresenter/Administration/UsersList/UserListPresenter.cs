@@ -8,17 +8,25 @@ namespace ZobShop.ModelViewPresenter.Administration.UsersList
     public class UserListPresenter : Presenter<IUserListView>
     {
         private readonly IUserService service;
+        private readonly IViewModelFactory factory;
 
-        public UserListPresenter(IUserListView view, IUserService service) : base(view)
+        public UserListPresenter(IUserListView view, IUserService service, IViewModelFactory factory) : base(view)
         {
             this.service = service;
+            this.factory = factory;
 
             this.View.MyInit += View_MyInit;
         }
 
         private void View_MyInit(object sender, EventArgs e)
         {
-            this.View.Model.Users = this.service.GetUsers();
+            var users = this.service.GetUsers();
+
+            var viewModels =
+                users.Select(
+                    u => this.factory.CreateUserDetailsViewModel(u.Email, u.Address, u.PhoneNumber, u.UserName, u.Id));
+
+            this.View.Model.Users = viewModels;
         }
     }
 }
