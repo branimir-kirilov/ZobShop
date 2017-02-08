@@ -4,16 +4,6 @@ branches:
   - master
 before_build:
 - ps: nuget restore
-build:
-  project: ./ZobShop/ZobShop.sln
-  verbosity: minimal
-notifications:
-- provider: Email
-  to:
-  - kirilov.branimir@gmail.com
-  on_build_success: true
-  on_build_failure: true
-  on_build_status_changed: true
 
 environment:
   COVERALLS:
