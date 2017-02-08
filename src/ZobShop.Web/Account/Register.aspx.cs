@@ -20,7 +20,13 @@ namespace ZobShop.Web.Account
 
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            var args = new RegisterEventArgs(this.Context, this.Email.Text, this.Password.Text);
+            var args = new RegisterEventArgs(this.Context,
+                this.Email.Text,
+                this.Password.Text,
+                this.Username.Text,
+                this.Phone.Text,
+                this.Address.Text);
+
             this.MyRegister?.Invoke(this, args);
 
             if (this.Model.IsRegistrationSuccessful)
@@ -32,6 +38,5 @@ namespace ZobShop.Web.Account
                 this.ErrorMessage.Text = this.Model.ErrorMessage;
             }
         }
-
     }
 }
