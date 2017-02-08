@@ -91,6 +91,7 @@
     <Compile Include="Services\CategoryServiceTests\GetCategoryByNameTests.cs" />
     <Compile Include="Services\ProductService\ConstructorTests.cs" />
     <Compile Include="Services\ProductService\CreateProductTests.cs" />
+    <Compile Include="Services\ProductService\GetProductsByCategoryTests.cs" />
     <Compile Include="Services\ProductService\GetProductsTests.cs" />
     <Compile Include="Services\ProductService\GetByIdTests.cs" />
   </ItemGroup>
