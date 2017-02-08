@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using AjaxControlToolkit;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using ZobShop.ModelViewPresenter.Product.Create;
@@ -26,12 +28,17 @@ namespace ZobShop.Web.Product
             var maker = this.Maker.Text;
             var price = int.Parse(this.Price.Text);
             var volume = double.Parse(this.Volume.Text);
-
+           
             var args = new CreateProductEventArgs(name, category, quantity, price, volume, maker);
             this.MyCreateProduct?.Invoke(this, args);
 
             var redirectLink = string.Format(RedirectUrl, this.Model.Id);
             this.Response.Redirect(redirectLink);
+        }
+
+        protected void AjaxFileUploadEvent(object sender, AjaxFileUploadEventArgs e)
+        {
+            //TODO: Implement logic here
         }
     }
 }

@@ -57,6 +57,13 @@
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Maker"
                     CssClass="text-danger" ErrorMessage="The name field is required." />
             </div>
+
+            <ajaxToolkit:AjaxFileUpload ID="AjaxFileUpload1"
+                ThrobberID="myThrobber"
+                AllowedFileTypes="jpg,jpeg"
+                MaximumNumberOfFiles=1
+                OnUploadComplete="AjaxFileUploadEvent"
+                runat="server"/>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
