@@ -1,4 +1,5 @@
-﻿using WebFormsMvp;
+﻿using System.Linq;
+using WebFormsMvp;
 using ZobShop.Services.Contracts;
 
 namespace ZobShop.ModelViewPresenter.Product.List
@@ -6,10 +7,12 @@ namespace ZobShop.ModelViewPresenter.Product.List
     public class ProductListPresenter : Presenter<IProductListView>
     {
         private readonly IProductService service;
+        private readonly IViewModelFactory factory;
 
-        public ProductListPresenter(IProductListView view, IProductService service) : base(view)
+        public ProductListPresenter(IProductListView view, IProductService service, IViewModelFactory factory) : base(view)
         {
             this.service = service;
+            this.factory = factory;
 
             this.View.MyInit += View_MyInit;
         }
@@ -20,11 +23,21 @@ namespace ZobShop.ModelViewPresenter.Product.List
 
             if (category == null)
             {
-                this.View.Model.Products = this.service.GetProducts();
+                this.View.Model.Products = this.service.GetProducts()
+                    .Select(p => this.factory.CreateProductDetailsViewModel(p.Name,
+                    p.Category.Name,
+                    p.Price,
+                    p.Volume,
+                    p.Maker));
             }
             else
             {
-                this.View.Model.Products = this.service.GetProductsByCategory(category);
+                this.View.Model.Products = this.service.GetProductsByCategory(category)
+                    .Select(p => this.factory.CreateProductDetailsViewModel(p.Name,
+                    p.Category.Name,
+                    p.Price,
+                    p.Volume,
+                    p.Maker));
             }
         }
     }
