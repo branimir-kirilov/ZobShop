@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Data\UnitOfWorkTests\CommitTests.cs" />
     <Compile Include="Data\UnitOfWorkTests\ConstructorTests.cs" />
+    <Compile Include="Data\UnitOfWorkTests\DisposeTests.cs" />
     <Compile Include="Models\CategoryConstructorTests.cs" />
     <Compile Include="Models\CommentConstructorTests.cs" />
     <Compile Include="Models\ProductConstructorTests.cs" />
