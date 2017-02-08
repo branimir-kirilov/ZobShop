@@ -3,6 +3,9 @@ branches:
   only:
   - master
   
+before_build:
+- ps: nuget restore ./WhenItsDone/WhenItsDone.sln
+  
 environment:
   COVERALLS:
     secure: mLkXDDiKucaZPaKBrZMDuc9Xqxru4aG8apig3 
