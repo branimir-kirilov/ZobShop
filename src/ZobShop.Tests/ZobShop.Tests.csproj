@@ -79,6 +79,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Data\UnitOfWorkTests\CommitTests.cs" />
+    <Compile Include="Data\UnitOfWorkTests\ConstructorTests.cs" />
     <Compile Include="Models\CategoryConstructorTests.cs" />
     <Compile Include="Models\CommentConstructorTests.cs" />
     <Compile Include="Models\ProductConstructorTests.cs" />
@@ -101,9 +103,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ZobShop.Data\ZobShop.Data.csproj">
       <Project>{D5E53BD4-FE25-4DF2-BC9B-C43EC0BDC64C}</Project>
