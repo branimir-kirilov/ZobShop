@@ -11,9 +11,9 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <form runat="server">
@@ -35,43 +35,44 @@
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
-            </Scripts>  
+            </Scripts>
         </asp:ScriptManager>
-    
+
         <%--Navigation Menu JavaScript--%>
-        <script src="/Scripts/Navigation/navigation.js"></script> 
-        
+        <script src="/Scripts/Navigation/navigation.js"></script>
+
         <div id="logo-wrapper">
         </div>
 
         <%--Navigation Menu--%>
         <div id='cssmenu'>
-          <ul class="active">
-            <li><a runat="server" href="~/">Home</a></li>
-            <li><a runat="server" href="~/About">About</a></li>
-            <li><a runat="server" href="~/Contact">Contact</a></li>
+            <ul class="active">
+                <li><a runat="server" href="~/">Home</a></li>
+                <li><a runat="server" href="~/Product/ProductsList">Products</a></li>
+                <li><a runat="server" href="~/About">About</a></li>
+                <li><a runat="server" href="~/Contact">Contact</a></li>
                 <%--Is user logged in templates--%>
                 <asp:LoginView runat="server" ViewStateMode="Disabled">
                     <AnonymousTemplate>
-                            <li class="navbar navbar-right"><a runat="server" href="~/Account/Register">Register</a></li>
-                            <li class="navbar navbar-right"><a runat="server" href="~/Account/Login">Log in</a></li>
+                        <li class="navbar navbar-right"><a runat="server" href="~/Account/Register">Register</a></li>
+                        <li class="navbar navbar-right"><a runat="server" href="~/Account/Login">Log in</a></li>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                            <li class="navbar navbar-right"><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                            <li class="navbar navbar-right">
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                            </li>
+                        <li class="navbar navbar-right"><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                        <li class="navbar navbar-right">
+                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                        </li>
                     </LoggedInTemplate>
                 </asp:LoginView>
-          </ul>
+            </ul>
         </div>
-        
+
         <%-- Back to top button --%>
         <a href="#" class="back-to-top">
-            <i class="fa fa-arrow-up"></i>   
+            <i class="fa fa-arrow-up"></i>
         </a>
 
-         <%--Main container--%>
+        <%--Main container--%>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
