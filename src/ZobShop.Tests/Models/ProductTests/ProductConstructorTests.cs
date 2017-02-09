@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using ZobShop.Models;
 
-namespace ZobShop.Tests.Models
+namespace ZobShop.Tests.Models.ProductTests
 {
     [TestFixture]
     public class ProductConstructorTests

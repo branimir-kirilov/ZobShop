@@ -89,8 +89,9 @@
     <Compile Include="Models\CategoryTests\CategoryConstructorTests.cs" />
     <Compile Include="Models\CategoryTests\PropertyTests.cs" />
     <Compile Include="Models\CommentConstructorTests.cs" />
-    <Compile Include="Models\ProductConstructorTests.cs" />
+    <Compile Include="Models\ProductTests\ProductConstructorTests.cs" />
     <Compile Include="Models\ProductRatingConstructorTests.cs" />
+    <Compile Include="Models\ProductTests\PropertyTests.cs" />
     <Compile Include="Models\ReviewConstructorTests.cs" />
     <Compile Include="Models\UserTests\PropertyTests.cs" />
     <Compile Include="Models\UserTests\UserConstructorTests.cs" />
