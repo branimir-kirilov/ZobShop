@@ -8,6 +8,14 @@ namespace ZobShop.Tests.Models
     public class ProductConstructorTests
     {
         [Test]
+        public void Constructor_ShouldBeInstanceOfProduct()
+        {
+            var product = new Product();
+
+            Assert.IsInstanceOf<Product>(product);
+        }
+
+        [Test]
         public void Constructor_Should_InitializeProduct()
         {
             var product = new Product();

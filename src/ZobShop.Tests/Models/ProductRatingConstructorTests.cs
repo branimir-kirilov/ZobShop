@@ -7,6 +7,14 @@ namespace ZobShop.Tests.Models
     public class ProductRatingConstructorTests
     {
         [Test]
+        public void Constructor_ShouldBeInstanceOfProductRating()
+        {
+            var rating = new ProductRating();
+
+            Assert.IsInstanceOf<ProductRating>(rating);
+        }
+
+        [Test]
         public void Constructor_Should_InitializeProductRatingCorrectly()
         {
             var productRating = new ProductRating();

@@ -7,6 +7,14 @@ namespace ZobShop.Tests.Models
     public class CommentConstructorTests
     {
         [Test]
+        public void Constructor_ShouldBeInstanceOfComment()
+        {
+            var comment = new Comment();
+
+            Assert.IsInstanceOf<Comment>(comment);
+        }
+
+        [Test]
         public void Constructor_Should_InitializeCommentCorrectly()
         {
             var comment = new Comment();

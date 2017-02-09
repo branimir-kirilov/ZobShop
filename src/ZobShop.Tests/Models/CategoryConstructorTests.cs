@@ -15,6 +15,14 @@ namespace ZobShop.Tests.Models
     public class CategoryConstructorTests
     {
         [Test]
+        public void Constructor_ShouldBeInstanceOfCategory()
+        {
+            var category=new Category();
+
+            Assert.IsInstanceOf<Category>(category);
+        }
+
+        [Test]
         public void Constructor_Should_InitializeCategory()
         {
             var category = new Category();
