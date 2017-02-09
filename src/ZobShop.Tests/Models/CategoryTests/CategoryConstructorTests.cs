@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moq;
-using NUnit.Framework;
-using ZobShop.Data.Contracts;
+﻿using NUnit.Framework;
 using ZobShop.Models;
-using ZobShop.Services;
 
-namespace ZobShop.Tests.Models
+namespace ZobShop.Tests.Models.CategoryTests
 {
     [TestFixture]
     public class CategoryConstructorTests
@@ -17,7 +9,7 @@ namespace ZobShop.Tests.Models
         [Test]
         public void Constructor_ShouldBeInstanceOfCategory()
         {
-            var category=new Category();
+            var category = new Category();
 
             Assert.IsInstanceOf<Category>(category);
         }
