@@ -86,12 +86,14 @@
     <Compile Include="Data\UnitOfWorkTests\CommitTests.cs" />
     <Compile Include="Data\UnitOfWorkTests\ConstructorTests.cs" />
     <Compile Include="Data\UnitOfWorkTests\DisposeTests.cs" />
-    <Compile Include="Models\CategoryConstructorTests.cs" />
+    <Compile Include="Models\CategoryTests\CategoryConstructorTests.cs" />
+    <Compile Include="Models\CategoryTests\PropertyTests.cs" />
     <Compile Include="Models\CommentConstructorTests.cs" />
     <Compile Include="Models\ProductConstructorTests.cs" />
     <Compile Include="Models\ProductRatingConstructorTests.cs" />
     <Compile Include="Models\ReviewConstructorTests.cs" />
-    <Compile Include="Models\UserConstructorTests.cs" />
+    <Compile Include="Models\UserTests\PropertyTests.cs" />
+    <Compile Include="Models\UserTests\UserConstructorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CategoryServiceTests\ConstructorTests.cs" />
     <Compile Include="Services\CategoryServiceTests\CreateCategoryTests.cs" />

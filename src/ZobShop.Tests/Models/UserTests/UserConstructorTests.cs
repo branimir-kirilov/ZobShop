@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using NUnit.Framework;
 using ZobShop.Models;
 
-namespace ZobShop.Tests.Models
+namespace ZobShop.Tests.Models.UserTests
 {
     [TestFixture]
     public class UserConstructorTests
@@ -24,7 +19,7 @@ namespace ZobShop.Tests.Models
         public void Constructor_Should_BeInstanceOfIdentityUser()
         {
             var user = new User();
-            
+
             Assert.IsInstanceOf<IdentityUser>(user);
         }
     }
