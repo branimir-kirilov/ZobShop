@@ -5,12 +5,17 @@ namespace ZobShop.Models
 {
     public class ProductRating
     {
-        public ProductRating(int rating, string content, int productId, User author)
+        public ProductRating()
+        {
+
+        }
+
+        public ProductRating(int rating, string content, Product product, User author)
         {
             this.Rating = rating;
             this.Content = content;
-            this.ProductId = productId;
             this.Author = author;
+            this.Product = product;
         }
 
         [Key]
