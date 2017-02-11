@@ -15,12 +15,18 @@ namespace ZobShop.Web.Product
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var id = int.Parse(this.Request.QueryString[QueryId]);
+            try
+            {
+                var id = int.Parse(this.Request.QueryString[QueryId]);
 
-            var args = new ProductDetailsEventArgs(id);
+                var args = new ProductDetailsEventArgs(id);
 
-            this.MyProductDetails?.Invoke(this, args);
-            
+                this.MyProductDetails?.Invoke(this, args);
+            }
+            catch (Exception)
+            {
+                this.ErrorLabel.Text = "Please provide an id";
+            }
             // TODO: Bind to model
         }
     }
