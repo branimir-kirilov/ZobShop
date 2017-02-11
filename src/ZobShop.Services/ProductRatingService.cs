@@ -1,4 +1,5 @@
-﻿using ZobShop.Data.Contracts;
+﻿using System;
+using ZobShop.Data.Contracts;
 using ZobShop.Factories;
 using ZobShop.Models;
 using ZobShop.Services.Contracts;
@@ -19,6 +20,31 @@ namespace ZobShop.Services
             IUnitOfWork unitOfWork,
             IProductRatingFactory factory)
         {
+            if (userRepository == null)
+            {
+                throw new ArgumentNullException("user repository cannot be null");
+            }
+
+            if (productRepository == null)
+            {
+                throw new ArgumentNullException("product repository cannot be null");
+            }
+
+            if (productRatingRepository == null)
+            {
+                throw new ArgumentNullException("product rating repository cannot be null");
+            }
+
+            if (unitOfWork == null)
+            {
+                throw new ArgumentNullException("unit of work repository cannot be null");
+            }
+
+            if (factory == null)
+            {
+                throw new ArgumentNullException("factory repository cannot be null");
+            }
+
             this.userRepository = userRepository;
             this.productRepository = productRepository;
             this.productRatingRepository = productRatingRepository;
