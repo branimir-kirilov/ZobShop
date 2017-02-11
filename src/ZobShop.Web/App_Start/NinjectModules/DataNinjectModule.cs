@@ -20,6 +20,7 @@ namespace ZobShop.Web.App_Start.NinjectModules
             this.Bind<IProductService>().To<ProductService>();
             this.Bind<IUserService>().To<UserService>();
             this.Bind<ICategoryService>().To<CategoryService>();
+            this.Bind<IProductRatingService>().To<ProductRatingService>();
         }
     }
 }
