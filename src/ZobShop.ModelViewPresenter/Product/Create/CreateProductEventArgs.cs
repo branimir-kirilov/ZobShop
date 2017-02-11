@@ -4,7 +4,14 @@ namespace ZobShop.ModelViewPresenter.Product.Create
 {
     public class CreateProductEventArgs : EventArgs
     {
-        public CreateProductEventArgs(string name, string categoryName, int quantity, decimal price, double volume, string maker)
+        public CreateProductEventArgs(string name,
+            string categoryName,
+            int quantity,
+            decimal price,
+            double volume,
+            string maker,
+            string mimeType,
+            byte[] imageBuffer)
         {
             this.Name = name;
             this.CategoryName = categoryName;
@@ -12,6 +19,8 @@ namespace ZobShop.ModelViewPresenter.Product.Create
             this.Price = price;
             this.Volume = volume;
             this.Maker = maker;
+            this.ImageMimeType = mimeType;
+            this.ImageBuffer = imageBuffer;
         }
 
         public string CategoryName { get; set; }

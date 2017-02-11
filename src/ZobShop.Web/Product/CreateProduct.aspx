@@ -15,7 +15,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Name" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Name"
-                    CssClass="text-danger" ErrorMessage="The name field is required." />
+                    CssClass="text-danger" ErrorMessage="The Name field is required." />
             </div>
         </div>
         <div class="form-group">
@@ -39,7 +39,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Price" CssClass="form-control" TextMode="Number" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Price"
-                    CssClass="text-danger" ErrorMessage="The name field is required." />
+                    CssClass="text-danger" ErrorMessage="The Price field is required." />
             </div>
         </div>
         <div class="form-group">
@@ -47,7 +47,7 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Volume" CssClass="form-control" TextMode="Number" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Volume"
-                    CssClass="text-danger" ErrorMessage="The name field is required." />
+                    CssClass="text-danger" ErrorMessage="The Volume field is required." />
             </div>
         </div>
         <div class="form-group">
@@ -55,15 +55,15 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Maker" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Maker"
-                    CssClass="text-danger" ErrorMessage="The name field is required." />
+                    CssClass="text-danger" ErrorMessage="The Maker field is required." />
             </div>
 
             <ajaxToolkit:AjaxFileUpload ID="AjaxFileUpload1"
                 ThrobberID="myThrobber"
                 AllowedFileTypes="jpg,jpeg"
-                MaximumNumberOfFiles=1
+                MaximumNumberOfFiles="1"
                 OnUploadComplete="AjaxFileUploadEvent"
-                runat="server"/>
+                runat="server" />
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

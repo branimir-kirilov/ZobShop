@@ -25,6 +25,12 @@ namespace ZobShop.Web.Product
 
         protected void CreateProduct_Click(object sender, EventArgs e)
         {
+            if (this.ImageBuffer == null)
+            {
+                this.ErrorMessage.Text = "Please upload an image for the product";
+                return;
+            }
+
             var name = this.Name.Text;
             var category = this.Category.Text;
             var quantity = int.Parse(this.Quantity.Text);
@@ -32,9 +38,7 @@ namespace ZobShop.Web.Product
             var price = int.Parse(this.Price.Text);
             var volume = double.Parse(this.Volume.Text);
 
-            var args = new CreateProductEventArgs(name, category, quantity, price, volume, maker);
-            args.ImageBuffer = this.ImageBuffer ?? args.ImageBuffer;
-            args.ImageMimeType = this.ImageMimeType ?? args.ImageMimeType;
+            var args = new CreateProductEventArgs(name, category, quantity, price, volume, maker, this.ImageMimeType, this.ImageBuffer);
 
             this.MyCreateProduct?.Invoke(this, args);
 
@@ -44,7 +48,6 @@ namespace ZobShop.Web.Product
 
         protected void AjaxFileUploadEvent(object sender, AjaxFileUploadEventArgs e)
         {
-            //TODO: Implement logic here
             this.ImageBuffer = e.GetContents();
             this.ImageMimeType = e.ContentType;
         }
