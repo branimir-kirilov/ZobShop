@@ -88,5 +88,26 @@ namespace ZobShop.Tests.Models.ProductTests
 
             Assert.AreEqual(volume, product.Volume);
         }
+
+        [Test]
+        public void TestImageBuffer_ShouldWorkCorrectly()
+        {
+            var buffer = new byte[2];
+
+            var product = new Product();
+            product.ImageBuffer = buffer;
+
+            Assert.AreEqual(buffer, product.ImageBuffer);
+        }
+
+        [TestCase(".jpg")]
+        [TestCase(".png")]
+        public void TestImageMimeType_ShouldWorkCorrectly(string imageMimeType)
+        {
+            var product = new Product();
+            product.ImageMimeType = imageMimeType;
+
+            Assert.AreEqual(imageMimeType, product.ImageMimeType);
+        }
     }
 }
