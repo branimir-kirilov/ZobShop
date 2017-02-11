@@ -10,8 +10,8 @@ namespace ZobShop.Web.Product
     [PresenterBinding(typeof(CreateProductPresenter))]
     public partial class CreateProduct : MvpPage<CreateProductViewModel>, ICreateProductView
     {
-        private byte[] ImageBuffer;
-        private string ImageMimeType;
+        private static byte[] ImageBuffer;
+        private static string ImageMimeType;
 
         private const string RedirectUrl = "/Product/ProductDetails?id={0}";
 
@@ -25,7 +25,7 @@ namespace ZobShop.Web.Product
 
         protected void CreateProduct_Click(object sender, EventArgs e)
         {
-            if (this.ImageBuffer == null)
+            if (ImageBuffer == null)
             {
                 this.ErrorMessage.Text = "Please upload an image for the product";
                 return;
@@ -38,9 +38,10 @@ namespace ZobShop.Web.Product
             var price = int.Parse(this.Price.Text);
             var volume = double.Parse(this.Volume.Text);
 
-            var args = new CreateProductEventArgs(name, category, quantity, price, volume, maker, this.ImageMimeType, this.ImageBuffer);
+            var args = new CreateProductEventArgs(name, category, quantity, price, volume, maker, ImageMimeType, ImageBuffer);
 
             this.MyCreateProduct?.Invoke(this, args);
+            ImageBuffer = null;
 
             var redirectLink = string.Format(RedirectUrl, this.Model.Id);
             this.Response.Redirect(redirectLink);
@@ -48,8 +49,8 @@ namespace ZobShop.Web.Product
 
         protected void AjaxFileUploadEvent(object sender, AjaxFileUploadEventArgs e)
         {
-            this.ImageBuffer = e.GetContents();
-            this.ImageMimeType = e.ContentType;
+            ImageBuffer = e.GetContents();
+            ImageMimeType = e.ContentType;
         }
     }
 }
