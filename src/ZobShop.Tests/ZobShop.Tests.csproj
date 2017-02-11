@@ -100,6 +100,7 @@
     <Compile Include="Services\CategoryServiceTests\CreateCategoryTests.cs" />
     <Compile Include="Services\CategoryServiceTests\GetCategoryByNameTests.cs" />
     <Compile Include="Services\ProductRatingServiceTests\ConstructorTests.cs" />
+    <Compile Include="Services\ProductRatingServiceTests\CreateProductRatingTests.cs" />
     <Compile Include="Services\ProductService\ConstructorTests.cs" />
     <Compile Include="Services\ProductService\CreateProductTests.cs" />
     <Compile Include="Services\ProductService\GetProductsByCategoryTests.cs" />
