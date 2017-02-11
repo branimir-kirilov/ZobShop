@@ -5,7 +5,14 @@ namespace ZobShop.Services.Contracts
 {
     public interface IProductService
     {
-        Product CreateProduct(string name, string categoryName, int quantity, decimal price, double volume, string maker);
+        Product CreateProduct(string name,
+            string categoryName,
+            int quantity,
+            decimal price,
+            double volume,
+            string maker,
+            string imageMimeType,
+            byte[] imageBuffer);
 
         Product GetById(int id);
 

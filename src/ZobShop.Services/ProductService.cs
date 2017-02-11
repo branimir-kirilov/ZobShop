@@ -46,7 +46,14 @@ namespace ZobShop.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public Product CreateProduct(string name, string categoryName, int quantity, decimal price, double volume, string maker)
+        public Product CreateProduct(string name, 
+            string categoryName,
+            int quantity,
+            decimal price,
+            double volume,
+            string maker, 
+            string imageMimeType,
+            byte[] imageBuffer)
         {
             var category = this.categoryService.GetCategoryByName(categoryName);
 
@@ -55,7 +62,7 @@ namespace ZobShop.Services
                 category = this.categoryService.CreateCategory(categoryName);
             }
 
-            var product = this.factory.CreateProduct(name, category, quantity, price, volume, maker);
+            var product = this.factory.CreateProduct(name, category, quantity, price, volume, maker, imageMimeType, imageBuffer);
             this.productRepository.Add(product);
             this.unitOfWork.Commit();
 

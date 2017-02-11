@@ -15,7 +15,7 @@ namespace ZobShop.Models
             this.productRatings = new HashSet<ProductRating>();
         }
 
-        public Product(string name, Category category, int quantity, decimal price, double volume, string maker)
+        public Product(string name, Category category, int quantity, decimal price, double volume, string maker, string imageMimeType, byte[] imageBuffer)
             : this()
         {
             this.Name = name;
@@ -24,6 +24,8 @@ namespace ZobShop.Models
             this.Price = price;
             this.Volume = volume;
             this.Maker = maker;
+            this.ImageBuffer = imageBuffer;
+            this.ImageMimeType = imageMimeType;
         }
 
         [Key]
@@ -55,5 +57,9 @@ namespace ZobShop.Models
             get { return this.productRatings; }
             set { this.productRatings = value; }
         }
+
+        public string ImageMimeType { get; set; }
+
+        public byte[] ImageBuffer { get; set; }
     }
 }

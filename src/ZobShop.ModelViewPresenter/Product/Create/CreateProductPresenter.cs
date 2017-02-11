@@ -16,7 +16,7 @@ namespace ZobShop.ModelViewPresenter.Product.Create
         public void OnCreateProduct(object sender, CreateProductEventArgs e)
         {
             // TODO: add buffer and image type to product
-            var product = this.service.CreateProduct(e.Name, e.CategoryName, e.Quantity, e.Price, e.Volume, e.Maker);
+            var product = this.service.CreateProduct(e.Name, e.CategoryName, e.Quantity, e.Price, e.Volume, e.Maker, e.ImageMimeType, e.ImageBuffer);
             this.View.Model.Id = product.ProductId;
         }
     }
