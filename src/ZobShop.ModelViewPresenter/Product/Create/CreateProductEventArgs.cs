@@ -25,5 +25,9 @@ namespace ZobShop.ModelViewPresenter.Product.Create
         public string Maker { get; set; }
 
         public string Name { get; set; }
+
+        public string ImageMimeType { get; set; }
+
+        public byte[] ImageBuffer { get; set; }
     }
 }
