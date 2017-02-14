@@ -119,6 +119,10 @@
     <Compile Include="ShoppingCart\Add\AddToCartPresenter.cs" />
     <Compile Include="ShoppingCart\Add\AddToCartViewModel.cs" />
     <Compile Include="ShoppingCart\Add\IAddToCartView.cs" />
+    <Compile Include="ShoppingCart\Summary\CartLineViewModel.cs" />
+    <Compile Include="ShoppingCart\Summary\CartSummaryPresenter.cs" />
+    <Compile Include="ShoppingCart\Summary\CartSummaryVIewModel.cs" />
+    <Compile Include="ShoppingCart\Summary\ICartSummaryView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
