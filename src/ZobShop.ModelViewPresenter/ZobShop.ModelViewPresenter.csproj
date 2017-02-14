@@ -115,6 +115,10 @@
     <Compile Include="Product\List\ProductListPresenter.cs" />
     <Compile Include="Product\List\ProductListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCart\Add\AddToCartEventArgs.cs" />
+    <Compile Include="ShoppingCart\Add\AddToCartPresenter.cs" />
+    <Compile Include="ShoppingCart\Add\AddToCartViewModel.cs" />
+    <Compile Include="ShoppingCart\Add\IAddToCartView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -128,6 +132,10 @@
     <ProjectReference Include="..\ZobShop.Models\ZobShop.Models.csproj">
       <Project>{601A83B5-681C-42C3-A67A-5E0EAF5D0EBE}</Project>
       <Name>ZobShop.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZobShop.Orders\ZobShop.Orders.csproj">
+      <Project>{17C008CB-9F06-4179-9192-6B067F7529D0}</Project>
+      <Name>ZobShop.Orders</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZobShop.Services\ZobShop.Services.csproj">
       <Project>{FFDE1559-F1EC-45FD-812F-E0CDE1C64B32}</Project>
