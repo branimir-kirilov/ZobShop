@@ -22,7 +22,7 @@ namespace ZobShop.Tests.Services.CategoryServiceTests
 
             var service = new CategoryService(repository.Object, unitOfWork.Object, factory.Object);
 
-            service.GetCategoryByName(null);
+            Assert.Throws<ArgumentNullException>(() => service.GetCategoryByName(null));
         }
 
         [TestCase("TestCategoryName")]
