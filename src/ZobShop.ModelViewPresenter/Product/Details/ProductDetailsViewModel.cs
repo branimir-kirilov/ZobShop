@@ -7,13 +7,15 @@
 
         }
 
-        public ProductDetailsViewModel(string name, string category, decimal price, double volume, string maker)
+        public ProductDetailsViewModel(string name, string category, decimal price, double volume, string maker, string imageMimeType, byte[] imageBuffer)
         {
             this.Name = name;
             this.Category = category;
             this.Price = price;
             this.Volume = volume;
             this.Maker = maker;
+            this.ImageMimeType = imageMimeType;
+            this.ImageBuffer = imageBuffer;
         }
 
         public string Name { get; set; }
@@ -25,5 +27,9 @@
         public double Volume { get; set; }
 
         public string Maker { get; set; }
+
+        public string ImageMimeType { get; set; }
+
+        public byte[] ImageBuffer { get; set; }
     }
 }
