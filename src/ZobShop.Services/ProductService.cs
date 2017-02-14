@@ -99,8 +99,12 @@ namespace ZobShop.Services
         public void DeleteProduct(int productId)
         {
             var product = this.productRepository.GetById(productId);
-            this.productRepository.Delete(product);
-            this.unitOfWork.Commit();
+
+            if (product != null)
+            {
+                this.productRepository.Delete(product);
+                this.unitOfWork.Commit();
+            }
         }
     }
 }
