@@ -2,6 +2,7 @@
 using Moq;
 using NUnit.Framework;
 using ZobShop.Orders;
+using ZobShop.Orders.Contracts;
 using ZobShop.Orders.Factories;
 using ZobShop.Services.Contracts;
 
@@ -44,6 +45,17 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
             var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object);
 
             Assert.IsNotNull(cart.CartLines);
+        }
+
+        [Test]
+        public void TestConstructor_ShouldBeInstanceOfIShoppingCart()
+        {
+            var mockedService = new Mock<IProductService>();
+            var mockedFactory = new Mock<ICartLineFactory>();
+
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object);
+
+            Assert.IsInstanceOf<IShoppingCart>(cart);
         }
     }
 }

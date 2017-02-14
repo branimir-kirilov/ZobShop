@@ -94,6 +94,7 @@
     <Compile Include="Models\ProductTests\PropertyTests.cs" />
     <Compile Include="Models\UserTests\PropertyTests.cs" />
     <Compile Include="Models\UserTests\UserConstructorTests.cs" />
+    <Compile Include="Orders\CartLineTests\ConstructorTests.cs" />
     <Compile Include="Orders\ShoppingCartTests\ClearCartTests.cs" />
     <Compile Include="Orders\ShoppingCartTests\ComputeTotalTests.cs" />
     <Compile Include="Orders\ShoppingCartTests\ConstructorTests.cs" />
