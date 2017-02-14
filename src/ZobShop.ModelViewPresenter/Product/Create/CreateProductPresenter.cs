@@ -1,4 +1,5 @@
-﻿using WebFormsMvp;
+﻿using System;
+using WebFormsMvp;
 using ZobShop.Services.Contracts;
 
 namespace ZobShop.ModelViewPresenter.Product.Create
@@ -9,7 +10,13 @@ namespace ZobShop.ModelViewPresenter.Product.Create
 
         public CreateProductPresenter(ICreateProductView view, IProductService service) : base(view)
         {
+            if (service == null)
+            {
+                throw new ArgumentNullException("service cannot be null");
+            }
+
             this.service = service;
+
             this.View.MyCreateProduct += OnCreateProduct;
         }
 

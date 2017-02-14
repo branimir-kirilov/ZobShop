@@ -14,6 +14,21 @@ namespace ZobShop.ModelViewPresenter.Administration.ProductsList
         public ProductsListPresenter(IProductsListView view, IProductService service, IViewModelFactory factory, ICategoryService categoryService)
             : base(view)
         {
+            if (service == null)
+            {
+                throw new ArgumentNullException("service cannot be null");
+            }
+
+            if (factory == null)
+            {
+                throw new ArgumentNullException("factory cannot be null");
+            }
+
+            if (categoryService == null)
+            {
+                throw new ArgumentNullException("categoryService cannot be null");
+            }
+
             this.service = service;
             this.factory = factory;
             this.categoryService = categoryService;

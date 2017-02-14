@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using Microsoft.AspNet.Identity;
 using WebFormsMvp;
 using ZobShop.ModelViewPresenter.Product.Details.RateProduct;
 using ZobShop.Services.Contracts;
@@ -16,6 +17,21 @@ namespace ZobShop.ModelViewPresenter.Product.Details
             IViewModelFactory factory,
             IProductRatingService productRatingService) : base(view)
         {
+            if (service == null)
+            {
+                throw new ArgumentNullException("service cannot be null");
+            }
+
+            if (productRatingService == null)
+            {
+                throw new ArgumentNullException("productRatingService cannot be null");
+            }
+
+            if (factory == null)
+            {
+                throw new ArgumentNullException("factory cannot be null");
+            }
+
             this.service = service;
             this.productRatingService = productRatingService;
             this.factory = factory;

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using WebFormsMvp;
 using ZobShop.Services.Contracts;
 
@@ -11,6 +12,16 @@ namespace ZobShop.ModelViewPresenter.Product.List
 
         public ProductListPresenter(IProductListView view, IProductService service, IViewModelFactory factory) : base(view)
         {
+            if (service == null)
+            {
+                throw new ArgumentNullException("service cannot be null");
+            }
+
+            if (factory == null)
+            {
+                throw new ArgumentNullException("factory cannot be null");
+            }
+
             this.service = service;
             this.factory = factory;
 
