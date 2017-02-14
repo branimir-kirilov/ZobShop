@@ -5,36 +5,49 @@ using System.Linq;
 using ZobShop.Models;
 using ZobShop.Orders.Contracts;
 using ZobShop.Orders.Factories;
+using ZobShop.Services.Contracts;
 
 namespace ZobShop.Orders
 {
     public class ShoppingCart : IShoppingCart
     {
         private readonly ICartLineFactory factory;
+        private readonly IProductService service;
 
-        public ShoppingCart(ICartLineFactory factory)
+        public ShoppingCart(ICartLineFactory factory, IProductService service)
         {
             if (factory == null)
             {
                 throw new ArgumentNullException("factory cannot be null");
             }
 
+            if (service == null)
+            {
+                throw new ArgumentNullException("service cannot be null");
+            }
+
             this.factory = factory;
+            this.service = service;
 
             this.CartLines = new Collection<ICartLine>();
         }
 
         public ICollection<ICartLine> CartLines { get; private set; }
 
-        public void AddItem(Product product, int quantity)
+        public void AddItem(int productId, int quantity)
         {
             var line = this.CartLines
-                .FirstOrDefault(l => l.Product.ProductId == product.ProductId);
+                .FirstOrDefault(l => l.Product.ProductId == productId);
 
             if (line == null)
             {
-                line = this.factory.CreateCartLine(product, quantity);
-                this.CartLines.Add(line);
+                var product = this.service.GetById(productId);
+
+                if (product != null)
+                {
+                    line = this.factory.CreateCartLine(product, quantity);
+                    this.CartLines.Add(line);
+                }
             }
             else
             {
@@ -42,9 +55,9 @@ namespace ZobShop.Orders
             }
         }
 
-        public void RemoveItem(Product product)
+        public void RemoveItem(int productId)
         {
-            var line = this.CartLines.FirstOrDefault(l => l.Product.ProductId == product.ProductId);
+            var line = this.CartLines.FirstOrDefault(l => l.Product.ProductId == productId);
 
             if (line != null)
             {
@@ -60,7 +73,7 @@ namespace ZobShop.Orders
 
         public void ClearCart()
         {
-            this.CartLines = new Collection<ICartLine>();
+            this.CartLines.Clear();
         }
     }
 }
