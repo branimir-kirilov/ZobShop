@@ -4,9 +4,7 @@
 # ZobShop
 
 ## TODO
-- Administration editing
-- Administration delete
-- Product comments
-- Product reviews
 - Fix UI !
-- Create view models for lists
+- UI
+- BEAUTIFUL UI
+- Add to cart button on product details and product list
