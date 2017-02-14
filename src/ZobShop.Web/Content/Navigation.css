@@ -111,7 +111,7 @@
 }
 #cssmenu > ul > li:hover > a::before,
 #cssmenu > ul > li > a:hover::before {
-  background: #13a817;
+  background: #118f15;
 }
 #cssmenu.small-screen {
   width: 100%;
