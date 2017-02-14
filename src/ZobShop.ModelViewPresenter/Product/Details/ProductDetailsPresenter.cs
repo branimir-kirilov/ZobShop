@@ -41,7 +41,9 @@ namespace ZobShop.ModelViewPresenter.Product.Details
                 product.Category.Name,
                 product.Price,
                 product.Volume,
-                product.Maker);
+                product.Maker,
+                product.ImageMimeType,
+                product.ImageBuffer);
 
             this.View.Model = viewModel;
         }

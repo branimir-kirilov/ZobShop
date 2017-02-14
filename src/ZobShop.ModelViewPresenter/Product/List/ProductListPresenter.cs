@@ -28,7 +28,9 @@ namespace ZobShop.ModelViewPresenter.Product.List
                     p.Category.Name,
                     p.Price,
                     p.Volume,
-                    p.Maker));
+                    p.Maker,
+                    p.ImageMimeType,
+                    p.ImageBuffer));
             }
             else
             {
@@ -37,7 +39,9 @@ namespace ZobShop.ModelViewPresenter.Product.List
                     p.Category.Name,
                     p.Price,
                     p.Volume,
-                    p.Maker));
+                    p.Maker,
+                    p.ImageMimeType,
+                    p.ImageBuffer));
             }
         }
     }
