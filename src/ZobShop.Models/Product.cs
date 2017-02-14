@@ -6,12 +6,10 @@ namespace ZobShop.Models
 {
     public class Product
     {
-        private ICollection<Review> reviews;
         private ICollection<ProductRating> productRatings;
 
         public Product()
         {
-            this.reviews = new HashSet<Review>();
             this.productRatings = new HashSet<ProductRating>();
         }
 
@@ -45,12 +43,6 @@ namespace ZobShop.Models
         public double Volume { get; set; }
 
         public string Maker { get; set; }
-
-        public virtual ICollection<Review> Reviews
-        {
-            get { return this.reviews; }
-            set { this.reviews = value; }
-        }
 
         public virtual ICollection<ProductRating> ProductRatings
         {

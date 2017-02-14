@@ -88,12 +88,10 @@
     <Compile Include="Data\UnitOfWorkTests\DisposeTests.cs" />
     <Compile Include="Models\CategoryTests\CategoryConstructorTests.cs" />
     <Compile Include="Models\CategoryTests\PropertyTests.cs" />
-    <Compile Include="Models\CommentConstructorTests.cs" />
     <Compile Include="Models\ProductRatingTests\PropertiesTests.cs" />
     <Compile Include="Models\ProductTests\ProductConstructorTests.cs" />
     <Compile Include="Models\ProductRatingTests\ProductRatingConstructorTests.cs" />
     <Compile Include="Models\ProductTests\PropertyTests.cs" />
-    <Compile Include="Models\ReviewConstructorTests.cs" />
     <Compile Include="Models\UserTests\PropertyTests.cs" />
     <Compile Include="Models\UserTests\UserConstructorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

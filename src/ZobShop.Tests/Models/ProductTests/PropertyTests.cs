@@ -68,17 +68,6 @@ namespace ZobShop.Tests.Models.ProductTests
             Assert.AreEqual(quantity, product.Quantity);
         }
 
-        [Test]
-        public void TestReviews_ShouldWorkCorrectly()
-        {
-            var reviews = new List<Review>();
-
-            var product = new Product();
-            product.Reviews = reviews;
-
-            Assert.AreEqual(reviews, product.Reviews);
-        }
-
         [TestCase(1)]
         [TestCase(1234)]
         public void TestVolume_ShouldWorkCorrectly(double volume)

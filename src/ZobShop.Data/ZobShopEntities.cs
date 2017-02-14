@@ -33,10 +33,6 @@ namespace ZobShop.Data
 
         public DbSet<Category> Categories { get; set; }
 
-        public DbSet<Comment> Comments { get; set; }
-
         public DbSet<ProductRating> ProductRatings { get; set; }
-
-        public DbSet<Review> Reviews { get; set; }
     }
 }
