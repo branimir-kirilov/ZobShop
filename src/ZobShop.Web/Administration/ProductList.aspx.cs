@@ -14,6 +14,7 @@ namespace ZobShop.Web.Administration
     {
         public event EventHandler MyInit;
         public event EventHandler<EditProductEventArgs> ProductEdit;
+        public event EventHandler<DeleteProductEventArgs> ProductDelete;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,7 +23,9 @@ namespace ZobShop.Web.Administration
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var args = new DeleteProductEventArgs(id);
+
+            this.ProductDelete?.Invoke(this, args);
         }
 
         public IEnumerable<ProductDetailsViewModel> Select()

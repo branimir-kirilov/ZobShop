@@ -9,5 +9,7 @@ namespace ZobShop.ModelViewPresenter.Administration.ProductsList
         event EventHandler MyInit;
 
         event EventHandler<EditProductEventArgs> ProductEdit;
+
+        event EventHandler<DeleteProductEventArgs> ProductDelete;
     }
 }

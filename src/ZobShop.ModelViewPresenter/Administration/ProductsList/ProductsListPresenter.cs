@@ -20,6 +20,14 @@ namespace ZobShop.ModelViewPresenter.Administration.ProductsList
 
             this.View.MyInit += View_MyInit;
             this.View.ProductEdit += View_ProductEdit;
+            this.View.ProductDelete += View_ProductDelete;
+        }
+
+        private void View_ProductDelete(object sender, DeleteProductEventArgs e)
+        {
+            var id = e.Id;
+
+            this.service.DeleteProduct(id);
         }
 
         private void View_ProductEdit(object sender, EditProductEventArgs e)
