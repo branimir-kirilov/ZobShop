@@ -104,6 +104,7 @@
     <Compile Include="Services\ProductRatingServiceTests\CreateProductRatingTests.cs" />
     <Compile Include="Services\ProductService\ConstructorTests.cs" />
     <Compile Include="Services\ProductService\CreateProductTests.cs" />
+    <Compile Include="Services\ProductService\DeleteProductTests.cs" />
     <Compile Include="Services\ProductService\EditProductTests.cs" />
     <Compile Include="Services\ProductService\GetProductsByCategoryTests.cs" />
     <Compile Include="Services\ProductService\GetProductsTests.cs" />
