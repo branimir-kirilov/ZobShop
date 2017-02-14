@@ -34,6 +34,10 @@ input[type="select"] {
   background-position: center;
   background-size: 30%;
 }
+.productsGrid {
+  border: 0px;
+  margin-top: 15px;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .jumbotron {

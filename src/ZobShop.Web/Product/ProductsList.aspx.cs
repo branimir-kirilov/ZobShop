@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using WebFormsMvp;
 using WebFormsMvp.Web;
@@ -11,6 +13,13 @@ namespace ZobShop.Web.Product
     {
         public event EventHandler<ProductListEventArgs> MyInit;
 
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+  
         protected void Page_Load(object sender, EventArgs e)
         {
             var query = this.Request.QueryString;
