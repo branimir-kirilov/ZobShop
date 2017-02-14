@@ -67,21 +67,12 @@ namespace ZobShop.Web.Product {
         protected global::System.Web.UI.UpdatePanel UpdatePanelComment;
         
         /// <summary>
-        /// CommentBox control.
+        /// RatingBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CommentBox;
-        
-        /// <summary>
-        /// Comment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Comment;
+        protected global::System.Web.UI.WebControls.TextBox RatingBox;
     }
 }

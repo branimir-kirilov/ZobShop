@@ -26,20 +26,21 @@ namespace ZobShop.Web.Product
                 this.MyProductDetails?.Invoke(this, args);
 
                 SqlCommand = string.Format(SqlCommandTemplate, id);
-
-                this.SqlDataSourceComments.SelectCommand = SqlCommand;
-                this.SqlDataSourceComments.DataBind();
             }
             catch (Exception)
             {
                 this.ErrorLabel.Text = "Please provide an id";
+                return;
             }
+
+            this.SqlDataSourceComments.SelectCommand = SqlCommand;
+            this.SqlDataSourceComments.DataBind();
             // TODO: Bind to model
         }
 
-        protected void Comment_OnClick(object sender, EventArgs e)
+        protected void Rate_OnClick(object sender, EventArgs e)
         {
-            // TODO: Create comment
+
 
             this.SqlDataSourceComments.DataBind();
         }
