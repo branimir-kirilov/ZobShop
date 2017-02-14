@@ -44,10 +44,7 @@ namespace ZobShop.Web.Product
 
         protected void Rate_OnClick(object sender, EventArgs e)
         {
-            // TODO: DO NOT DO THIS !!!
-            var userId = this.Context.User.Identity.GetUserId();
-
-            var args = new RateProductEventArgs(int.Parse(this.RatingBox.Text), this.ContentRatingBox.Text, ProductId, userId);
+            var args = new RateProductEventArgs(int.Parse(this.RatingBox.Text), this.ContentRatingBox.Text, ProductId, this.Context);
 
             this.RateProduct?.Invoke(this, args);
 

@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Web;
 
 namespace ZobShop.ModelViewPresenter.Product.Details.RateProduct
 {
     public class RateProductEventArgs : EventArgs
     {
-        public RateProductEventArgs(int rating, string content, int productId, string authorId)
+        public RateProductEventArgs(int rating, string content, int productId, HttpContext context)
         {
             this.Rating = rating;
             this.Content = content;
             this.ProductId = productId;
-            this.AuthorId = authorId;
+            this.Context = context;
         }
 
         public int Rating { get; set; }
@@ -18,6 +19,6 @@ namespace ZobShop.ModelViewPresenter.Product.Details.RateProduct
 
         public int ProductId { get; set; }
 
-        public string AuthorId { get; set; }
+        public HttpContext Context { get; set; }
     }
 }

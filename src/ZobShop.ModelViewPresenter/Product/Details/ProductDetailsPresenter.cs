@@ -1,4 +1,5 @@
-﻿using WebFormsMvp;
+﻿using Microsoft.AspNet.Identity;
+using WebFormsMvp;
 using ZobShop.ModelViewPresenter.Product.Details.RateProduct;
 using ZobShop.Services.Contracts;
 
@@ -25,7 +26,9 @@ namespace ZobShop.ModelViewPresenter.Product.Details
 
         private void View_RateProduct(object sender, RateProductEventArgs e)
         {
-            this.productRatingService.CreateProductRating(e.Rating, e.Content, e.ProductId, e.AuthorId);
+            var userId = e.Context.User.Identity.GetUserId();
+
+            this.productRatingService.CreateProductRating(e.Rating, e.Content, e.ProductId, userId);
         }
 
         public void View_MyProductDetails(object sender, ProductDetailsEventArgs e)
