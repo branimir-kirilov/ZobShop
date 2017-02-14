@@ -46,12 +46,12 @@ namespace ZobShop.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public Product CreateProduct(string name, 
+        public Product CreateProduct(string name,
             string categoryName,
             int quantity,
             decimal price,
             double volume,
-            string maker, 
+            string maker,
             string imageMimeType,
             byte[] imageBuffer)
         {
@@ -88,6 +88,12 @@ namespace ZobShop.Services
                 .ToList();
 
             return products;
+        }
+
+        public void EditProduct(Product product)
+        {
+            this.productRepository.Update(product);
+            this.unitOfWork.Commit();
         }
     }
 }

@@ -19,5 +19,7 @@ namespace ZobShop.Services.Contracts
         IEnumerable<Product> GetProducts();
 
         IEnumerable<Product> GetProductsByCategory(string categoryName);
+
+        void EditProduct(Product product);
     }
 }
