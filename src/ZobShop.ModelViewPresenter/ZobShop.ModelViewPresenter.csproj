@@ -92,9 +92,7 @@
     <Compile Include="Account\Register\RegisterEventArgs.cs" />
     <Compile Include="Account\Register\RegisterPresenter.cs" />
     <Compile Include="Account\Register\RegisterViewModel.cs" />
-    <Compile Include="Administration\EditProduct\EditProductEventArgs.cs" />
-    <Compile Include="Administration\EditProduct\EditProductPresenter.cs" />
-    <Compile Include="Administration\EditProduct\IEditProductView.cs" />
+    <Compile Include="Administration\ProductsList\EditProductEventArgs.cs" />
     <Compile Include="Administration\ProductsList\IProductsListView.cs" />
     <Compile Include="Administration\ProductsList\ProductsListPresenter.cs" />
     <Compile Include="Administration\UsersList\IUserListView.cs" />

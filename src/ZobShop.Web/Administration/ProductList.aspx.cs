@@ -13,6 +13,7 @@ namespace ZobShop.Web.Administration
     public partial class ProductList : MvpPage<ProductListViewModel>, IProductsListView
     {
         public event EventHandler MyInit;
+        public event EventHandler<EditProductEventArgs> ProductEdit;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,6 +37,11 @@ namespace ZobShop.Web.Administration
             if (item != null)
             {
                 TryUpdateModel(item);
+
+                if (ModelState.IsValid)
+                {
+                    this.ProductEdit?.Invoke(this, new EditProductEventArgs(item));
+                }
             }
         }
     }
