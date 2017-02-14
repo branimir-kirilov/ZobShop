@@ -24,7 +24,8 @@ namespace ZobShop.ModelViewPresenter.Product.List
             if (category == null)
             {
                 this.View.Model.Products = this.service.GetProducts()
-                    .Select(p => this.factory.CreateProductDetailsViewModel(p.Name,
+                    .Select(p => this.factory.CreateProductDetailsViewModel(p.ProductId,
+                        p.Name,
                     p.Category.Name,
                     p.Price,
                     p.Volume,
@@ -35,7 +36,8 @@ namespace ZobShop.ModelViewPresenter.Product.List
             else
             {
                 this.View.Model.Products = this.service.GetProductsByCategory(category)
-                    .Select(p => this.factory.CreateProductDetailsViewModel(p.Name,
+                    .Select(p => this.factory.CreateProductDetailsViewModel(p.ProductId,
+                        p.Name,
                     p.Category.Name,
                     p.Price,
                     p.Volume,

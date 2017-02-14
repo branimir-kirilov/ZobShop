@@ -5,7 +5,8 @@ namespace ZobShop.ModelViewPresenter
 {
     public interface IViewModelFactory
     {
-        ProductDetailsViewModel CreateProductDetailsViewModel(string name,
+        ProductDetailsViewModel CreateProductDetailsViewModel(int id,
+            string name,
             string category,
             decimal price,
             double volume,

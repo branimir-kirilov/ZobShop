@@ -79,7 +79,8 @@ namespace ZobShop.ModelViewPresenter.Administration.EditProduct
         {
             var product = this.productService.GetById(e.Id);
 
-            var viewModel = this.factory.CreateProductDetailsViewModel(product.Name,
+            var viewModel = this.factory.CreateProductDetailsViewModel(e.Id,
+                product.Name,
                product.Category.Name,
                product.Price,
                product.Volume,

@@ -7,8 +7,9 @@
 
         }
 
-        public ProductDetailsViewModel(string name, string category, decimal price, double volume, string maker, string imageMimeType, byte[] imageBuffer)
+        public ProductDetailsViewModel(int id, string name, string category, decimal price, double volume, string maker, string imageMimeType, byte[] imageBuffer)
         {
+            this.Id = id;
             this.Name = name;
             this.Category = category;
             this.Price = price;
@@ -17,6 +18,8 @@
             this.ImageMimeType = imageMimeType;
             this.ImageBuffer = imageBuffer;
         }
+
+        public int Id { get; set; }
 
         public string Name { get; set; }
 

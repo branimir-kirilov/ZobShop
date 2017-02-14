@@ -37,7 +37,8 @@ namespace ZobShop.ModelViewPresenter.Product.Details
 
             var product = this.service.GetById(id);
 
-            var viewModel = this.factory.CreateProductDetailsViewModel(product.Name,
+            var viewModel = this.factory.CreateProductDetailsViewModel(product.ProductId,
+                product.Name,
                 product.Category.Name,
                 product.Price,
                 product.Volume,

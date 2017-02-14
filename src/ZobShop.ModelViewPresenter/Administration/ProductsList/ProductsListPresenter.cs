@@ -24,7 +24,7 @@ namespace ZobShop.ModelViewPresenter.Administration.ProductsList
 
             this.View.Model.Products = products
                 .Select(p =>
-                this.factory.CreateProductDetailsViewModel(p.Name, p.Category.Name, p.Price, p.Volume, p.Maker, p.ImageMimeType, p.ImageBuffer));
+                this.factory.CreateProductDetailsViewModel(p.ProductId, p.Name, p.Category.Name, p.Price, p.Volume, p.Maker, p.ImageMimeType, p.ImageBuffer));
         }
     }
 }
