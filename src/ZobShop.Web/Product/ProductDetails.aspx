@@ -26,8 +26,9 @@
     <asp:UpdatePanel ID="UpdatePanelComment" runat="server" class="panel"
         UpdateMode="Conditional">
         <ContentTemplate>
+            <asp:TextBox runat="server" ID="ContentRatingBox"></asp:TextBox>
             <asp:TextBox runat="server" ID="RatingBox"></asp:TextBox>
-            <asp:Button runat="server" ID="Rate" Text="Add Review"OnClick="Rate_OnClick" />
+            <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" />
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
