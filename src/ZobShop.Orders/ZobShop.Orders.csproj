@@ -52,6 +52,10 @@
       <Project>{601a83b5-681c-42c3-a67a-5e0eaf5d0ebe}</Project>
       <Name>ZobShop.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZobShop.Services\ZobShop.Services.csproj">
+      <Project>{FFDE1559-F1EC-45FD-812F-E0CDE1C64B32}</Project>
+      <Name>ZobShop.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

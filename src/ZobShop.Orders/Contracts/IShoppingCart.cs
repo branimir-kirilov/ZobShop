@@ -7,9 +7,9 @@ namespace ZobShop.Orders.Contracts
     {
         ICollection<ICartLine> CartLines { get; }
 
-        void AddItem(Product product, int quantity);
+        void AddItem(int productId, int quantity);
 
-        void RemoveItem(Product product);
+        void RemoveItem(int productId);
 
         decimal ComputeTotal();
 
