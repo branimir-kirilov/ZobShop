@@ -95,5 +95,10 @@ namespace ZobShop.Services
             this.productRepository.Update(product);
             this.unitOfWork.Commit();
         }
+
+        public void DeleteProduct(int productId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
