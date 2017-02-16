@@ -16,7 +16,7 @@ namespace ZobShop.Web.Account
             var args = new RegisterEventArgs(this.Context,
                 this.Email.Text,
                 this.Password.Text,
-                this.Username.Text,
+                this.Name.Text,
                 this.Phone.Text,
                 this.Address.Text);
 

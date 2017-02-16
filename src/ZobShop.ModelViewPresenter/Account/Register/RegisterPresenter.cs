@@ -22,8 +22,9 @@ namespace ZobShop.ModelViewPresenter.Account.Register
 
             var user = new User()
             {
-                UserName = e.Username,
+                UserName = e.Email,
                 Email = e.Email,
+                Name = e.Name,
                 PhoneNumber = e.Phone,
                 Address = e.Address
             };

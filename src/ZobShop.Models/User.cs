@@ -7,6 +7,8 @@ namespace ZobShop.Models
 {
     public class User : IdentityUser
     {
+        public string Name { get; set; }
+
         public string Address { get; set; }
 
         public Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
