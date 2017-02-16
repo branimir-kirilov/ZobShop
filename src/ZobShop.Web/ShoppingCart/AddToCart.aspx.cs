@@ -22,12 +22,15 @@ namespace ZobShop.Web.ShoppingCart
             }
             catch (Exception)
             {
+                this.ErrorMessages.Text = "Please provide valid arguments";
                 return;
             }
 
             var args = new AddToCartEventArgs(this.id, this.quantity);
 
             this.MyAddToCart?.Invoke(this, args);
+
+            this.Response.Redirect("Summary");
         }
     }
 }

@@ -31,7 +31,7 @@ namespace ZobShop.Web.App_Start.NinjectModules
             });
 
             this.Bind<ICartLine>().To<CartLine>();
-            this.Bind<IShoppingCart>().To<ShoppingCart>();
+            this.Bind<IShoppingCart>().To<Orders.ShoppingCart>();
             this.Bind<ICartLineFactory>().ToFactory().InSingletonScope();
 
             this.Bind<IShoppingCart>().ToMethod(this.GetShoppingCart).WhenInjectedInto(typeof(AddToCartPresenter));

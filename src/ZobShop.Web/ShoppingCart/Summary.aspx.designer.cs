@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ZobShop.Web.ShoppingCartViews
+namespace ZobShop.Web.ShoppingCart
 {
 
 
