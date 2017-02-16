@@ -111,7 +111,8 @@ namespace ZobShop.Services
         {
             var products = this.productRepository.GetAll((Product p) => p.Name.Contains(searchQuery) ||
                                                                         p.Maker.Contains(searchQuery) ||
-                                                                        p.Category.Name.Contains(searchQuery));
+                                                                        p.Category.Name.Contains(searchQuery))
+                                                                        .ToList();
 
             return products;
         }

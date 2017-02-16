@@ -13,25 +13,8 @@ namespace ZobShop.Web
     [PresenterBinding(typeof(SearchPresenter))]
     public partial class Search : MvpPage<ProductListViewModel>, ISearchView
     {
-        private const string SearchQueryParam = "search";
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                var searchQuery = this.Request.QueryString[SearchQueryParam];
-
-                var args = new SearchEventArgs(searchQuery);
-
-                this.MySearch?.Invoke(this, args);
-
-                this.Reapeater.DataSource = this.Model.Products;
-                this.DataBind();
-            }
-            catch (Exception)
-            {
-
-            }
         }
 
         public event EventHandler<SearchEventArgs> MySearch;
@@ -39,6 +22,26 @@ namespace ZobShop.Web
         public IEnumerable<ProductDetailsViewModel> Reapeater_GetData([QueryString("q")] string query)
         {
             return this.Model.Products;
+        }
+
+        protected void SearchButton_OnClick(object sender, EventArgs e)
+        {
+            var searchQuery = this.SearchParam.Text;
+
+            var args = new SearchEventArgs(searchQuery);
+
+            this.MySearch?.Invoke(this, args);
+
+            var showLabel = true;
+
+            if (this.Model.Products.Any())
+            {
+                showLabel = false;
+                this.Reapeater.DataSource = this.Model.Products;
+                this.DataBind();
+            }
+
+            this.NoResultsLabel.Visible = showLabel;
         }
     }
 }
