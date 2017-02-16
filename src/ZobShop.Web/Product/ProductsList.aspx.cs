@@ -33,7 +33,7 @@ namespace ZobShop.Web.Product
         protected void CategoriesDropDownList_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             var category = this.CategoriesDropDownList.SelectedValue;
-            if (this.CategoriesDropDownList.SelectedIndex == 1)
+            if (this.CategoriesDropDownList.SelectedIndex == 0)
             {
                 category = null;
             }
