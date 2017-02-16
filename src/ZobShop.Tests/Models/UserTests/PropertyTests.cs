@@ -16,5 +16,16 @@ namespace ZobShop.Tests.Models.UserTests
 
             Assert.AreEqual(address, user.Address);
         }
+
+        [TestCase("Pesho")]
+        [TestCase("Gosho")]
+        [TestCase("Stamat")]
+        public void TestNameProperty_ShouldWorkCorrectly(string name)
+        {
+            var user = new User();
+            user.Name = name;
+
+            Assert.AreEqual(name, user.Name);
+        }
     }
 }
