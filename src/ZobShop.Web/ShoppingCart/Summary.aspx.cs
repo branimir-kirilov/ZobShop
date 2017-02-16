@@ -20,5 +20,9 @@ namespace ZobShop.Web.ShoppingCart
         }
 
         public event EventHandler MyInit;
+
+        public void Delete(int productId)
+        {
+        }
     }
 }

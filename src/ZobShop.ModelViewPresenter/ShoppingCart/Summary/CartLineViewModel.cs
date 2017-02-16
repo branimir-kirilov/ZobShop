@@ -8,7 +8,10 @@ namespace ZobShop.ModelViewPresenter.ShoppingCart.Summary
         {
             this.Model = model;
             this.Quantity = quantity;
+            this.ProductId = this.Model.Id;
         }
+
+        public int ProductId { get; set; }
 
         public int Quantity { get; set; }
 
