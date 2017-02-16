@@ -58,7 +58,7 @@ namespace ZobShop.Tests.Services.ProductService
 
             var result = service.SearchProducts(searchParam);
 
-            Assert.AreSame(products, result);
+            Assert.AreEqual(products, result);
         }
     }
 }
