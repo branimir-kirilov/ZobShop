@@ -3,7 +3,7 @@ using WebFormsMvp;
 using WebFormsMvp.Web;
 using ZobShop.ModelViewPresenter.ShoppingCart.Add;
 
-namespace ZobShop.Web.ShoppingCartViews
+namespace ZobShop.Web.ShoppingCart
 {
     [PresenterBinding(typeof(AddToCartPresenter))]
     public partial class AddToCart : MvpPage<AddToCartViewModel>, IAddToCartView
