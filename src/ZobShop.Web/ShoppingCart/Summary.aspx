@@ -19,6 +19,7 @@
                     <asp:CommandField ShowDeleteButton="true" />
                 </Columns>
             </asp:GridView>
+            <asp:Label runat="server" ID="Total"></asp:Label>
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

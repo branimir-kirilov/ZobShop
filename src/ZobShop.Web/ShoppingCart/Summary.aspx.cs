@@ -13,6 +13,7 @@ namespace ZobShop.Web.ShoppingCart
         protected void Page_Load(object sender, EventArgs e)
         {
             this.MyInit?.Invoke(this, null);
+            this.Total.Text = this.Model.Total.ToString();
         }
 
         public IEnumerable<CartLineViewModel> Select()
@@ -27,6 +28,7 @@ namespace ZobShop.Web.ShoppingCart
         {
             var args = new DeleteProductEventArgs(productId);
             this.RemoveFromCart?.Invoke(this, args);
+            this.Total.Text = this.Model.Total.ToString();
         }
     }
 }

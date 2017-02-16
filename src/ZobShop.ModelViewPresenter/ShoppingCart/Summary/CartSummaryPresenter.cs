@@ -36,6 +36,8 @@ namespace ZobShop.ModelViewPresenter.ShoppingCart.Summary
             var id = e.Id;
 
             this.cart.RemoveItem(id);
+
+            this.View.Model.Total = this.cart.ComputeTotal();
         }
 
         private void View_MyInit(object sender, System.EventArgs e)
@@ -44,6 +46,7 @@ namespace ZobShop.ModelViewPresenter.ShoppingCart.Summary
                 .Select(this.GetCartLineViewModel);
 
             this.View.Model.Products = products;
+            this.View.Model.Total = this.cart.ComputeTotal();
         }
 
         private CartLineViewModel GetCartLineViewModel(ICartLine line)
