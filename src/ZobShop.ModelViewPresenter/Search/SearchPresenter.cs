@@ -30,15 +30,18 @@ namespace ZobShop.ModelViewPresenter.Search
 
         private void View_MySearch(object sender, SearchEventArgs e)
         {
-            this.View.Model.Products = this.service.SearchProducts(e.SearchQueryString)
-                   .Select(p => this.factory.CreateProductDetailsViewModel(p.ProductId,
-                       p.Name,
-                   p.Category.Name,
-                   p.Price,
-                   p.Volume,
-                   p.Maker,
-                   p.ImageMimeType,
-                   p.ImageBuffer));
+            var products = this.service.SearchProducts(e.SearchQueryString);
+            var viewModels = products.Select(p => this.factory.CreateProductDetailsViewModel(p.ProductId,
+                         p.Name,
+                     p.Category.Name,
+                     p.Price,
+                     p.Volume,
+                     p.Maker,
+                     p.ImageMimeType,
+                     p.ImageBuffer));
+
+            this.View.Model.Products = viewModels;
+
         }
     }
 }

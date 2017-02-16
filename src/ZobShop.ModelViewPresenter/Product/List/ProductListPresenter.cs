@@ -39,6 +39,7 @@ namespace ZobShop.ModelViewPresenter.Product.List
             {
                 return;
             }
+
             var productsByCategory = this.View.Model.Products
                 .Where(p => p.Category.Equals(category));
 
