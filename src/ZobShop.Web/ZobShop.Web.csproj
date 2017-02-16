@@ -304,6 +304,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Search.aspx" />
     <Content Include="ShoppingCart\AddToCart.aspx" />
     <Content Include="ShoppingCart\Summary.aspx" />
     <Content Include="Site.Master" />
@@ -498,6 +499,13 @@
       <DependentUpon>ProductsList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCart\AddToCart.aspx.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
