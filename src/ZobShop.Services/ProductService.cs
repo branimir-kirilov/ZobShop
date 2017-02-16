@@ -106,5 +106,14 @@ namespace ZobShop.Services
                 this.unitOfWork.Commit();
             }
         }
+
+        public IEnumerable<Product> SearchProducts(string searchQuery)
+        {
+            var products = this.productRepository.GetAll((Product p) => p.Name.Contains(searchQuery) ||
+                                                                        p.Maker.Contains(searchQuery) ||
+                                                                        p.Category.Name.Contains(searchQuery));
+
+            return products;
+        }
     }
 }

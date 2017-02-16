@@ -23,5 +23,7 @@ namespace ZobShop.Services.Contracts
         void EditProduct(Product product);
 
         void DeleteProduct(int productId);
+
+        IEnumerable<Product> SearchProducts(string searchQuery);
     }
 }
