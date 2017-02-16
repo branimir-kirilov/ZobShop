@@ -3,6 +3,7 @@ using System.IO;
 using AjaxControlToolkit;
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using ZobShop.ModelViewPresenter.Account;
 using ZobShop.ModelViewPresenter.Product.Create;
 
 namespace ZobShop.Web.Product
@@ -16,10 +17,10 @@ namespace ZobShop.Web.Product
         private const string RedirectUrl = "/Product/ProductDetails?id={0}";
 
         public event EventHandler<CreateProductEventArgs> MyCreateProduct;
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          
         }
 
 
@@ -53,5 +54,6 @@ namespace ZobShop.Web.Product
             ImageMimeType = e.ContentType;
             AjaxFileUpload.Enabled = false;
         }
+
     }
 }
