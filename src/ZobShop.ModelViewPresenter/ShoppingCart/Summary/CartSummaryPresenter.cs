@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using WebFormsMvp;
 using ZobShop.Orders.Contracts;
 
@@ -12,6 +13,16 @@ namespace ZobShop.ModelViewPresenter.ShoppingCart.Summary
         public CartSummaryPresenter(ICartSummaryView view, IShoppingCart cart, IViewModelFactory factory)
             : base(view)
         {
+            if (cart == null)
+            {
+                throw new ArgumentNullException("cart cannot be null");
+            }
+
+            if (factory == null)
+            {
+                throw new ArgumentNullException("factory cannot be null");
+            }
+
             this.cart = cart;
             this.factory = factory;
 

@@ -1,4 +1,5 @@
-﻿using WebFormsMvp;
+﻿using System;
+using WebFormsMvp;
 using ZobShop.Orders.Contracts;
 
 namespace ZobShop.ModelViewPresenter.ShoppingCart.Add
@@ -9,6 +10,11 @@ namespace ZobShop.ModelViewPresenter.ShoppingCart.Add
 
         public AddToCartPresenter(IAddToCartView view, IShoppingCart cart) : base(view)
         {
+            if (cart == null)
+            {
+                throw new ArgumentNullException("cart cannot be null");
+            }
+
             this.cart = cart;
 
             this.View.MyAddToCart += View_MyAddToCart;
