@@ -10,6 +10,16 @@
             </div>
         </ItemTemplate>
     </asp:FormView>
+    <div>
+        <asp:RangeValidator runat="server"
+            Type="Integer"
+            ControlToValidate="AddToCartQuantity"
+            MinimumValue="1"
+            MaximumValue="123"
+            ErrorMessage="Please provide positive quantity"></asp:RangeValidator>
+        <asp:TextBox runat="server" ID="AddToCartQuantity" Text="1" TextMode="Number"></asp:TextBox>
+        <asp:Button runat="server" ID="AddToCartButton" OnClick="AddToCartButton_OnClick" />
+    </div>
 
 
     <br />

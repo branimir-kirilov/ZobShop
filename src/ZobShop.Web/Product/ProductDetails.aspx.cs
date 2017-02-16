@@ -11,6 +11,8 @@ namespace ZobShop.Web.Product
     public partial class ProductDetails : MvpPage<ProductDetailsViewModel>, IProductDetailsView
     {
         private const string SqlCommandTemplate = "SELECT * FROM PRODUCTRATINGS WHERE PRODUCTID={0}";
+        private const string RedirectUrlTemplate = "~/ShoppingCart/AddToCart?id={0}&quantity={1}";
+
         private static string SqlCommand;
         private static int ProductId;
 
@@ -49,6 +51,14 @@ namespace ZobShop.Web.Product
             this.RateProduct?.Invoke(this, args);
 
             this.SqlDataSourceComments.DataBind();
+        }
+
+        protected void AddToCartButton_OnClick(object sender, EventArgs e)
+        {
+            var quantityString = this.AddToCartQuantity.Text;
+            var redirectUrl = string.Format(RedirectUrlTemplate, ProductId, quantityString);
+
+            this.Response.Redirect(redirectUrl);
         }
     }
 }
