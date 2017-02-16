@@ -115,6 +115,9 @@
     <Compile Include="Product\List\ProductListPresenter.cs" />
     <Compile Include="Product\List\ProductListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\ISearchView.cs" />
+    <Compile Include="Search\SearchEventArgs.cs" />
+    <Compile Include="Search\SearchPresenter.cs" />
     <Compile Include="ShoppingCart\Add\AddToCartEventArgs.cs" />
     <Compile Include="ShoppingCart\Add\AddToCartPresenter.cs" />
     <Compile Include="ShoppingCart\Add\AddToCartViewModel.cs" />
