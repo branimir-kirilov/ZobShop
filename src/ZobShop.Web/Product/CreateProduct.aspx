@@ -56,12 +56,15 @@
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Maker"
                     CssClass="text-danger" ErrorMessage="The Maker field is required." />
             </div>
-
-            <ajaxToolkit:AjaxFileUpload ID="AjaxFileUpload1"
+            
+             <asp:Label runat="server" AssociatedControlID="Maker" CssClass="col-md-2 control-label">Upload image (Max: 3mb) </asp:Label>
+            <ajaxToolkit:AjaxFileUpload ID="AjaxFileUpload"
                 ThrobberID="myThrobber"
-                AllowedFileTypes="jpg,jpeg"
+                AllowedFileTypes="jpg,jpeg,png"
                 MaximumNumberOfFiles="1"
-                OnUploadComplete="AjaxFileUploadEvent"
+                OnUploadComplete="AjaxFileUpload_UploadCompleted"
+                MaxFileSize="3000"
+                autoStartUpload="false"
                 runat="server" />
         </div>
         <div class="form-group">

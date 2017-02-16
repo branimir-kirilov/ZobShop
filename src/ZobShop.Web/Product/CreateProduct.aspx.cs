@@ -47,10 +47,11 @@ namespace ZobShop.Web.Product
             this.Response.Redirect(redirectLink);
         }
 
-        protected void AjaxFileUploadEvent(object sender, AjaxFileUploadEventArgs e)
+        protected void AjaxFileUpload_UploadCompleted(object sender, AjaxFileUploadEventArgs e)
         {
             ImageBuffer = e.GetContents();
             ImageMimeType = e.ContentType;
+            AjaxFileUpload.Enabled = false;
         }
     }
 }
