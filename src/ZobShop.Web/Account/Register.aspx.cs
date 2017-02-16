@@ -2,6 +2,7 @@
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using ZobShop.Authentication;
+using ZobShop.ModelViewPresenter.Account;
 using ZobShop.ModelViewPresenter.Account.Register;
 
 namespace ZobShop.Web.Account
@@ -9,7 +10,19 @@ namespace ZobShop.Web.Account
     [PresenterBinding(typeof(RegisterPresenter))]
     public partial class Register : MvpPage<RegisterViewModel>, IRegisterView
     {
+        public event EventHandler<AccountRedirectEventArgs> MyInit;
         public event EventHandler<RegisterEventArgs> MyRegister;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            var args = new AccountRedirectEventArgs(this.Context);
+            this.MyInit?.Invoke(this, args);
+
+            if (this.Model.IsAuthenticated)
+            {
+                this.Response.Redirect("~/");
+            }
+        }
 
         protected void CreateUser_Click(object sender, EventArgs e)
         {

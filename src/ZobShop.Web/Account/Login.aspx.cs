@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.Owin;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using ZobShop.Authentication;
+using ZobShop.ModelViewPresenter.Account;
 using ZobShop.ModelViewPresenter.Account.Login;
 
 namespace ZobShop.Web.Account
@@ -12,9 +13,18 @@ namespace ZobShop.Web.Account
     public partial class Login : MvpPage<LoginViewModel>, ILoginView
     {
         public event EventHandler<LoginEventArgs> MyLogin;
+        public event EventHandler<AccountRedirectEventArgs> MyInit;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            var args = new AccountRedirectEventArgs(this.Context);
+            this.MyInit?.Invoke(this, args);
+
+            if (this.Model.IsAuthenticated)
+            {
+                this.Response.Redirect("~/");
+            }
+
             RegisterHyperLink.NavigateUrl = "Register";
             // Enable this once you have account confirmation enabled for password reset functionality
             //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
