@@ -26,6 +26,8 @@ namespace ZobShop.Tests.Services.CategoryServiceTests
         }
 
         [TestCase("TestCategoryName")]
+        [TestCase("OtherTestCategoryName")]
+        [TestCase("YetAnotherName")]
         public void TestGetCategoryByName_PassValidName_ShouldCallRepositoryGetAll(string name)
         {
             var factory = new Mock<ICategoryFactory>();
@@ -39,13 +41,16 @@ namespace ZobShop.Tests.Services.CategoryServiceTests
         }
 
         [TestCase("TestCategoryName")]
+        [TestCase("YetAnotherName")]
         [TestCase("OtherTestCategoryName")]
         public void TestGetCategoryByName_PassValidName_ShouldReturnCorrectly(string name)
         {
             var factory = new Mock<ICategoryFactory>();
 
             var firstMockedCategory = new Mock<Category>();
-            var categories = new List<Category> { firstMockedCategory.Object };
+            var secondMockedCategory = new Mock<Category>();
+            var thirdMockedCategory = new Mock<Category>();
+            var categories = new List<Category> { firstMockedCategory.Object, secondMockedCategory.Object, thirdMockedCategory.Object };
 
             var repository = new Mock<IRepository<Category>>();
             repository.Setup(x => x.GetAll(It.IsAny<Expression<Func<Category, bool>>>()))
@@ -56,7 +61,8 @@ namespace ZobShop.Tests.Services.CategoryServiceTests
             var service = new CategoryService(repository.Object, unitOfWork.Object, factory.Object);
             var result = service.GetCategoryByName(name);
 
-            Assert.AreSame(firstMockedCategory.Object, result);
+            var expected = categories.FirstOrDefault();
+            Assert.AreSame(expected, result);
         }
 
     }
