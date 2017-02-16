@@ -65,6 +65,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -95,6 +99,8 @@
     <Compile Include="Models\UserTests\PropertyTests.cs" />
     <Compile Include="Models\UserTests\UserConstructorTests.cs" />
     <Compile Include="Mvp\Search\SearchEventArgsTests\ConstructorTests.cs" />
+    <Compile Include="Mvp\Search\SearchPresenterTests\ConstructorTests.cs" />
+    <Compile Include="Mvp\Search\SearchPresenterTests\ViewMySearchTests.cs" />
     <Compile Include="Orders\CartLineTests\ConstructorTests.cs" />
     <Compile Include="Orders\ShoppingCartTests\AddProductTests.cs" />
     <Compile Include="Orders\ShoppingCartTests\ClearCartTests.cs" />
@@ -122,9 +128,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mvp\Search\SearchPresenterTests\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ZobShop.Data\ZobShop.Data.csproj">
       <Project>{D5E53BD4-FE25-4DF2-BC9B-C43EC0BDC64C}</Project>
