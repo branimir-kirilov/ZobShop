@@ -13,6 +13,15 @@ namespace ZobShop.Web.Product {
     public partial class ProductsList {
         
         /// <summary>
+        /// CategoriesDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CategoriesDropDownList;
+        
+        /// <summary>
         /// ProductList control.
         /// </summary>
         /// <remarks>

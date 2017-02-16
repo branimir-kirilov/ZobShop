@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using WebFormsMvp;
+using ZobShop.ModelViewPresenter.Product.Details;
 using ZobShop.Services.Contracts;
 
 namespace ZobShop.ModelViewPresenter.Product.List
@@ -26,27 +28,43 @@ namespace ZobShop.ModelViewPresenter.Product.List
             this.factory = factory;
 
             this.View.MyInit += View_MyInit;
+            this.View.CategoryChanged += View_CategoryChanged;
+        }
+
+        private void View_CategoryChanged(object sender, ProductListEventArgs e)
+        {
+            var category = e.Category;
+
+            if (string.IsNullOrEmpty(category))
+            {
+                return;
+            }
+            var productsByCategory = this.View.Model.Products
+                .Where(p => p.Category.Equals(category));
+
+            this.View.Model.Products = productsByCategory;
         }
 
         private void View_MyInit(object sender, ProductListEventArgs e)
         {
             var category = e.Category;
 
-            if (category == null)
+            IEnumerable<ProductDetailsViewModel> products;
+            if (string.IsNullOrEmpty(category))
             {
-                this.View.Model.Products = this.service.GetProducts()
-                    .Select(p => this.factory.CreateProductDetailsViewModel(p.ProductId,
-                        p.Name,
-                    p.Category.Name,
-                    p.Price,
-                    p.Volume,
-                    p.Maker,
-                    p.ImageMimeType,
-                    p.ImageBuffer));
+                products = this.service.GetProducts()
+                     .Select(p => this.factory.CreateProductDetailsViewModel(p.ProductId,
+                         p.Name,
+                     p.Category.Name,
+                     p.Price,
+                     p.Volume,
+                     p.Maker,
+                     p.ImageMimeType,
+                     p.ImageBuffer));
             }
             else
             {
-                this.View.Model.Products = this.service.GetProductsByCategory(category)
+                products = this.service.GetProductsByCategory(category)
                     .Select(p => this.factory.CreateProductDetailsViewModel(p.ProductId,
                         p.Name,
                     p.Category.Name,
@@ -56,6 +74,11 @@ namespace ZobShop.ModelViewPresenter.Product.List
                     p.ImageMimeType,
                     p.ImageBuffer));
             }
+
+            var categories = new List<string> { "Select Category", "All" };
+            categories.AddRange(products.Select(p => p.Category).Distinct());
+            this.View.Model.Products = products;
+            this.View.Model.Categories = categories;
         }
     }
 }

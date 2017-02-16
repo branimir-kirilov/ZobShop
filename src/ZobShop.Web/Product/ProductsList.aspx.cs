@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using ZobShop.ModelViewPresenter.Product.Details;
 using ZobShop.ModelViewPresenter.Product.List;
 
 namespace ZobShop.Web.Product
@@ -12,6 +15,7 @@ namespace ZobShop.Web.Product
     public partial class ProductsList : MvpPage<ProductListViewModel>, IProductListView
     {
         public event EventHandler<ProductListEventArgs> MyInit;
+        public event EventHandler<ProductListEventArgs> CategoryChanged;
 
         public Image byteArrayToImage(byte[] byteArrayIn)
         {
@@ -19,17 +23,33 @@ namespace ZobShop.Web.Product
             Image returnImage = Image.FromStream(ms);
             return returnImage;
         }
-  
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            var query = this.Request.QueryString;
-            var category = query?["category"];
+            var args = new ProductListEventArgs(null);
+            this.MyInit?.Invoke(this, args);
+        }
+
+        protected void CategoriesDropDownList_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            var category = this.CategoriesDropDownList.SelectedValue;
+            if (this.CategoriesDropDownList.SelectedIndex == 1)
+            {
+                category = null;
+            }
 
             var args = new ProductListEventArgs(category);
-            this.MyInit?.Invoke(this, args);
+            this.CategoryChanged?.Invoke(this, args);
+        }
 
-            this.ProductList.DataSource = this.Model.Products;
-            this.DataBind();
+        public IEnumerable<ProductDetailsViewModel> Select()
+        {
+            return this.Model.Products;
+        }
+
+        public IEnumerable<string> SelectCategories()
+        {
+            return this.Model.Categories;
         }
     }
 }
