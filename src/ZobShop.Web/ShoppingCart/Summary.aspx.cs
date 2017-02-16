@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using ZobShop.ModelViewPresenter.Administration.ProductsList;
 using ZobShop.ModelViewPresenter.ShoppingCart.Summary;
 
 namespace ZobShop.Web.ShoppingCart
@@ -20,9 +21,12 @@ namespace ZobShop.Web.ShoppingCart
         }
 
         public event EventHandler MyInit;
+        public event EventHandler<DeleteProductEventArgs> RemoveFromCart;
 
         public void Delete(int productId)
         {
+            var args = new DeleteProductEventArgs(productId);
+            this.RemoveFromCart?.Invoke(this, args);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using WebFormsMvp;
+using ZobShop.ModelViewPresenter.Administration.ProductsList;
 using ZobShop.Orders.Contracts;
 
 namespace ZobShop.ModelViewPresenter.ShoppingCart.Summary
@@ -27,6 +28,14 @@ namespace ZobShop.ModelViewPresenter.ShoppingCart.Summary
             this.factory = factory;
 
             this.View.MyInit += View_MyInit;
+            this.View.RemoveFromCart += View_RemoveFromCart;
+        }
+
+        private void View_RemoveFromCart(object sender, DeleteProductEventArgs e)
+        {
+            var id = e.Id;
+
+            this.cart.RemoveItem(id);
         }
 
         private void View_MyInit(object sender, System.EventArgs e)
