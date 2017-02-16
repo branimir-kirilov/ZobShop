@@ -19,7 +19,7 @@
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
+                            <asp:TextBox runat="server" ID="Email"  MaxLength="50" CssClass="form-control" TextMode="Email" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                                 CssClass="text-danger" ErrorMessage="The email field is required." />
                         </div>
