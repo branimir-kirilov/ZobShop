@@ -5,5 +5,7 @@ namespace ZobShop.ModelViewPresenter.Account.Login
     public class LoginViewModel
     {
         public SignInStatus SignInStatus { get; set; }
+
+        public bool IsAuthenticated { get; set; }
     }
 }

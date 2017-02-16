@@ -84,6 +84,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\AccountRedirectEventArgs.cs" />
+    <Compile Include="Account\IAccountRedirectView.cs" />
     <Compile Include="Account\Login\ILoginView.cs" />
     <Compile Include="Account\Login\LoginEventArgs.cs" />
     <Compile Include="Account\Login\LoginPresenter.cs" />

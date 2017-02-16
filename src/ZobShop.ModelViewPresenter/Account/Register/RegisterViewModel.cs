@@ -5,5 +5,7 @@
         public bool IsRegistrationSuccessful { get; set; }
 
         public string ErrorMessage { get; set; }
+
+        public bool IsAuthenticated { get; set; }
     }
 }

@@ -14,6 +14,13 @@ namespace ZobShop.ModelViewPresenter.Account.Register
         public RegisterPresenter(IRegisterView view) : base(view)
         {
             this.View.MyRegister += this.OnRegister;
+            this.View.MyInit += View_MyInit;
+        }
+
+        private void View_MyInit(object sender, AccountRedirectEventArgs e)
+        {
+            var isAuthenticated = e.HttpContext.User.Identity.IsAuthenticated;
+            this.View.Model.IsAuthenticated = isAuthenticated;
         }
 
         private void OnRegister(object sender, RegisterEventArgs e)
