@@ -67,6 +67,9 @@
                         <asp:RoleGroup Roles="admin">
                             <ContentTemplate>
                                 <li><a runat="server" href="~/Product/CreateProduct" title="Products">Create Product </a></li>
+                                <li class="navbar navbar-right">
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
                             </ContentTemplate>
                         </asp:RoleGroup>
                     </RoleGroups>
