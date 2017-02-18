@@ -10,13 +10,12 @@ namespace ZobShop.Web.Account
     [PresenterBinding(typeof(RegisterPresenter))]
     public partial class Register : MvpPage<RegisterViewModel>, IRegisterView
     {
-        public event EventHandler<AccountRedirectEventArgs> MyInit;
+        public event EventHandler MyInit;
         public event EventHandler<RegisterEventArgs> MyRegister;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var args = new AccountRedirectEventArgs(this.Context);
-            this.MyInit?.Invoke(this, args);
+            this.MyInit?.Invoke(this, e);
 
             if (this.Model.IsAuthenticated)
             {
@@ -26,8 +25,7 @@ namespace ZobShop.Web.Account
 
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            var args = new RegisterEventArgs(this.Context,
-                this.Email.Text,
+            var args = new RegisterEventArgs(this.Email.Text,
                 this.Password.Text,
                 this.Name.Text,
                 this.Phone.Text,

@@ -12,13 +12,12 @@ namespace ZobShop.Web.Account
     [PresenterBinding(typeof(LoginPresenter))]
     public partial class Login : MvpPage<LoginViewModel>, ILoginView
     {
+        public event EventHandler MyInit;
         public event EventHandler<LoginEventArgs> MyLogin;
-        public event EventHandler<AccountRedirectEventArgs> MyInit;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var args = new AccountRedirectEventArgs(this.Context);
-            this.MyInit?.Invoke(this, args);
+            this.MyInit?.Invoke(this, e);
 
             if (this.Model.IsAuthenticated)
             {
@@ -40,7 +39,7 @@ namespace ZobShop.Web.Account
         {
             if (IsValid)
             {
-                var args = new LoginEventArgs(this.Context, this.Email.Text, this.Password.Text, this.RememberMe.Checked);
+                var args = new LoginEventArgs(this.Email.Text, this.Password.Text, this.RememberMe.Checked);
                 this.MyLogin?.Invoke(this, args);
 
                 switch (this.Model.SignInStatus)
