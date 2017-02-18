@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Web;
 using Microsoft.AspNet.Identity;
@@ -11,21 +12,29 @@ namespace ZobShop.ModelViewPresenter.Account.Register
 {
     public class RegisterPresenter : Presenter<IRegisterView>
     {
-        public RegisterPresenter(IRegisterView view) : base(view)
+        private readonly IAuthenticationProvider provider;
+
+        public RegisterPresenter(IRegisterView view, IAuthenticationProvider provider) : base(view)
         {
+            if (provider == null)
+            {
+                throw new ArgumentNullException("provider cannot be null");
+            }
+
+            this.provider = provider;
+
             this.View.MyRegister += this.OnRegister;
             this.View.MyInit += View_MyInit;
         }
 
-        private void View_MyInit(object sender, AccountRedirectEventArgs e)
+        private void View_MyInit(object sender, EventArgs e)
         {
-            var isAuthenticated = e.HttpContext.User.Identity.IsAuthenticated;
-            this.View.Model.IsAuthenticated = isAuthenticated;
+            this.View.Model.IsAuthenticated = this.provider.IsAuthenticated;
         }
 
         private void OnRegister(object sender, RegisterEventArgs e)
         {
-            var manager = e.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = this.provider.GetUserManager();
 
             var user = new User()
             {
@@ -40,7 +49,7 @@ namespace ZobShop.ModelViewPresenter.Account.Register
 
             if (result.Succeeded)
             {
-                var signInManager = e.Context.GetOwinContext().Get<ApplicationSignInManager>();
+                var signInManager = this.provider.GetSignInManager();
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
 
                 this.View.Model.IsRegistrationSuccessful = true;
