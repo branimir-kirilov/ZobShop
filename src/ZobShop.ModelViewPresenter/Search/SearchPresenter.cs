@@ -32,7 +32,7 @@ namespace ZobShop.ModelViewPresenter.Search
         {
             var products = this.service.SearchProducts(e.SearchQueryString);
             var viewModels = products.Select(p => this.factory.CreateProductDetailsViewModel(p.ProductId,
-                         p.Name,
+                     p.Name,
                      p.Category.Name,
                      p.Price,
                      p.Volume,
@@ -41,7 +41,6 @@ namespace ZobShop.ModelViewPresenter.Search
                      p.ImageBuffer));
 
             this.View.Model.Products = viewModels;
-
         }
     }
 }
