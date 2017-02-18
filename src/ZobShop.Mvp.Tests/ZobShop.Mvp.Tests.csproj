@@ -60,9 +60,15 @@
     <Compile Include="ShoppingCart\AddPresenterTests\ConstructorTests.cs" />
     <Compile Include="ShoppingCart\AddPresenterTests\ViewMyAddToCartTests.cs" />
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\ConstructorTests.cs" />
+    <Compile Include="ShoppingCart\CartSummaryPresenterTests\VIewMyInitTests.cs" />
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\ViewRemoveFromCartTests.cs" />
+    <Compile Include="VIewModels\CartLineVIewModelTests\PropertiesTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ZobShop.Models\ZobShop.Models.csproj">
+      <Project>{601A83B5-681C-42C3-A67A-5E0EAF5D0EBE}</Project>
+      <Name>ZobShop.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZobShop.ModelViewPresenter\ZobShop.ModelViewPresenter.csproj">
       <Project>{a80f56d5-69d7-40aa-9a32-c458fa9dbe13}</Project>
       <Name>ZobShop.ModelViewPresenter</Name>
