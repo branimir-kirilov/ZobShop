@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Security.Principal;
-using System.Web;
 using Moq;
 using NUnit.Framework;
 using ZobShop.Authentication;
-using ZobShop.ModelViewPresenter.Account;
 using ZobShop.ModelViewPresenter.Account.Login;
 
 namespace ZobShop.Mvp.Tests.Account.LoginPresenterTests
