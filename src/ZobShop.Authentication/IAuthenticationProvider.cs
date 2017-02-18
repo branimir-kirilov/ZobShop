@@ -1,10 +1,12 @@
-﻿namespace ZobShop.Authentication
+﻿using ZobShop.Authentication.Contracts;
+
+namespace ZobShop.Authentication
 {
     public interface IAuthenticationProvider
     {
-        ApplicationSignInManager GetSignInManager();
+        ISignInManager GetSignInManager();
 
-        ApplicationUserManager GetUserManager();
+        IUserManager GetUserManager();
 
         bool IsAuthenticated { get; }
     }

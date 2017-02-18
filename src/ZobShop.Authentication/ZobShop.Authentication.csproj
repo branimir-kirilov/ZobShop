@@ -91,6 +91,8 @@
   <ItemGroup>
     <Compile Include="ApplicationSignInManager.cs" />
     <Compile Include="ApplicationUserManager.cs" />
+    <Compile Include="Contracts\ISignInManager.cs" />
+    <Compile Include="Contracts\IUserManager.cs" />
     <Compile Include="HttpContextAuthenticationProvider.cs" />
     <Compile Include="IAuthenticationProvider.cs" />
     <Compile Include="IdentityHelper.cs" />

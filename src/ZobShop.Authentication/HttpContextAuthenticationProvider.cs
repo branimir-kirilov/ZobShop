@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNet.Identity.Owin;
 using System.Web;
-using Microsoft.AspNet.Identity;
+using ZobShop.Authentication.Contracts;
 
 namespace ZobShop.Authentication
 {
     public class HttpContextAuthenticationProvider : IAuthenticationProvider
     {
-        public ApplicationSignInManager GetSignInManager()
+        public ISignInManager GetSignInManager()
         {
             return HttpContext.Current.GetOwinContext().GetUserManager<ApplicationSignInManager>();
         }
 
-        public ApplicationUserManager GetUserManager()
+        public IUserManager GetUserManager()
         {
             return HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
         }

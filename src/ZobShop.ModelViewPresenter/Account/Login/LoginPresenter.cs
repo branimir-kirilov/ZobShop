@@ -32,7 +32,7 @@ namespace ZobShop.ModelViewPresenter.Account.Login
         {
             var signinManager = this.provider.GetSignInManager();
 
-            var result = signinManager.PasswordSignIn(e.Email, e.Password, e.RememberMe, shouldLockout: false);
+            var result = signinManager.SignInWithPassword(e.Email, e.Password, e.RememberMe);
 
             this.View.Model.SignInStatus = result;
         }

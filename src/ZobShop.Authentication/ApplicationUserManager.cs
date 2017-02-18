@@ -3,13 +3,14 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
+using ZobShop.Authentication.Contracts;
 using ZobShop.Authentication.Services;
 using ZobShop.Data;
 using ZobShop.Models;
 
 namespace ZobShop.Authentication
 {
-    public class ApplicationUserManager : UserManager<User>
+    public class ApplicationUserManager : UserManager<User>, IUserManager
     {
         public ApplicationUserManager(IUserStore<User> store)
             : base(store)
@@ -58,6 +59,11 @@ namespace ZobShop.Authentication
                 manager.UserTokenProvider = new DataProtectorTokenProvider<User>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
+        }
+
+        public IdentityResult CreateUser(User user, string password)
+        {
+            return this.Create(user, password);
         }
     }
 }

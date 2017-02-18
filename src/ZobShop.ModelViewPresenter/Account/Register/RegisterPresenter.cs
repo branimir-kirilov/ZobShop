@@ -45,12 +45,12 @@ namespace ZobShop.ModelViewPresenter.Account.Register
                 Address = e.Address
             };
 
-            var result = manager.Create(user, e.Password);
+            var result = manager.CreateUser(user, e.Password);
 
             if (result.Succeeded)
             {
                 var signInManager = this.provider.GetSignInManager();
-                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                signInManager.SignInUser(user, isPersistent: false, rememberBrowser: false);
 
                 this.View.Model.IsRegistrationSuccessful = true;
             }
