@@ -60,6 +60,7 @@
     <Compile Include="ShoppingCart\AddPresenterTests\ConstructorTests.cs" />
     <Compile Include="ShoppingCart\AddPresenterTests\ViewMyAddToCartTests.cs" />
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\ConstructorTests.cs" />
+    <Compile Include="ShoppingCart\CartSummaryPresenterTests\ViewRemoveFromCartTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZobShop.ModelViewPresenter\ZobShop.ModelViewPresenter.csproj">
