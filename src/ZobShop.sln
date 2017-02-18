@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZobShop.Factories", "ZobSho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZobShop.Orders", "ZobShop.Orders\ZobShop.Orders.csproj", "{17C008CB-9F06-4179-9192-6B067F7529D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZobShop.Mvp.Tests", "ZobShop.Mvp.Tests\ZobShop.Mvp.Tests.csproj", "{BB3A9EDC-416B-4828-9E46-786C642B5E5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{17C008CB-9F06-4179-9192-6B067F7529D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17C008CB-9F06-4179-9192-6B067F7529D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17C008CB-9F06-4179-9192-6B067F7529D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB3A9EDC-416B-4828-9E46-786C642B5E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3A9EDC-416B-4828-9E46-786C642B5E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3A9EDC-416B-4828-9E46-786C642B5E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3A9EDC-416B-4828-9E46-786C642B5E5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

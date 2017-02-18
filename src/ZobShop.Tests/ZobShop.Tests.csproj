@@ -140,10 +140,6 @@
       <Project>{601A83B5-681C-42C3-A67A-5E0EAF5D0EBE}</Project>
       <Name>ZobShop.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ZobShop.ModelViewPresenter\ZobShop.ModelViewPresenter.csproj">
-      <Project>{a80f56d5-69d7-40aa-9a32-c458fa9dbe13}</Project>
-      <Name>ZobShop.ModelViewPresenter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ZobShop.Orders\ZobShop.Orders.csproj">
       <Project>{17C008CB-9F06-4179-9192-6B067F7529D0}</Project>
       <Name>ZobShop.Orders</Name>
