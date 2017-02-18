@@ -6,6 +6,7 @@ using Ninject.Activation;
 using Ninject.Extensions.Conventions;
 using Ninject.Extensions.Factory;
 using Ninject.Modules;
+using ZobShop.Authentication;
 using ZobShop.ModelViewPresenter.ShoppingCart.Add;
 using ZobShop.ModelViewPresenter.ShoppingCart.Summary;
 using ZobShop.Orders;
@@ -29,6 +30,8 @@ namespace ZobShop.Web.App_Start.NinjectModules
                       .BindDefaultInterface();
                 }
             });
+
+            this.Bind<IAuthenticationProvider>().To<HttpContextAuthenticationProvider>();
 
             this.Bind<ICartLine>().To<CartLine>();
             this.Bind<IShoppingCart>().To<Orders.ShoppingCart>();
