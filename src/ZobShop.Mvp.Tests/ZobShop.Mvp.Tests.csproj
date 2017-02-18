@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchPresenterTests\ConstructorTests.cs" />
+    <Compile Include="SearchPresenterTests\ViewMySearchTests.cs" />
     <Compile Include="ShoppingCart\AddPresenterTests\ConstructorTests.cs" />
     <Compile Include="ShoppingCart\AddPresenterTests\ViewMyAddToCartTests.cs" />
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\ConstructorTests.cs" />
