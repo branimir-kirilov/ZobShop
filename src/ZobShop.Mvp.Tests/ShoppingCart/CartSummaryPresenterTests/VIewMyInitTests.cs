@@ -44,7 +44,7 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CartSummaryPresenterTests
         {
             var imgBuffer = new byte[3];
             var category = new Category(categoryName);
-            var product = new Product(name, category, quantity, price, volume, maker, imageMimeType, imgBuffer);
+            var product = new Models.Product(name, category, quantity, price, volume, maker, imageMimeType, imgBuffer);
 
             var mockedView = new Mock<ICartSummaryView>();
             mockedView.Setup(v => v.Model).Returns(new CartSummaryVIewModel());
@@ -88,7 +88,7 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CartSummaryPresenterTests
         {
             var imgBuffer = new byte[3];
             var category = new Category(categoryName);
-            var product = new Product(name, category, quantity, price, volume, maker, imageMimeType, imgBuffer);
+            var product = new Models.Product(name, category, quantity, price, volume, maker, imageMimeType, imgBuffer);
 
             var mockedView = new Mock<ICartSummaryView>();
             mockedView.Setup(v => v.Model).Returns(new CartSummaryVIewModel());

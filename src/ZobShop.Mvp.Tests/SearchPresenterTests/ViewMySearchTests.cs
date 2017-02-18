@@ -42,10 +42,10 @@ namespace ZobShop.Mvp.Tests.SearchPresenterTests
             mockedView.Setup(v => v.Model).Returns(new ProductListViewModel());
 
             var category = new Category();
-            var product = new Product { Category = category };
+            var product = new Models.Product { Category = category };
 
             var mockedService = new Mock<IProductService>();
-            mockedService.Setup(s => s.SearchProducts(It.IsAny<string>())).Returns(new List<Product> { product });
+            mockedService.Setup(s => s.SearchProducts(It.IsAny<string>())).Returns(new List<Models.Product> { product });
 
             var productDetailsViewModel = new ProductDetailsViewModel();
 
