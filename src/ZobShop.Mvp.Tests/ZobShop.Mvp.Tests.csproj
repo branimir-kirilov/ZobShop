@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchPresenterTests\ConstructorTests.cs" />
     <Compile Include="ShoppingCart\AddPresenterTests\ConstructorTests.cs" />
     <Compile Include="ShoppingCart\AddPresenterTests\ViewMyAddToCartTests.cs" />
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\ConstructorTests.cs" />
@@ -76,6 +77,10 @@
     <ProjectReference Include="..\ZobShop.Orders\ZobShop.Orders.csproj">
       <Project>{17C008CB-9F06-4179-9192-6B067F7529D0}</Project>
       <Name>ZobShop.Orders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZobShop.Services\ZobShop.Services.csproj">
+      <Project>{ffde1559-f1ec-45fd-812f-e0cde1c64b32}</Project>
+      <Name>ZobShop.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
