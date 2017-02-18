@@ -3,7 +3,7 @@ using NUnit.Framework;
 using ZobShop.ModelViewPresenter.ShoppingCart.Add;
 using ZobShop.Orders.Contracts;
 
-namespace ZobShop.Mvp.Tests.ShoppingCart.Add.AddPresenterTests
+namespace ZobShop.Mvp.Tests.ShoppingCart.AddPresenterTests
 {
     [TestFixture]
     public class ViewMyAddToCartTests
