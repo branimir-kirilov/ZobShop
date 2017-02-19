@@ -113,6 +113,7 @@
     <Compile Include="Administration\ProductsListPresenterTests\ViewProductDeleteTests.cs" />
     <Compile Include="Administration\ProductsListPresenterTests\ViewProductEditTests.cs" />
     <Compile Include="Administration\UsersListPresenterTests\ConstructorTests.cs" />
+    <Compile Include="Administration\UsersListPresenterTests\ViewMyInitTests.cs" />
     <Compile Include="Product\CreateProductPresenterTests\ConstructorTests.cs" />
     <Compile Include="Product\CreateProductPresenterTests\OnCreateProductTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\VIewMyInitTests.cs" />
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\ViewRemoveFromCartTests.cs" />
     <Compile Include="VIewModels\CartLineVIewModelTests\PropertiesTests.cs" />
+    <Compile Include="VIewModels\UserDetailsViewModelTests\PropertiesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZobShop.Authentication\ZobShop.Authentication.csproj">
