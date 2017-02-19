@@ -108,6 +108,10 @@
     <Compile Include="Account\RegisterPresenterTests\ConstructorTests.cs" />
     <Compile Include="Account\RegisterPresenterTests\OnRegisterTests.cs" />
     <Compile Include="Account\RegisterPresenterTests\ViewMyInitTests.cs" />
+    <Compile Include="Administration\ProductsListPresenterTests\ConstructorTests.cs" />
+    <Compile Include="Administration\ProductsListPresenterTests\ViewMyInitTests.cs" />
+    <Compile Include="Administration\ProductsListPresenterTests\ViewProductDeleteTests.cs" />
+    <Compile Include="Administration\ProductsListPresenterTests\ViewProductEditTests.cs" />
     <Compile Include="Product\CreateProductPresenterTests\ConstructorTests.cs" />
     <Compile Include="Product\CreateProductPresenterTests\OnCreateProductTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
