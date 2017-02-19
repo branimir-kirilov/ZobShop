@@ -53,16 +53,19 @@ namespace ZobShop.ModelViewPresenter.Product.Details
 
             var product = this.service.GetById(id);
 
-            var viewModel = this.factory.CreateProductDetailsViewModel(product.ProductId,
-                product.Name,
-                product.Category.Name,
-                product.Price,
-                product.Volume,
-                product.Maker,
-                product.ImageMimeType,
-                product.ImageBuffer);
+            if (product != null)
+            {
+                var viewModel = this.factory.CreateProductDetailsViewModel(product.ProductId,
+                    product.Name,
+                    product.Category.Name,
+                    product.Price,
+                    product.Volume,
+                    product.Maker,
+                    product.ImageMimeType,
+                    product.ImageBuffer);
 
-            this.View.Model = viewModel;
+                this.View.Model = viewModel;
+            }
         }
     }
 }

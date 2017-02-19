@@ -49,9 +49,12 @@ namespace ZobShop.ModelViewPresenter.Administration.ProductsList
         {
             var product = this.service.GetById(e.Model.Id);
 
-            product = this.SetupChanges(product, e);
+            if (product != null)
+            {
+                product = this.SetupChanges(product, e);
 
-            this.service.EditProduct(product);
+                this.service.EditProduct(product);
+            }
         }
 
         private Models.Product SetupChanges(Models.Product product, EditProductEventArgs args)
