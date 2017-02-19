@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using WebFormsMvp;
 using ZobShop.Authentication;
+using ZobShop.Factories;
 using ZobShop.Models;
 
 namespace ZobShop.ModelViewPresenter.Account.Register
@@ -13,15 +14,22 @@ namespace ZobShop.ModelViewPresenter.Account.Register
     public class RegisterPresenter : Presenter<IRegisterView>
     {
         private readonly IAuthenticationProvider provider;
+        private readonly IUserFactory factory;
 
-        public RegisterPresenter(IRegisterView view, IAuthenticationProvider provider) : base(view)
+        public RegisterPresenter(IRegisterView view, IAuthenticationProvider provider, IUserFactory factory) : base(view)
         {
             if (provider == null)
             {
                 throw new ArgumentNullException("provider cannot be null");
             }
 
+            if (factory == null)
+            {
+                throw new ArgumentNullException("factory cannot be null");
+            }
+
             this.provider = provider;
+            this.factory = factory;
 
             this.View.MyRegister += this.OnRegister;
             this.View.MyInit += View_MyInit;
@@ -36,14 +44,7 @@ namespace ZobShop.ModelViewPresenter.Account.Register
         {
             var manager = this.provider.GetUserManager();
 
-            var user = new User()
-            {
-                UserName = e.Email,
-                Email = e.Email,
-                Name = e.Name,
-                PhoneNumber = e.Phone,
-                Address = e.Address
-            };
+            var user = this.factory.CreateUser(e.Email, e.Email, e.Name, e.Phone, e.Address);
 
             var result = manager.CreateUser(user, e.Password);
 

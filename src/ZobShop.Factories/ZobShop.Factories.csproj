@@ -60,6 +60,7 @@
     <Compile Include="ICategoryFactory.cs" />
     <Compile Include="IProductFactory.cs" />
     <Compile Include="IProductRatingFactory.cs" />
+    <Compile Include="IUserFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

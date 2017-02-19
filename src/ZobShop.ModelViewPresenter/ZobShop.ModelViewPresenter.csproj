@@ -137,6 +137,10 @@
       <Project>{7a53f585-72d3-41ac-b131-415d8e021dac}</Project>
       <Name>ZobShop.Authentication</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZobShop.Factories\ZobShop.Factories.csproj">
+      <Project>{1959CD6F-B7C4-4A1C-A7E8-53811F0AC5CD}</Project>
+      <Name>ZobShop.Factories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZobShop.Models\ZobShop.Models.csproj">
       <Project>{601A83B5-681C-42C3-A67A-5E0EAF5D0EBE}</Project>
       <Name>ZobShop.Models</Name>
