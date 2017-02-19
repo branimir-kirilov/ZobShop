@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.Owin;
 using System.Web;
+using Microsoft.AspNet.Identity;
 using ZobShop.Authentication.Contracts;
 
 namespace ZobShop.Authentication
@@ -16,9 +17,14 @@ namespace ZobShop.Authentication
             return HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
         }
 
-        bool IAuthenticationProvider.IsAuthenticated
+        public bool IsAuthenticated
         {
             get { return HttpContext.Current.User.Identity.IsAuthenticated; }
+        }
+
+        public string CurrentUserId
+        {
+            get { return HttpContext.Current.User.Identity.GetUserId(); }
         }
     }
 }

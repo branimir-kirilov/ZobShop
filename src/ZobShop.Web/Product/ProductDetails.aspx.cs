@@ -46,7 +46,7 @@ namespace ZobShop.Web.Product
 
         protected void Rate_OnClick(object sender, EventArgs e)
         {
-            var args = new RateProductEventArgs(int.Parse(this.RatingBox.Text), this.ContentRatingBox.Text, ProductId, this.Context);
+            var args = new RateProductEventArgs(int.Parse(this.RatingBox.Text), this.ContentRatingBox.Text, ProductId);
 
             this.RateProduct?.Invoke(this, args);
 

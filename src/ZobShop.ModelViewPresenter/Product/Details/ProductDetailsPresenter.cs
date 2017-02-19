@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNet.Identity;
 using WebFormsMvp;
+using ZobShop.Authentication;
 using ZobShop.ModelViewPresenter.Product.Details.RateProduct;
 using ZobShop.Services.Contracts;
 
@@ -11,11 +12,13 @@ namespace ZobShop.ModelViewPresenter.Product.Details
         private readonly IProductService service;
         private readonly IViewModelFactory factory;
         private readonly IProductRatingService productRatingService;
+        private readonly IAuthenticationProvider provider;
 
         public ProductDetailsPresenter(IProductDetailsView view,
             IProductService service,
             IViewModelFactory factory,
-            IProductRatingService productRatingService) : base(view)
+            IProductRatingService productRatingService,
+            IAuthenticationProvider provider) : base(view)
         {
             if (service == null)
             {
@@ -32,9 +35,15 @@ namespace ZobShop.ModelViewPresenter.Product.Details
                 throw new ArgumentNullException("factory cannot be null");
             }
 
+            if (provider == null)
+            {
+                throw new ArgumentNullException("provider cannot be null");
+            }
+
             this.service = service;
             this.productRatingService = productRatingService;
             this.factory = factory;
+            this.provider = provider;
 
             this.View.MyProductDetails += View_MyProductDetails;
             this.View.RateProduct += View_RateProduct;
@@ -42,7 +51,7 @@ namespace ZobShop.ModelViewPresenter.Product.Details
 
         private void View_RateProduct(object sender, RateProductEventArgs e)
         {
-            var userId = e.Context.User.Identity.GetUserId();
+            var userId = this.provider.CurrentUserId;
 
             this.productRatingService.CreateProductRating(e.Rating, e.Content, e.ProductId, userId);
         }

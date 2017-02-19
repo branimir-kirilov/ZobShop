@@ -9,5 +9,7 @@ namespace ZobShop.Authentication
         IUserManager GetUserManager();
 
         bool IsAuthenticated { get; }
+
+        string CurrentUserId { get; }
     }
 }
