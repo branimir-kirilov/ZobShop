@@ -92,6 +92,8 @@
     <Compile Include="Account\LoginPresenterTests\ConstructorTests.cs" />
     <Compile Include="Account\LoginPresenterTests\OnLoginTests.cs" />
     <Compile Include="Account\LoginPresenterTests\ViewMyInitTests.cs" />
+    <Compile Include="Account\RegisterPresenterTests\ConstructorTests.cs" />
+    <Compile Include="Account\RegisterPresenterTests\ViewMyInitTests.cs" />
     <Compile Include="Product\CreateProductPresenterTests\ConstructorTests.cs" />
     <Compile Include="Product\CreateProductPresenterTests\OnCreateProductTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +110,10 @@
     <ProjectReference Include="..\ZobShop.Authentication\ZobShop.Authentication.csproj">
       <Project>{7A53F585-72D3-41AC-B131-415D8E021DAC}</Project>
       <Name>ZobShop.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZobShop.Factories\ZobShop.Factories.csproj">
+      <Project>{1959CD6F-B7C4-4A1C-A7E8-53811F0AC5CD}</Project>
+      <Name>ZobShop.Factories</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZobShop.Models\ZobShop.Models.csproj">
       <Project>{601A83B5-681C-42C3-A67A-5E0EAF5D0EBE}</Project>
