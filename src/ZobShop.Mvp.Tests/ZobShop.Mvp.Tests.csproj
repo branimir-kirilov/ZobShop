@@ -116,6 +116,7 @@
     <Compile Include="Administration\UsersListPresenterTests\ViewMyInitTests.cs" />
     <Compile Include="Product\CreateProductPresenterTests\ConstructorTests.cs" />
     <Compile Include="Product\CreateProductPresenterTests\OnCreateProductTests.cs" />
+    <Compile Include="Product\ProductListPresenterTests\ConstructorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchPresenterTests\ConstructorTests.cs" />
     <Compile Include="SearchPresenterTests\ViewMySearchTests.cs" />

@@ -78,6 +78,7 @@ namespace ZobShop.ModelViewPresenter.Product.List
 
             var categories = new List<string> { "All Products" };
             categories.AddRange(products.Select(p => p.Category).Distinct());
+
             this.View.Model.Products = products;
             this.View.Model.Categories = categories;
         }
