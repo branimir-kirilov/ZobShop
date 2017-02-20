@@ -61,12 +61,15 @@ input[type="select"] {
   font-weight: bold;
 }
 .grid-row {
-  background-color: rgba(32, 83, 32, 0.1);
   outline: 0px;
   margin-bottom: 15px;
+  background-color: rgba(32, 83, 32, 0.1);
+  text-align: center;
+  vertical-align: middle;
 }
-.header-text {
-  font-size: 18px;
+.product-name {
+  font-size: 25px;
+  font-weight: bold;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
