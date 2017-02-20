@@ -1,18 +1,18 @@
 ﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="ZobShop.Web.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %>.</h2>
+    <h2><%: Title %> </h2>
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
 
-    <div class="form-horizontal">
+    <div class="form-horizontal col-md-8">
         <h4>Create a new account</h4>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <asp:TextBox runat="server" ID="Email" MaxLength="60" CssClass="form-control" TextMode="Email" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                     CssClass="text-danger" ErrorMessage="The email field is required." />
@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Name" CssClass="col-md-2 control-label">Name</asp:Label>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <asp:TextBox runat="server" ID="Name" MaxLength="50" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Name"
                     CssClass="text-danger" ErrorMessage="The name field is required." />
@@ -28,19 +28,19 @@
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Address" CssClass="col-md-2 control-label">Address</asp:Label>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <asp:TextBox MaxLength="60" runat="server" ID="Address" CssClass="form-control" />
             </div>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Phone" CssClass="col-md-2 control-label">Phone</asp:Label>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <asp:TextBox MaxLength="40" runat="server" ID="Phone" CssClass="form-control" />
             </div>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
                     CssClass="text-danger" ErrorMessage="The password field is required." />
@@ -48,7 +48,7 @@
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
@@ -57,9 +57,17 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-2 col-md-8">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
+    </div>
+
+    <div class="col-md-4">
+        <h4> Why register? </h4>
+        <hr />
+        <h5> Buy our products online </h5>
+        <h5> Receive information about new producs </h5>
+        <h5> Get discounts! </h5>
     </div>
 </asp:Content>
