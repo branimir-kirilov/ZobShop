@@ -67,6 +67,12 @@ input[type="select"] {
   text-align: center;
   vertical-align: middle;
 }
+.round-corners {
+  border: 2px solid  gray;
+  box-shadow: rgba(0, 3, 2, 0.2) 10px 10px;
+  padding: 20px;
+  border-radius: 25px;
+}
 .product-name {
   font-size: 25px;
   font-weight: bold;

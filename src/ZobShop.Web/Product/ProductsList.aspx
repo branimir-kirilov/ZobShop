@@ -25,13 +25,15 @@
                 GridLines="Horizontal">
                 <RowStyle CssClass="grid-row" VerticalAlign="Top" />
                 <Columns>
-                    <asp:TemplateField >
+                    <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Label Text='<%# Eval("Name") %>' runat="server" CssClass="product-name" />
-                            <hr />
-                            <asp:Label Text='<%# $"{Eval("Price"):C}" %>' runat="server" CssClass="product-price" />
-                            <hr />
-                            <asp:Label Text='<%# $"Category: {Eval("Category")}" %>' runat="server" CssClass="product-category" />
+                            <div class="round-corners">
+                                <asp:Label Text='<%# Eval("Name") %>' runat="server" CssClass="product-name" />
+                                <hr />
+                                <asp:Label Text='<%# $"{Eval("Price"):C}" %>' runat="server" CssClass="product-price" />
+                                <hr />
+                                <asp:Label Text='<%# $"Category: {Eval("Category")}" %>' runat="server" CssClass="product-category" />
+                            </div>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>
