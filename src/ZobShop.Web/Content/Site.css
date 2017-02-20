@@ -54,6 +54,10 @@ input[type="select"] {
   border: none;
   border-bottom-style: none;
 }
+.main-label {
+  font-size: 20px;
+  font-weight: bold;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .jumbotron {

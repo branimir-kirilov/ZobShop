@@ -1,13 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductsList.aspx.cs" Inherits="ZobShop.Web.Product.ProductsList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:DropDownList ID="CategoriesDropDownList" runat="server"
+    <asp:Label Text="Choose category: " runat="server"  CssClass="main-label"/>
+     <asp:DropDownList ID="CategoriesDropDownList" runat="server"
         OnSelectedIndexChanged="CategoriesDropDownList_OnSelectedIndexChanged"
         AutoPostBack="True"
         EnableViewState="True"
         SelectMethod="SelectCategories"
         CssClass="category-dropdown">
     </asp:DropDownList>
+    <hr />
     <asp:UpdatePanel runat="server">
         <Triggers>
             <asp:AsyncPostBackTrigger EventName="SelectedIndexChanged" ControlID="CategoriesDropDownList" runat="server" />
