@@ -65,6 +65,7 @@
                 OnUploadComplete="AjaxFileUpload_UploadCompleted"
                 MaxFileSize="3000"
                 autoStartUpload="false"
+                ChunkSize="100"
                 runat="server" />
         </div>
         <div class="form-group">

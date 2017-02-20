@@ -46,7 +46,7 @@
 
         <%--Navigation Menu--%>
         <div id='cssmenu'>
-            <ul class="active">
+            <ul>
                 <li><a runat="server" href="~/">Home</a></li>
                 <li><a runat="server" href="~/Product/ProductsList">Products</a></li>
                 <li><a runat="server" href="~/Search">Search</a></li>

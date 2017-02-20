@@ -75,6 +75,7 @@
 }
 #cssmenu > ul > li.active > a {
   color: #dff2fa;
+  background-color: #118f15;
 }
 #cssmenu > ul > li:hover > a,
 #cssmenu > ul > li > a:hover {

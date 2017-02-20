@@ -37,6 +37,14 @@ input[type="select"] {
 .productsGrid {
   border: 0px;
   margin-top: 15px;
+  padding: 20px;
+}
+.data-entry {
+  font-size: 18px;
+}
+.data-entry-product-name {
+  font-size: 24px;
+  margin: 10px;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductsList.aspx.cs" Inherits="ZobShop.Web.Product.ProductsList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<<<<<<< Updated upstream
     <asp:DropDownList ID="CategoriesDropDownList" runat="server"
         OnSelectedIndexChanged="CategoriesDropDownList_OnSelectedIndexChanged"
         AutoPostBack="True"
@@ -32,6 +33,25 @@
             </asp:GridView>
         </ContentTemplate>
     </asp:UpdatePanel>
+=======
+    <asp:GridView runat="server" ID="ProductList" AutoGenerateColumns="False"
+        ItemType="ZobShop.ModelViewPresenter.Product.Details.ProductDetailsViewModel"
+        DataKeyNames="Id"
+        CssClass="productsGrid" BorderColor="White" BorderStyle="None">
+        <Columns>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:Image ID="imgStatus" runat="server" ImageUrl='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("ImageBuffer")) %>' Height="200" Width="200" ImageAlign="Middle" CssClass="productImage" />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:BoundField ItemStyle-CssClass="data-entry-product-name" DataField="Name" />
+            <asp:BoundField ItemStyle-CssClass="data-entry" DataField="Maker"/>
+            <asp:BoundField ItemStyle-CssClass="data-entry" DataField="Category" />
+            <asp:BoundField ItemStyle-CssClass="data-entry" DataField="Price"/>
+            <asp:BoundField ItemStyle-CssClass="data-entry" DataField="Volume"/>
+        </Columns>
+    </asp:GridView>
+>>>>>>> Stashed changes
 </asp:Content>
 
 
