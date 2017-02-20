@@ -91,7 +91,7 @@
 
             <%--Footer--%>
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - ZobShop. GitHub Repository: https://github.com/Branimir123/ZobShop </p>
             </footer>
         </div>
     </form>
