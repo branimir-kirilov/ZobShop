@@ -77,6 +77,9 @@ input[type="select"] {
   font-size: 25px;
   font-weight: bold;
 }
+.search-controls {
+  margin-top: 25px;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .jumbotron {
