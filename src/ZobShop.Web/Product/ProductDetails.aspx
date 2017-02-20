@@ -10,15 +10,16 @@
             </div>
         </ItemTemplate>
     </asp:FormView>
-    <div>
+    
+    <div id="add-to-cart-controls" class="col-md-offset-2">
         <asp:RangeValidator runat="server"
             Type="Integer"
             ControlToValidate="AddToCartQuantity"
             MinimumValue="1"
-            MaximumValue="123"
+            MaximumValue="15"
             ErrorMessage="Please provide positive quantity"></asp:RangeValidator>
-        <asp:TextBox runat="server" ID="AddToCartQuantity" Text="1" TextMode="Number"></asp:TextBox>
-        <asp:Button runat="server" ID="AddToCartButton" OnClick="AddToCartButton_OnClick" />
+        <asp:TextBox runat="server" ID="AddToCartQuantity" Text="Choose quantity" TextMode="Number"></asp:TextBox>
+        <asp:Button runat="server" ID="AddToCartButton" Text="Add to cart" OnClick="AddToCartButton_OnClick" />
     </div>
 
 
@@ -37,7 +38,7 @@
         UpdateMode="Conditional">
         <ContentTemplate>
             <asp:TextBox runat="server" ID="ContentRatingBox"></asp:TextBox>
-            <asp:TextBox runat="server" ID="RatingBox"></asp:TextBox>
+            <asp:TextBox runat="server" Type="Integer" ID="RatingBox"></asp:TextBox>
             <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" />
         </ContentTemplate>
     </asp:UpdatePanel>
