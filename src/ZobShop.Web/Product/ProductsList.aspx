@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductsList.aspx.cs" Inherits="ZobShop.Web.Product.ProductsList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Label Text="Choose category: " runat="server"  CssClass="main-label"/>
-     <asp:DropDownList ID="CategoriesDropDownList" runat="server"
+    <asp:Label Text="Choose category: " runat="server" CssClass="main-label" />
+    <asp:DropDownList ID="CategoriesDropDownList" runat="server"
         OnSelectedIndexChanged="CategoriesDropDownList_OnSelectedIndexChanged"
         AutoPostBack="True"
         EnableViewState="True"
@@ -19,14 +19,14 @@
                 ItemType="ZobShop.ModelViewPresenter.Product.Details.ProductDetailsViewModel"
                 DataKeyNames="Id"
                 CssClass="productsGrid" BorderColor="White" BorderStyle="None"
-                SelectMethod="Select">
+                SelectMethod="Select"
+                BorderWidth="0">
+                <RowStyle CssClass="grid-row" VerticalAlign="Top" />
                 <Columns>
-                    <asp:BoundField DataField="Name" HeaderText="Product Name" />
-                    <asp:BoundField DataField="Maker" HeaderText="Maker" />
-                    <asp:BoundField DataField="Category" HeaderText="Category" />
-                    <asp:BoundField DataField="Price" HeaderText="Price" />
-                    <asp:BoundField DataField="Volume" HeaderText="Volume" />
-                    <asp:TemplateField HeaderText="Photo" HeaderStyle-CssClass="">
+                    <asp:BoundField DataField="Name" HeaderText="Product Name" HeaderStyle-CssClass="header-text" />
+                    <asp:BoundField DataField="Category" HeaderText="Category" HeaderStyle-CssClass="header-text"/>
+                    <asp:BoundField DataField="Price" HeaderText="Price" HeaderStyle-CssClass="header-text"/>
+                    <asp:TemplateField HeaderText="Photo" HeaderStyle-CssClass="header-text">
                         <ItemTemplate>
                             <asp:Image ID="imgStatus" runat="server" ImageUrl='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("ImageBuffer")) %>' Height="200" ImageAlign="Middle" CssClass="productImage" />
                         </ItemTemplate>

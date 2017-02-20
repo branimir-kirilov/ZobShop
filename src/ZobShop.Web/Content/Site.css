@@ -53,10 +53,20 @@ input[type="select"] {
   padding: 10px;
   border: none;
   border-bottom-style: none;
+  border-color: transparent;
+  outline: 0px;
 }
 .main-label {
   font-size: 20px;
   font-weight: bold;
+}
+.grid-row {
+  background-color: rgba(32, 83, 32, 0.1);
+  outline: 0px;
+  margin-bottom: 15px;
+}
+.header-text {
+  font-size: 18px;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
