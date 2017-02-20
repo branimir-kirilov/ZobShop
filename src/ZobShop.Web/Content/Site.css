@@ -73,9 +73,18 @@ input[type="select"] {
   padding: 20px;
   border-radius: 25px;
 }
+.round-corners:hover {
+  border: 2px solid  gray;
+  box-shadow: rgba(0, 155, 0, 0.7) 10px 10px;
+  padding: 20px;
+  border-radius: 25px;
+}
 .product-name {
   font-size: 25px;
   font-weight: bold;
+}
+.product-price {
+  color: forestgreen;
 }
 .search-controls {
   margin-top: 25px;
