@@ -29,13 +29,15 @@
                     <Columns>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <div class="round-corners">
-                                    <asp:Label Text='<%# Eval("Name") %>' runat="server" CssClass="product-name" />
-                                    <hr />
-                                    <asp:Label Text='<%# $"{Eval("Price"):C}" %>' runat="server" CssClass="product-price" />
-                                    <hr />
-                                    <asp:Label Text='<%# $"Category: {Eval("Category")}" %>' runat="server" CssClass="product-category" />
-                                </div>
+                                    <div class="round-corners" onclick="location.href='<%# $"/Product/ProductDetails?id={Eval("Id")}" %>'">
+                                        <asp:Label Text='<%# Eval("Name") %>' runat="server" CssClass="product-name" />
+                                        <hr />
+                                        <asp:Label Text='<%# $"{Eval("Price"):C}" %>' runat="server" CssClass="product-price" />
+                                        <hr />
+                                        <asp:Label Text='<%# $"Category: {Eval("Category")}" %>' runat="server" CssClass="product-category" />
+                                        <hr />
+                                        <asp:HyperLink Text="See more" NavigateUrl='<%# $"~/Product/ProductDetails?id={Eval("Id")}" %>' runat="server" />
+                                    </div>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField>

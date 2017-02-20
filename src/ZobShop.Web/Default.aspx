@@ -5,9 +5,10 @@
     <div class="jumbotron">
         <h1 id="home-title">Get The Body You Deserve</h1>
         <p class="lead">Click on the link below to explore the variaty of products we offer! </p>
-        <p><a href="http://www.asp.net" class="btn btn-success btn-lg">Explore &raquo;</a></p>
+        <p><a href="/Product/ProductsList" class="btn btn-success btn-lg">Explore &raquo;</a></p>
     </div>
-
+    <hr />
+    <h2>Featured Products</h2>
     <div class="row">
         <div class="col-md-4">
             <h2>Getting started</h2>
