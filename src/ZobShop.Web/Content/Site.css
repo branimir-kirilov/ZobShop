@@ -46,6 +46,14 @@ input[type="select"] {
   font-size: 24px;
   margin: 10px;
 }
+.category-dropdown {
+  margin-top: 15px;
+  font-size: 20px;
+  font-style: normal;
+  padding: 10px;
+  border: none;
+  border-bottom-style: none;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .jumbotron {

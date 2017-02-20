@@ -5,7 +5,8 @@
         OnSelectedIndexChanged="CategoriesDropDownList_OnSelectedIndexChanged"
         AutoPostBack="True"
         EnableViewState="True"
-        SelectMethod="SelectCategories">
+        SelectMethod="SelectCategories"
+        CssClass="category-dropdown">
     </asp:DropDownList>
     <asp:UpdatePanel runat="server">
         <Triggers>
