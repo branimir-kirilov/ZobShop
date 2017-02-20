@@ -25,7 +25,7 @@
                     <asp:BoundField DataField="Volume" HeaderText="Volume" />
                     <asp:TemplateField HeaderText="Photo" HeaderStyle-CssClass="">
                         <ItemTemplate>
-                            <asp:Image ID="imgStatus" runat="server" ImageUrl='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("ImageBuffer")) %>' Height="200" Width="200" ImageAlign="Middle" CssClass="productImage" />
+                            <asp:Image ID="imgStatus" runat="server" ImageUrl='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("ImageBuffer")) %>' Height="200" ImageAlign="Middle" CssClass="productImage" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
