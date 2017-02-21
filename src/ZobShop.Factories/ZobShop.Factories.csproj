@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICategoryFactory.cs" />
+    <Compile Include="IOrderFactory.cs" />
     <Compile Include="IProductFactory.cs" />
     <Compile Include="IProductRatingFactory.cs" />
     <Compile Include="IUserFactory.cs" />
