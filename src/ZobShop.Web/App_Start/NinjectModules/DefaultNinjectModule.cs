@@ -8,6 +8,7 @@ using Ninject.Extensions.Factory;
 using Ninject.Modules;
 using ZobShop.Authentication;
 using ZobShop.ModelViewPresenter.ShoppingCart.Add;
+using ZobShop.ModelViewPresenter.ShoppingCart.Checkout;
 using ZobShop.ModelViewPresenter.ShoppingCart.Summary;
 using ZobShop.Orders;
 using ZobShop.Orders.Contracts;
@@ -39,6 +40,7 @@ namespace ZobShop.Web.App_Start.NinjectModules
 
             this.Bind<IShoppingCart>().ToMethod(this.GetShoppingCart).WhenInjectedInto(typeof(AddToCartPresenter));
             this.Bind<IShoppingCart>().ToMethod(this.GetShoppingCart).WhenInjectedInto(typeof(CartSummaryPresenter));
+            this.Bind<IShoppingCart>().ToMethod(this.GetShoppingCart).WhenInjectedInto(typeof(CheckoutPresenter));
         }
 
         private IShoppingCart GetShoppingCart(IContext arg)

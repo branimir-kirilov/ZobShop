@@ -14,6 +14,7 @@ namespace ZobShop.Web.App_Start.NinjectModules
             this.Bind<ICategoryFactory>().ToFactory().InRequestScope();
             this.Bind<IProductRatingFactory>().ToFactory().InRequestScope();
             this.Bind<IUserFactory>().ToFactory().InRequestScope();
+            this.Bind<IOrderFactory>().ToFactory().InRequestScope();
 
             this.Bind<IViewModelFactory>().ToFactory().InRequestScope();
         }
