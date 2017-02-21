@@ -40,5 +40,42 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
 
             Assert.Throws<ArgumentNullException>(() => new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, null));
         }
+
+        [Test]
+        public void TestConstructor_PassEverythingCorrectly_ShouldNotThrow()
+        {
+            var mockedView = new Mock<ICheckoutView>();
+            var mockedUserService = new Mock<IUserService>();
+            var mockedAuthenticationProvider = new Mock<IAuthenticationProvider>();
+            var mockedViewModelFactory = new Mock<IViewModelFactory>();
+
+            Assert.DoesNotThrow(() => new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, mockedViewModelFactory.Object));
+        }
+
+        [Test]
+        public void TestConstructor_PassEverythingCorrectly_ShouldInitializeCorrectly()
+        {
+            var mockedView = new Mock<ICheckoutView>();
+            var mockedUserService = new Mock<IUserService>();
+            var mockedAuthenticationProvider = new Mock<IAuthenticationProvider>();
+            var mockedViewModelFactory = new Mock<IViewModelFactory>();
+
+            var checkoutPresenter = new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, mockedViewModelFactory.Object);
+
+            Assert.IsInstanceOf<CheckoutPresenter>(checkoutPresenter);
+        }
+
+        [Test]
+        public void TestConstructor_PassEverythingCorrectly_NotBeNull()
+        {
+            var mockedView = new Mock<ICheckoutView>();
+            var mockedUserService = new Mock<IUserService>();
+            var mockedAuthenticationProvider = new Mock<IAuthenticationProvider>();
+            var mockedViewModelFactory = new Mock<IViewModelFactory>();
+
+            var checkoutPresenter = new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, mockedViewModelFactory.Object);
+
+            Assert.IsNotNull(checkoutPresenter);
+        }
     }
 }
