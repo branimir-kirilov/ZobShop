@@ -87,14 +87,14 @@
         </a>
 
         <%--Main container--%>
-        <div class="container body-content">
+        <div class="container body-content col-md-12">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
 
             <%--Footer--%>
-            <footer>
-                <p class="col-md-12">&copy; <%: DateTime.Now.Year %> - ZobShop. GitHub Repository: https://github.com/Branimir123/ZobShop </p>
+            <footer class="col-md-12">
+                <p>&copy; <%: DateTime.Now.Year %> - ZobShop. GitHub Repository: https://github.com/Branimir123/ZobShop </p>
             </footer>
         </div>
     </form>

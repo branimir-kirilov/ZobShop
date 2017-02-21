@@ -11,7 +11,7 @@
         </ItemTemplate>
     </asp:FormView>
 
-    <div id="add-to-cart-controls" class="col-md-offset-2">
+    <div id="add-to-cart-controls" class="col-md-offset-2 navbar-right">
         <asp:RangeValidator runat="server"
             Type="Integer"
             ControlToValidate="AddToCartQuantity"
@@ -31,26 +31,31 @@
         <hr />
     </div>
     <div class="col-md-5">
-         <asp:Image  runat="server" ImageUrl='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Model.ImageBuffer) %>' Height="200" ImageAlign="Middle" CssClass="productImage" />
+        <asp:Image runat="server" ImageUrl='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Model.ImageBuffer) %>' Height="200" ImageAlign="Middle" CssClass="productImage" />
     </div>
 
     <br />
-    <asp:UpdatePanel runat="server" ID="UpdatePanelResults">
-        <ContentTemplate>
-            <asp:SqlDataSource ID="SqlDataSourceComments" runat="server"
-                ConnectionString="<%$ ConnectionStrings:ZobShopDb %>"></asp:SqlDataSource>
-            <asp:Label runat="server" ID="PanelResults"></asp:Label>
 
-            <asp:GridView runat="server" DataSourceID="SqlDataSourceComments" AutoGenerateColumns="True"></asp:GridView>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+    <div class="reviews col-md-9">
+        <asp:UpdatePanel runat="server" ID="UpdatePanelResults">
+            <ContentTemplate>
+                <asp:SqlDataSource ID="SqlDataSourceComments" runat="server"
+                    ConnectionString="<%$ ConnectionStrings:ZobShopDb %>"></asp:SqlDataSource>
+                <asp:Label runat="server" ID="PanelResults"></asp:Label>
 
-    <asp:UpdatePanel ID="UpdatePanelComment" runat="server" class="panel"
-        UpdateMode="Conditional">
-        <ContentTemplate>
-            <asp:TextBox runat="server" ID="ContentRatingBox"></asp:TextBox>
-            <asp:TextBox runat="server" Type="Integer" ID="RatingBox"></asp:TextBox>
-            <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" />
-        </ContentTemplate>
-    </asp:UpdatePanel>
+                <asp:GridView runat="server" DataSourceID="SqlDataSourceComments" AutoGenerateColumns="True"></asp:GridView>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+
+    <div class="add-review col-md-9"> 
+        <asp:UpdatePanel ID="UpdatePanelComment" runat="server" class="panel"
+            UpdateMode="Conditional">
+            <ContentTemplate>
+                <asp:TextBox runat="server" ID="ContentRatingBox"></asp:TextBox>
+                <asp:TextBox runat="server" Type="Integer" ID="RatingBox"></asp:TextBox>
+                <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
 </asp:Content>
