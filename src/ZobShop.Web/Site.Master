@@ -52,6 +52,7 @@
                 <li><a runat="server" href="~/Search">Search</a></li>
                 <li><a runat="server" href="~/About">About</a></li>
                 <li><a runat="server" href="~/Contact">Contact</a></li>
+                <li class="navbar navbar-right"><a runat="server" href="~/ShoppingCart/Summary">Summary</a></li>
                 <%--Is user logged in templates--%>
                 <asp:LoginView runat="server" ViewStateMode="Disabled">
                     <AnonymousTemplate>
