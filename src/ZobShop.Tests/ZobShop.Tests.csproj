@@ -119,6 +119,7 @@
     <Compile Include="Services\ProductService\GetByIdTests.cs" />
     <Compile Include="Services\ProductService\SearchProductTests.cs" />
     <Compile Include="Services\UserServiceTests\ConstructorTests.cs" />
+    <Compile Include="Services\UserServiceTests\GetByIdTests.cs" />
     <Compile Include="Services\UserServiceTests\GetUsersTests.cs" />
   </ItemGroup>
   <ItemGroup>
