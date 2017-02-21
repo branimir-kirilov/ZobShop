@@ -35,6 +35,28 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
         }
 
         [Test]
+        public void TestConstructor_PassOrderServiceNull_ShouldThrowArgumentNullException()
+        {
+            var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedService = new Mock<IProductService>();
+
+            Assert.Throws<ArgumentNullException>(() =>
+            new ShoppingCart(mockedFactory.Object, mockedService.Object, null, mockedOrderFactory.Object));
+        }
+        
+        [Test]
+        public void TestConstructor_PassOrderFactoryNull_ShouldThrowArgumentNullException()
+        {
+            var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
+            var mockedService = new Mock<IProductService>();
+
+            Assert.Throws<ArgumentNullException>(() =>
+            new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object,null));
+        }
+
+        [Test]
         public void TestConstructor_PassCorrectly_ShouldNotThrow()
         {
             var mockedService = new Mock<IProductService>();

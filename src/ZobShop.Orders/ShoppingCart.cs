@@ -37,6 +37,11 @@ namespace ZobShop.Orders
                 throw new ArgumentNullException("orderService cannot be null");
             }
 
+            if (orderFactory == null)
+            {
+                throw new ArgumentNullException("orderFactory cannot be null");
+            }
+
             this.factory = factory;
             this.service = service;
             this.orderService = orderService;

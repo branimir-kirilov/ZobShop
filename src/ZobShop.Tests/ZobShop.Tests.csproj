@@ -107,6 +107,7 @@
     <Compile Include="Orders\ShoppingCartTests\ClearCartTests.cs" />
     <Compile Include="Orders\ShoppingCartTests\ComputeTotalTests.cs" />
     <Compile Include="Orders\ShoppingCartTests\ConstructorTests.cs" />
+    <Compile Include="Orders\ShoppingCartTests\FinishOrderTests.cs" />
     <Compile Include="Orders\ShoppingCartTests\RemoveItemTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CategoryServiceTests\ConstructorTests.cs" />

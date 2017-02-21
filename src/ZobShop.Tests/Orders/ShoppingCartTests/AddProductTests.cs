@@ -89,5 +89,32 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
 
             Assert.IsTrue(cart.CartLines.Contains(mockedLine.Object));
         }
+
+        [TestCase(1, 2, 15)]
+        [TestCase(12, 13, 33)]
+        public void TestAddProduct_LinesContainsProduct_ShouldAddQuantityToLine(int id, int quantity, int quantityToAdd)
+        {
+            var product = new Product { ProductId = id };
+
+            var mockedService = new Mock<IProductService>();
+
+            var mockedLine = new Mock<ICartLine>();
+            mockedLine.Setup(l => l.Product).Returns(product);
+            mockedLine.Setup(l => l.Quantity).Returns(quantity);
+
+            var mockedFactory = new Mock<ICartLineFactory>();
+            mockedFactory.Setup(x => x.CreateCartLine(It.IsAny<Product>(), It.IsAny<int>()))
+                .Returns(mockedLine.Object);
+
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
+
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object);
+            cart.CartLines.Add(mockedLine.Object);
+
+            cart.AddItem(id, quantityToAdd);
+
+            mockedLine.Verify(l => l.Quantity, Times.Once);
+        }
     }
 }
