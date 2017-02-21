@@ -3,8 +3,13 @@
 
 # ZobShop
 
-## TODO
-- Fix UI !
-- UI
-- BEAUTIFUL UI
-- Add to cart button on product details and product list
+ZobShop is ASP .NET Web Forms application which is a shop for food supplements. The products are only added by admins and everyone can buy them and leave a review.
+
+![Alt text](/screens/Screenshot_2.jpg?raw=true)
+<hr />
+![Alt text](/screens/Screenshot_3.jpg?raw=true)
+<hr />
+![Alt text](/screens/Screenshot_5.jpg?raw=true)
+<hr />
+![Alt text](/screens/Screenshot_6.jpg?raw=true)
+<hr />
