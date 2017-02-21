@@ -1,5 +1,6 @@
 ﻿using ZobShop.ModelViewPresenter.Administration.UsersList;
 using ZobShop.ModelViewPresenter.Product.Details;
+using ZobShop.ModelViewPresenter.ShoppingCart.Checkout;
 using ZobShop.ModelViewPresenter.ShoppingCart.Summary;
 
 namespace ZobShop.ModelViewPresenter
@@ -19,5 +20,7 @@ namespace ZobShop.ModelViewPresenter
             string username, string id);
 
         CartLineViewModel CreateCartLineViewModel(ProductDetailsViewModel model, int quantity);
+
+        CheckoutViewModel CreateCheckoutViewModel(string name, string address, string phoneNumber);
     }
 }

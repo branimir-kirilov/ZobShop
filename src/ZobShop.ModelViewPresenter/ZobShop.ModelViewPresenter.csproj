@@ -123,6 +123,9 @@
     <Compile Include="ShoppingCart\Add\AddToCartPresenter.cs" />
     <Compile Include="ShoppingCart\Add\AddToCartViewModel.cs" />
     <Compile Include="ShoppingCart\Add\IAddToCartView.cs" />
+    <Compile Include="ShoppingCart\Checkout\CheckoutPresenter.cs" />
+    <Compile Include="ShoppingCart\Checkout\CheckoutViewModel.cs" />
+    <Compile Include="ShoppingCart\Checkout\ICheckoutView.cs" />
     <Compile Include="ShoppingCart\Summary\CartLineViewModel.cs" />
     <Compile Include="ShoppingCart\Summary\CartSummaryPresenter.cs" />
     <Compile Include="ShoppingCart\Summary\CartSummaryVIewModel.cs" />
