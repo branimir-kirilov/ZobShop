@@ -10,7 +10,7 @@
             </div>
         </ItemTemplate>
     </asp:FormView>
-    
+
     <div id="add-to-cart-controls" class="col-md-offset-2">
         <asp:RangeValidator runat="server"
             Type="Integer"
@@ -18,7 +18,7 @@
             MinimumValue="1"
             MaximumValue="15"
             ErrorMessage="Please provide positive quantity"></asp:RangeValidator>
-        <asp:TextBox runat="server" ID="AddToCartQuantity" Text="Choose quantity" TextMode="Number"></asp:TextBox>
+        <asp:TextBox runat="server" ID="AddToCartQuantity" Text="1" TextMode="Number"></asp:TextBox>
         <asp:Button runat="server" ID="AddToCartButton" Text="Add to cart" OnClick="AddToCartButton_OnClick" />
     </div>
 
