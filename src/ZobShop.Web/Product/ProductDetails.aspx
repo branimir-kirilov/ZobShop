@@ -44,10 +44,10 @@
                 <asp:Label runat="server" ID="PanelResults"></asp:Label>
 
                 <asp:GridView runat="server"
-                     DataSourceID="SqlDataSourceComments" 
-                    AutoGenerateColumns="False" 
-                    CssClass="reviews-grid" 
-                    BorderStyle="None" 
+                    DataSourceID="SqlDataSourceComments"
+                    AutoGenerateColumns="False"
+                    CssClass="reviews-grid"
+                    BorderStyle="None"
                     BorderWidth="0"
                     CellPadding="15"
                     CellSpacing="10"
@@ -57,22 +57,26 @@
                     RowStyle-BorderColor="Transparent"
                     RowStyle-BackColor="Transparent">
                     <Columns>
-                        <asp:BoundField DataField="Rating" HeaderText="Ratings"/>
-                        <asp:BoundField DataField="Content" HeaderText="Comments"/>
+                        <asp:BoundField DataField="Rating" HeaderText="Ratings" />
+                        <asp:BoundField DataField="Content" HeaderText="Comments" />
                     </Columns>
                 </asp:GridView>
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
 
-    <div class="add-review col-md-9">
-        <asp:UpdatePanel ID="UpdatePanelComment" runat="server" class="panel"
-            UpdateMode="Conditional">
-            <ContentTemplate>
-                <asp:TextBox runat="server" ID="ContentRatingBox"></asp:TextBox>
-                <asp:TextBox runat="server" Type="Integer" ID="RatingBox"></asp:TextBox>
-                <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" />
-            </ContentTemplate>
-        </asp:UpdatePanel>
-    </div>
+    <asp:LoginView runat="server" ViewStateMode="Disabled">
+        <LoggedInTemplate>
+            <div class="add-review col-md-9">
+                <asp:UpdatePanel ID="UpdatePanelComment" runat="server" class="panel"
+                    UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <asp:TextBox runat="server" ID="ContentRatingBox"></asp:TextBox>
+                        <asp:TextBox runat="server" Type="Integer" ID="RatingBox"></asp:TextBox>
+                        <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" />
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+        </LoggedInTemplate>
+    </asp:LoginView>
 </asp:Content>
