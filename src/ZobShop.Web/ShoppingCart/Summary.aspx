@@ -20,6 +20,8 @@
                 </Columns>
             </asp:GridView>
             <asp:Label runat="server" ID="Total"></asp:Label>
+            <hr/>
+            <a runat="server" class="btn btn-default" href="/ShoppingCart/Checkout">Checkout</a>
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
