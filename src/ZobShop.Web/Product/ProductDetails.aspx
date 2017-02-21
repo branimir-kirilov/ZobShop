@@ -18,8 +18,10 @@
             MinimumValue="1"
             MaximumValue="15"
             ErrorMessage="Please provide positive quantity"></asp:RangeValidator>
-        <asp:TextBox runat="server" ID="AddToCartQuantity" Text="1" TextMode="Number"></asp:TextBox>
-        <asp:Button runat="server" ID="AddToCartButton" Text="Add to cart" OnClick="AddToCartButton_OnClick" />
+        <asp:Label runat="server" Text="Choose quantity: "></asp:Label>
+        <asp:TextBox runat="server" ID="AddToCartQuantity" Text="1" TextMode="Number"
+            Width="35" Height="35"></asp:TextBox>
+        <asp:Button runat="server" ID="AddToCartButton" Text="Add to cart" OnClick="AddToCartButton_OnClick" CssClass="btn btn-success" />
     </div>
 
     <div class="product-details col-md-6">
@@ -76,7 +78,7 @@
                         <asp:TextBox runat="server" Type="Integer" ID="RatingBox" TextMode="Multiline" Width="400" Height="100" CssClass="comment-box"></asp:TextBox>
                         <asp:Label runat="server" Text="Rating" />
                         <asp:TextBox runat="server" ID="ContentRatingBox" TextMode="Number" min="1" max="6" step="1" Width="50" Height="50" MaxLength="1"></asp:TextBox>
-                        <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" />
+                        <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" CssClass="btn btn-success btn-lg"/>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
