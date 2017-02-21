@@ -48,6 +48,10 @@
     <Compile Include="ShoppingCart.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ZobShop.Factories\ZobShop.Factories.csproj">
+      <Project>{1959CD6F-B7C4-4A1C-A7E8-53811F0AC5CD}</Project>
+      <Name>ZobShop.Factories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZobShop.Models\ZobShop.Models.csproj">
       <Project>{601a83b5-681c-42c3-a67a-5e0eaf5d0ebe}</Project>
       <Name>ZobShop.Models</Name>

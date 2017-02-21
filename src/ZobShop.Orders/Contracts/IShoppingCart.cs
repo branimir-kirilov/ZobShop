@@ -14,5 +14,7 @@ namespace ZobShop.Orders.Contracts
         decimal ComputeTotal();
 
         void ClearCart();
+
+        void FinishOrder(string name, string address, string phoneNumber);
     }
 }
