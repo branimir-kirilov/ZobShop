@@ -22,6 +22,17 @@
         <asp:Button runat="server" ID="AddToCartButton" Text="Add to cart" OnClick="AddToCartButton_OnClick" />
     </div>
 
+    <div class="round-corners col-md-6">
+        <asp:Label Text='<%# $"{Model.Name}" %>' runat="server" CssClass="product-name" />
+        <hr />
+        <asp:Label Text='<%# $"{Model.Price:C}" %>' runat="server" CssClass="product-price" />
+        <hr />
+        <asp:Label Text='<%# $"Category: {Model.Category}" %>' runat="server" CssClass="product-category" />
+        <hr />
+    </div>
+    <div class="col-md-5">
+         <asp:Image  runat="server" ImageUrl='<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Model.ImageBuffer) %>' Height="200" ImageAlign="Middle" CssClass="productImage" />
+    </div>
 
     <br />
     <asp:UpdatePanel runat="server" ID="UpdatePanelResults">

@@ -22,7 +22,7 @@
                             <hr />
                             <asp:Label Text='<%# $"Category: {Item.Category}" %>' runat="server" CssClass="product-category" />
                             <hr />
-                            <asp:HyperLink Text="See more" NavigateUrl='<%# $"~/Product/ProductDetails?id={Eval("Id")}" %>' runat="server" />
+                            <asp:HyperLink Text="See more" NavigateUrl='<%# $"~/Product/ProductDetails?id={Item.Id}" %>' runat="server" />
                         </div>
                     </li>
                 </ItemTemplate>

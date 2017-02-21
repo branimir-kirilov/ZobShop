@@ -42,7 +42,6 @@ namespace ZobShop.Web.Product
             this.SqlDataSourceComments.SelectCommand = SqlCommand;
             this.SqlDataSourceComments.DataBind();
             // TODO: Bind to model
-
         }
 
         protected void Rate_OnClick(object sender, EventArgs e)
