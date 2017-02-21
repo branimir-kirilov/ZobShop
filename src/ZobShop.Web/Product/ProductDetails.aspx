@@ -67,21 +67,17 @@
         </asp:UpdatePanel>
     </div>
 
-    <asp:LoginView runat="server" ViewStateMode="Disabled">
-        <LoggedInTemplate>
-            <div class="add-review col-md-9">
-                <asp:Label runat="server" Text="Give Rating" />
-                <asp:UpdatePanel ID="UpdatePanelComment" runat="server" class="panel"
-                    UpdateMode="Conditional">
-                    <ContentTemplate>
-                        <asp:Label runat="server" Text="Comment" />
-                        <asp:TextBox runat="server" Type="Integer" ID="RatingBox" TextMode="Multiline" Width="400" Height="100" CssClass="comment-box"></asp:TextBox>
-                        <asp:Label runat="server" Text="Rating" />
-                        <asp:TextBox runat="server" ID="ContentRatingBox" TextMode="Number" min="1" max="6" step="1" Width="50" Height="50" MaxLength="1"></asp:TextBox>
-                        <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" CssClass="btn btn-success btn-lg"/>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-            </div>
-        </LoggedInTemplate>
-    </asp:LoginView>
+    <div class="add-review col-md-9">
+        <asp:Label runat="server" Text="Give Rating" />
+        <asp:UpdatePanel ID="UpdatePanelComment" runat="server" class="panel"
+            UpdateMode="Conditional">
+            <ContentTemplate>
+                <asp:Label runat="server" Text="Comment" />
+                <asp:TextBox runat="server" Type="Integer" ID="RatingBox" TextMode="Multiline" Width="400" Height="100" CssClass="comment-box"></asp:TextBox>
+                <asp:Label runat="server" Text="Rating" />
+                <asp:TextBox runat="server" ID="ContentRatingBox" TextMode="Number" min="1" max="6" step="1" Width="50" Height="50" MaxLength="1"></asp:TextBox>
+                <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" CssClass="btn btn-success btn-lg" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
 </asp:Content>
