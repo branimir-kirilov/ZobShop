@@ -1,5 +1,6 @@
 ﻿using Moq;
 using NUnit.Framework;
+using ZobShop.Factories;
 using ZobShop.Models;
 using ZobShop.Orders;
 using ZobShop.Orders.Contracts;
@@ -17,8 +18,10 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
         {
             var mockedService = new Mock<IProductService>();
             var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
 
-            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object);
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object);
 
             cart.AddItem(id, quantity);
 
@@ -33,8 +36,10 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
             mockedService.Setup(x => x.GetById(It.IsAny<int>())).Returns((Product)null);
 
             var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
 
-            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object);
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object);
 
             cart.AddItem(id, quantity);
 
@@ -51,8 +56,10 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
             mockedService.Setup(x => x.GetById(It.IsAny<int>())).Returns(mockedProduct.Object);
 
             var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
 
-            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object);
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object);
 
             cart.AddItem(id, quantity);
 
@@ -73,7 +80,10 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
             mockedFactory.Setup(x => x.CreateCartLine(It.IsAny<Product>(), It.IsAny<int>()))
                 .Returns(mockedLine.Object);
 
-            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object);
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
+
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object);
 
             cart.AddItem(id, quantity);
 

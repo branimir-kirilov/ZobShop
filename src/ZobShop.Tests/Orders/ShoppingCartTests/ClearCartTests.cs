@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Moq;
 using NUnit.Framework;
+using ZobShop.Factories;
 using ZobShop.Orders;
 using ZobShop.Orders.Contracts;
 using ZobShop.Orders.Factories;
@@ -16,8 +17,10 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
         {
             var mockedService = new Mock<IProductService>();
             var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
 
-            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object);
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object);
 
             var mockedCartLine = new Mock<ICartLine>();
             cart.CartLines.Add(mockedCartLine.Object);

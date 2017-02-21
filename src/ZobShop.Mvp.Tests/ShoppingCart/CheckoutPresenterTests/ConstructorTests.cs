@@ -4,6 +4,7 @@ using NUnit.Framework;
 using ZobShop.Authentication;
 using ZobShop.ModelViewPresenter;
 using ZobShop.ModelViewPresenter.ShoppingCart.Checkout;
+using ZobShop.Orders.Contracts;
 using ZobShop.Services.Contracts;
 
 namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
@@ -17,8 +18,10 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
             var mockedView = new Mock<ICheckoutView>();
             var mockedUserService = new Mock<IUserService>();
             var mockedViewModelFactory = new Mock<IViewModelFactory>();
+            var mockedCart = new Mock<IShoppingCart>();
 
-            Assert.Throws<ArgumentNullException>(() => new CheckoutPresenter(mockedView.Object, null, mockedUserService.Object, mockedViewModelFactory.Object));
+            Assert.Throws<ArgumentNullException>(() =>
+            new CheckoutPresenter(mockedView.Object, null, mockedUserService.Object, mockedViewModelFactory.Object, mockedCart.Object));
         }
 
         [Test]
@@ -27,8 +30,10 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
             var mockedView = new Mock<ICheckoutView>();
             var mockedAuthenticationProvider = new Mock<IAuthenticationProvider>();
             var mockedViewModelFactory = new Mock<IViewModelFactory>();
+            var mockedCart = new Mock<IShoppingCart>();
 
-            Assert.Throws<ArgumentNullException>(() => new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, null, mockedViewModelFactory.Object));
+            Assert.Throws<ArgumentNullException>(() =>
+            new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, null, mockedViewModelFactory.Object, mockedCart.Object));
         }
 
         [Test]
@@ -37,8 +42,10 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
             var mockedView = new Mock<ICheckoutView>();
             var mockedAuthenticationProvider = new Mock<IAuthenticationProvider>();
             var mockedUserService = new Mock<IUserService>();
+            var mockedCart = new Mock<IShoppingCart>();
 
-            Assert.Throws<ArgumentNullException>(() => new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, null));
+            Assert.Throws<ArgumentNullException>(() =>
+            new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, null, mockedCart.Object));
         }
 
         [Test]
@@ -48,8 +55,14 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
             var mockedUserService = new Mock<IUserService>();
             var mockedAuthenticationProvider = new Mock<IAuthenticationProvider>();
             var mockedViewModelFactory = new Mock<IViewModelFactory>();
+            var mockedCart = new Mock<IShoppingCart>();
 
-            Assert.DoesNotThrow(() => new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, mockedViewModelFactory.Object));
+            Assert.DoesNotThrow(() =>
+            new CheckoutPresenter(mockedView.Object,
+            mockedAuthenticationProvider.Object,
+            mockedUserService.Object,
+            mockedViewModelFactory.Object,
+            mockedCart.Object));
         }
 
         [Test]
@@ -59,8 +72,13 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
             var mockedUserService = new Mock<IUserService>();
             var mockedAuthenticationProvider = new Mock<IAuthenticationProvider>();
             var mockedViewModelFactory = new Mock<IViewModelFactory>();
+            var mockedCart = new Mock<IShoppingCart>();
 
-            var checkoutPresenter = new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, mockedViewModelFactory.Object);
+            var checkoutPresenter = new CheckoutPresenter(mockedView.Object,
+                mockedAuthenticationProvider.Object,
+                mockedUserService.Object,
+                mockedViewModelFactory.Object,
+                mockedCart.Object);
 
             Assert.IsInstanceOf<CheckoutPresenter>(checkoutPresenter);
         }
@@ -72,8 +90,14 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
             var mockedUserService = new Mock<IUserService>();
             var mockedAuthenticationProvider = new Mock<IAuthenticationProvider>();
             var mockedViewModelFactory = new Mock<IViewModelFactory>();
+            var mockedCart = new Mock<IShoppingCart>();
 
-            var checkoutPresenter = new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, mockedViewModelFactory.Object);
+            var checkoutPresenter =
+                new CheckoutPresenter(mockedView.Object,
+                mockedAuthenticationProvider.Object, 
+                mockedUserService.Object,
+                mockedViewModelFactory.Object,
+                mockedCart.Object);
 
             Assert.IsNotNull(checkoutPresenter);
         }

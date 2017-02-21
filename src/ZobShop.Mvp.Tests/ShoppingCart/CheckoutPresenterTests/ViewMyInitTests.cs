@@ -9,6 +9,7 @@ using ZobShop.Authentication;
 using ZobShop.Models;
 using ZobShop.ModelViewPresenter;
 using ZobShop.ModelViewPresenter.ShoppingCart.Checkout;
+using ZobShop.Orders.Contracts;
 using ZobShop.Services.Contracts;
 
 namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
@@ -23,9 +24,8 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
             var mockedView = new Mock<ICheckoutView>();
             mockedView.Setup(v => v.Model).Returns(new CheckoutViewModel());
 
+            var user = new User() { Id = id };
 
-            var user = new User() {Id = id };
-      
             var mockedUserService = new Mock<IUserService>();
             mockedUserService.Setup(u => u.GetById(It.IsAny<string>())).Returns(user);
 
@@ -35,7 +35,10 @@ namespace ZobShop.Mvp.Tests.ShoppingCart.CheckoutPresenterTests
             var mockedViewModelFactory = new Mock<IViewModelFactory>();
             mockedViewModelFactory.Setup(f => f.CreateCheckoutViewModel(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>())).Returns(new CheckoutViewModel());
 
-            var checkoutPresenter = new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, mockedViewModelFactory.Object);
+            var mockedCart = new Mock<IShoppingCart>();
+
+            var checkoutPresenter =
+                new CheckoutPresenter(mockedView.Object, mockedAuthenticationProvider.Object, mockedUserService.Object, mockedViewModelFactory.Object, mockedCart.Object);
 
             mockedView.Raise(v => v.MyInit += null, EventArgs.Empty);
 

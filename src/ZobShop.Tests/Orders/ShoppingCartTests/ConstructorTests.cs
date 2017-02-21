@@ -1,6 +1,7 @@
 ﻿using System;
 using Moq;
 using NUnit.Framework;
+using ZobShop.Factories;
 using ZobShop.Orders;
 using ZobShop.Orders.Contracts;
 using ZobShop.Orders.Factories;
@@ -15,16 +16,22 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
         public void TestConstructor_PassFactoryNull_ShouldThrowArgumentNullException()
         {
             var mockedService = new Mock<IProductService>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
 
-            Assert.Throws<ArgumentNullException>(() => new ShoppingCart(null, mockedService.Object));
+            Assert.Throws<ArgumentNullException>(() =>
+            new ShoppingCart(null, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object));
         }
 
         [Test]
         public void TestConstructor_PassServiceNull_ShouldThrowArgumentNullException()
         {
             var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
 
-            Assert.Throws<ArgumentNullException>(() => new ShoppingCart(mockedFactory.Object, null));
+            Assert.Throws<ArgumentNullException>(() =>
+            new ShoppingCart(mockedFactory.Object, null, mockedOrderService.Object, mockedOrderFactory.Object));
         }
 
         [Test]
@@ -32,8 +39,10 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
         {
             var mockedService = new Mock<IProductService>();
             var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
 
-            Assert.DoesNotThrow(() => new ShoppingCart(mockedFactory.Object, mockedService.Object));
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object);
         }
 
         [Test]
@@ -41,8 +50,10 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
         {
             var mockedService = new Mock<IProductService>();
             var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
 
-            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object);
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object);
 
             Assert.IsNotNull(cart.CartLines);
         }
@@ -52,8 +63,10 @@ namespace ZobShop.Tests.Orders.ShoppingCartTests
         {
             var mockedService = new Mock<IProductService>();
             var mockedFactory = new Mock<ICartLineFactory>();
+            var mockedOrderFactory = new Mock<IOrderFactory>();
+            var mockedOrderService = new Mock<IOrderService>();
 
-            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object);
+            var cart = new ShoppingCart(mockedFactory.Object, mockedService.Object, mockedOrderService.Object, mockedOrderFactory.Object);
 
             Assert.IsInstanceOf<IShoppingCart>(cart);
         }
