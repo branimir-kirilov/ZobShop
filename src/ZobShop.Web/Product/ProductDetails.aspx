@@ -43,12 +43,17 @@
                     ConnectionString="<%$ ConnectionStrings:ZobShopDb %>"></asp:SqlDataSource>
                 <asp:Label runat="server" ID="PanelResults"></asp:Label>
 
-                <asp:GridView runat="server" DataSourceID="SqlDataSourceComments" AutoGenerateColumns="True"></asp:GridView>
+                <asp:GridView runat="server" DataSourceID="SqlDataSourceComments" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:BoundField DataField="Rating" HeaderText="Ratings"/>
+                        <asp:BoundField DataField="Content" HeaderText="Comments"/>
+                    </Columns>
+                </asp:GridView>
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
 
-    <div class="add-review col-md-9"> 
+    <div class="add-review col-md-9">
         <asp:UpdatePanel ID="UpdatePanelComment" runat="server" class="panel"
             UpdateMode="Conditional">
             <ContentTemplate>
