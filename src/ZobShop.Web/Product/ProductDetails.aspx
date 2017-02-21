@@ -43,7 +43,19 @@
                     ConnectionString="<%$ ConnectionStrings:ZobShopDb %>"></asp:SqlDataSource>
                 <asp:Label runat="server" ID="PanelResults"></asp:Label>
 
-                <asp:GridView runat="server" DataSourceID="SqlDataSourceComments" AutoGenerateColumns="False">
+                <asp:GridView runat="server"
+                     DataSourceID="SqlDataSourceComments" 
+                    AutoGenerateColumns="False" 
+                    CssClass="reviews-grid" 
+                    BorderStyle="None" 
+                    BorderWidth="0"
+                    CellPadding="15"
+                    CellSpacing="10"
+                    PagerSettings-Visible="true"
+                    HeaderStyle-BorderColor="Transparent"
+                    RowStyle-BorderStyle="None"
+                    RowStyle-BorderColor="Transparent"
+                    RowStyle-BackColor="Transparent">
                     <Columns>
                         <asp:BoundField DataField="Rating" HeaderText="Ratings"/>
                         <asp:BoundField DataField="Content" HeaderText="Comments"/>
