@@ -59,9 +59,11 @@
   <ItemGroup>
     <Compile Include="CategoryService.cs" />
     <Compile Include="Contracts\ICategoryService.cs" />
+    <Compile Include="Contracts\IOrderService.cs" />
     <Compile Include="Contracts\IProductRatingService.cs" />
     <Compile Include="Contracts\IProductService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="ProductRatingService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
