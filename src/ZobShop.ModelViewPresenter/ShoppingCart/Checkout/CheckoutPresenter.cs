@@ -1,6 +1,7 @@
 ﻿using System;
 using WebFormsMvp;
 using ZobShop.Authentication;
+using ZobShop.Orders.Contracts;
 using ZobShop.Services.Contracts;
 
 namespace ZobShop.ModelViewPresenter.ShoppingCart.Checkout
@@ -10,11 +11,13 @@ namespace ZobShop.ModelViewPresenter.ShoppingCart.Checkout
         private readonly IAuthenticationProvider provider;
         private readonly IUserService service;
         private readonly IViewModelFactory factory;
+        private readonly IShoppingCart cart;
 
         public CheckoutPresenter(ICheckoutView view,
             IAuthenticationProvider provider,
             IUserService service,
-            IViewModelFactory factory)
+            IViewModelFactory factory,
+            IShoppingCart cart)
             : base(view)
         {
             if (provider == null)
@@ -35,8 +38,16 @@ namespace ZobShop.ModelViewPresenter.ShoppingCart.Checkout
             this.service = service;
             this.provider = provider;
             this.factory = factory;
+            this.cart = cart;
 
             this.View.MyInit += this.View_MyInit;
+            this.View.MyCheckout += this.View_MyCheckout;
+        }
+
+        private void View_MyCheckout(object sender, CheckoutEventArgs e)
+        {
+            this.cart.FinishOrder(e.Name, e.Address, e.PhoneNumber);
+            this.View.Model.IsCheckoutSuccessful = true;
         }
 
         private void View_MyInit(object sender, EventArgs e)
