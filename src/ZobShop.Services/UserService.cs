@@ -29,5 +29,12 @@ namespace ZobShop.Services
 
             return result;
         }
+
+        public User GetById(string id)
+        {
+            var user = this.repository.GetById(id);
+
+            return user;
+        }
     }
 }

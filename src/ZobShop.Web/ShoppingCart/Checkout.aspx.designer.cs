@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ZobShop.Web.ShoppingCart {
-    
-    
-    public partial class Checkout {
-        
+namespace ZobShop.Web.ShoppingCart
+{
+
+
+    public partial class Checkout
+    {
+
         /// <summary>
         /// Total control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace ZobShop.Web.ShoppingCart {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal Total;
-        
+
         /// <summary>
         /// Name control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace ZobShop.Web.ShoppingCart {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Name;
-        
+
         /// <summary>
         /// Address control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace ZobShop.Web.ShoppingCart {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Address;
-        
+
         /// <summary>
         /// Phone control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace ZobShop.Web.ShoppingCart {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Phone;
-        
+
         /// <summary>
         /// Checkout control.
         /// </summary>
@@ -55,6 +57,6 @@ namespace ZobShop.Web.ShoppingCart {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Checkout;
+        protected global::System.Web.UI.WebControls.Button CheckoutButton;
     }
 }
