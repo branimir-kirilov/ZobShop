@@ -88,12 +88,13 @@
 
         <%--Main container--%>
         <div class="container body-content col-md-12">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+            <div class="col-md-12">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
             <hr />
-
             <%--Footer--%>
-            <footer class="col-md-12">
+            <footer class="col-md-9">
                 <p>&copy; <%: DateTime.Now.Year %> - ZobShop. GitHub Repository: https://github.com/Branimir123/ZobShop </p>
             </footer>
         </div>
