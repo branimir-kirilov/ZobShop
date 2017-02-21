@@ -4,6 +4,9 @@
     <p>
         <asp:Literal runat="server" ID="Total" />
     </p>
+     <p class="text-danger">
+        <asp:Literal runat="server" ID="ErrorMessage" />
+    </p>
     <div class="form-horizontal col-md-8">
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
@@ -30,6 +33,6 @@
                     CssClass="text-danger" ErrorMessage="The phone field is required." />
             </div>
         </div>
-        <asp:Button runat="server" ID="Checkout" Text="Checkout" />
+        <asp:Button runat="server" ID="Checkout" Text="Checkout" CssClass="btn btn-default" OnClick="Checkout_OnClick" />
     </div>
 </asp:Content>

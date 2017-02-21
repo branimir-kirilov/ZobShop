@@ -18,5 +18,26 @@ namespace ZobShop.Web.ShoppingCart
         }
 
         public event EventHandler MyInit;
+
+        public event EventHandler<CheckoutEventArgs> MyCheckout;
+
+        protected void Checkout_OnClick(object sender, EventArgs e)
+        {
+            var name = this.Name.Text;
+            var address = this.Address.Text;
+            var phone = this.Phone.Text;
+
+            var args = new CheckoutEventArgs(name, address, phone);
+            this.MyCheckout?.Invoke(this, args);
+
+            if (this.Model.IsCheckoutSuccessful)
+            {
+                this.Response.Redirect("~/ShoppingCart/OrderFinished");
+            }
+            else
+            {
+                this.ErrorMessage.Text = "Something went wrong, please try again";
+            }
+        }
     }
 }
