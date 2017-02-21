@@ -306,6 +306,7 @@
     <Content Include="Global.asax" />
     <Content Include="Search.aspx" />
     <Content Include="ShoppingCart\AddToCart.aspx" />
+    <Content Include="ShoppingCart\Checkout.aspx" />
     <Content Include="ShoppingCart\Summary.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
@@ -512,6 +513,13 @@
     </Compile>
     <Compile Include="ShoppingCart\AddToCart.aspx.designer.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart\Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart\Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="ShoppingCart\Summary.aspx.cs">
       <DependentUpon>Summary.aspx</DependentUpon>
