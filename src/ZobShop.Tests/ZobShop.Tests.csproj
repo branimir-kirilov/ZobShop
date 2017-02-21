@@ -92,6 +92,8 @@
     <Compile Include="Data\UnitOfWorkTests\DisposeTests.cs" />
     <Compile Include="Models\CategoryTests\CategoryConstructorTests.cs" />
     <Compile Include="Models\CategoryTests\PropertyTests.cs" />
+    <Compile Include="Models\OrderTests\ConstructorTests.cs" />
+    <Compile Include="Models\OrderTests\PropertiesTests.cs" />
     <Compile Include="Models\ProductRatingTests\PropertiesTests.cs" />
     <Compile Include="Models\ProductTests\ProductConstructorTests.cs" />
     <Compile Include="Models\ProductRatingTests\ProductRatingConstructorTests.cs" />
