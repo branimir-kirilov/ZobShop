@@ -73,6 +73,11 @@ input[type="select"] {
   padding: 20px;
   border-radius: 25px;
 }
+.product-details {
+  border: 2px solid  gray;
+  padding: 20px;
+  border-radius: 25px;
+}
 .round-corners:hover {
   border: 2px solid  gray;
   box-shadow: rgba(0, 155, 0, 0.7) 10px 10px;
@@ -105,6 +110,12 @@ input[type="select"] {
 #div-search-results {
   margin-top: 80px;
   margin: 35px;
+}
+.reviews {
+  margin: 25px;
+}
+.add-review {
+  margin: 25px;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

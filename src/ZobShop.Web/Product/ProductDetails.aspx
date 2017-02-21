@@ -22,7 +22,7 @@
         <asp:Button runat="server" ID="AddToCartButton" Text="Add to cart" OnClick="AddToCartButton_OnClick" />
     </div>
 
-    <div class="round-corners col-md-6">
+    <div class="product-details col-md-6">
         <asp:Label Text='<%# $"{Model.Name}" %>' runat="server" CssClass="product-name" />
         <hr />
         <asp:Label Text='<%# $"{Model.Price:C}" %>' runat="server" CssClass="product-price" />
