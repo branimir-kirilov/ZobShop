@@ -127,6 +127,7 @@
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\ConstructorTests.cs" />
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\VIewMyInitTests.cs" />
     <Compile Include="ShoppingCart\CartSummaryPresenterTests\ViewRemoveFromCartTests.cs" />
+    <Compile Include="ShoppingCart\CheckoutPresenterTests\ConstructorTests.cs" />
     <Compile Include="VIewModels\CartLineVIewModelTests\PropertiesTests.cs" />
     <Compile Include="VIewModels\UserDetailsViewModelTests\PropertiesTests.cs" />
   </ItemGroup>
