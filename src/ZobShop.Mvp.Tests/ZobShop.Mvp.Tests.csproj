@@ -130,6 +130,7 @@
     <Compile Include="ShoppingCart\CheckoutPresenterTests\ConstructorTests.cs" />
     <Compile Include="ShoppingCart\CheckoutPresenterTests\ViewMyInitTests.cs" />
     <Compile Include="VIewModels\CartLineVIewModelTests\PropertiesTests.cs" />
+    <Compile Include="VIewModels\CheckoutViewModelTests\ConsturctorTests.cs" />
     <Compile Include="VIewModels\UserDetailsViewModelTests\PropertiesTests.cs" />
   </ItemGroup>
   <ItemGroup>
