@@ -68,11 +68,14 @@
     <asp:LoginView runat="server" ViewStateMode="Disabled">
         <LoggedInTemplate>
             <div class="add-review col-md-9">
+                <asp:Label runat="server" Text="Give Rating" />
                 <asp:UpdatePanel ID="UpdatePanelComment" runat="server" class="panel"
                     UpdateMode="Conditional">
                     <ContentTemplate>
-                        <asp:TextBox runat="server" ID="ContentRatingBox"></asp:TextBox>
-                        <asp:TextBox runat="server" Type="Integer" ID="RatingBox"></asp:TextBox>
+                        <asp:Label runat="server" Text="Comment" />
+                        <asp:TextBox runat="server" Type="Integer" ID="RatingBox" TextMode="MultiLine" Width="400" Height="100" CssClass="comment-box"></asp:TextBox>
+                        <asp:Label runat="server" Text="Rating" />
+                        <asp:TextBox runat="server" ID="ContentRatingBox" Width="50" Height="50" MaxLength="1"></asp:TextBox>
                         <asp:Button runat="server" ID="Rate" Text="Add Review" OnClick="Rate_OnClick" />
                     </ContentTemplate>
                 </asp:UpdatePanel>

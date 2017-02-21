@@ -68,18 +68,18 @@ input[type="select"] {
   vertical-align: middle;
 }
 .round-corners {
-  border: 2px solid  gray;
+  border: 2px solid gray;
   box-shadow: rgba(0, 3, 2, 0.2) 10px 10px;
   padding: 20px;
   border-radius: 25px;
 }
 .product-details {
-  border: 2px solid  gray;
+  border: 2px solid gray;
   padding: 20px;
   border-radius: 25px;
 }
 .round-corners:hover {
-  border: 2px solid  gray;
+  border: 2px solid gray;
   box-shadow: rgba(0, 155, 0, 0.7) 10px 10px;
   padding: 20px;
   border-radius: 25px;
@@ -115,7 +115,13 @@ input[type="select"] {
   margin: 25px;
 }
 .add-review {
+  padding: 15px;
   margin: 25px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.comment-box {
+  resize: none;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
