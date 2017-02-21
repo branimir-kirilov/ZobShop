@@ -14,10 +14,16 @@
                     <ul>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <li>
-                        <a href="<%# $"Product/ProductDetails?id={Item.Id}" %>"><%# $"{Item.Maker} {Item.Name}" %></a>
-
-                        (Category: <%#: Item.Category %>)                 
+                    <li class="product-result col-md-6" id="div-search-results">
+                        <div class="round-corners" onclick="location.href='<%# $"/Product/ProductDetails?id={Item.Id}" %>'">
+                            <asp:Label Text='<%# $"{Item.Name}" %>' runat="server" CssClass="product-name" />
+                            <hr />
+                            <asp:Label Text='<%# $"{Item.Price:C}" %>' runat="server" CssClass="product-price" />
+                            <hr />
+                            <asp:Label Text='<%# $"Category: {Item.Category}" %>' runat="server" CssClass="product-category" />
+                            <hr />
+                            <asp:HyperLink Text="See more" NavigateUrl='<%# $"~/Product/ProductDetails?id={Eval("Id")}" %>' runat="server" />
+                        </div>
                     </li>
                 </ItemTemplate>
                 <FooterTemplate>
