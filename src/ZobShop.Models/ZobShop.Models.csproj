@@ -51,7 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductOrder.cs" />
     <Compile Include="ProductRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
