@@ -10,15 +10,22 @@ namespace ZobShop.Services
     public class UserService : IUserService
     {
         private readonly IRepository<User> repository;
+        private readonly IUnitOfWork unitOfWork;
 
-        public UserService(IRepository<User> repository)
+        public UserService(IRepository<User> repository, IUnitOfWork unitOfWork)
         {
             if (repository == null)
             {
                 throw new ArgumentNullException("repository cannot be null");
             }
 
+            if (unitOfWork == null)
+            {
+                throw new ArgumentNullException("unitOfWork cannot be null");
+            }
+
             this.repository = repository;
+            this.unitOfWork = unitOfWork;
         }
 
         public IEnumerable<User> GetUsers()
@@ -35,6 +42,14 @@ namespace ZobShop.Services
             var user = this.repository.GetById(id);
 
             return user;
+        }
+
+        public void DeleteUser(string id)
+        {
+            var user = this.repository.GetById(id);
+
+            this.repository.Delete(user);
+            this.unitOfWork.Commit();
         }
     }
 }

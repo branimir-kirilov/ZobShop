@@ -8,5 +8,7 @@ namespace ZobShop.Services.Contracts
         IEnumerable<User> GetUsers();
 
         User GetById(string id);
+
+        void DeleteUser(string id);
     }
 }
