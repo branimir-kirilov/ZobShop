@@ -15,8 +15,9 @@ namespace ZobShop.Tests.Services.UserServiceTests
         public void TestGetById_PassValidId_ShouldCallRepositoryGetById(string id)
         {
             var repository = new Mock<IRepository<User>>();
+            var mockedUnitOfWork = new Mock<IUnitOfWork>();
 
-            var service = new UserService(repository.Object);
+            var service = new UserService(repository.Object, mockedUnitOfWork.Object);
             service.GetById(id);
 
             repository.Verify(r => r.GetById(id), Times.Once);
@@ -32,7 +33,9 @@ namespace ZobShop.Tests.Services.UserServiceTests
             var repository = new Mock<IRepository<User>>();
             repository.Setup(r => r.GetById(It.IsAny<object>())).Returns(mockedUser.Object);
 
-            var service = new UserService(repository.Object);
+            var mockedUnitOfWork = new Mock<IUnitOfWork>();
+
+            var service = new UserService(repository.Object, mockedUnitOfWork.Object);
             var result = service.GetById(id);
 
             Assert.AreSame(mockedUser.Object, result);

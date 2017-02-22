@@ -14,8 +14,9 @@ namespace ZobShop.Tests.Services.UserServiceTests
         public void TestGetUsers_ShouldCallRepositoryEntities()
         {
             var repository = new Mock<IRepository<User>>();
+            var mockedUnitOfWork = new Mock<IUnitOfWork>();
 
-            var service = new UserService(repository.Object);
+            var service = new UserService(repository.Object, mockedUnitOfWork.Object);
 
             service.GetUsers();
 
@@ -38,8 +39,9 @@ namespace ZobShop.Tests.Services.UserServiceTests
 
             var repository = new Mock<IRepository<User>>();
             repository.Setup(x => x.Entities).Returns(collection);
+            var mockedUnitOfWork = new Mock<IUnitOfWork>();
 
-            var service = new UserService(repository.Object);
+            var service = new UserService(repository.Object, mockedUnitOfWork.Object);
 
             var result = service.GetUsers();
 
