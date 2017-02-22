@@ -26,6 +26,12 @@ namespace ZobShop.ModelViewPresenter.Administration.UsersList
             this.factory = factory;
 
             this.View.MyInit += View_MyInit;
+            this.View.DeleteUser += View_DeleteUser;
+        }
+
+        private void View_DeleteUser(object sender, UserIdEventArgs e)
+        {
+            this.service.DeleteUser(e.UserId);
         }
 
         private void View_MyInit(object sender, EventArgs e)

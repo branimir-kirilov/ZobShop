@@ -99,6 +99,7 @@
     <Compile Include="Administration\ProductsList\ProductsListPresenter.cs" />
     <Compile Include="Administration\UsersList\IUserListView.cs" />
     <Compile Include="Administration\UsersList\UserDetailsViewModel.cs" />
+    <Compile Include="Administration\UsersList\UserIdEventArgs.cs" />
     <Compile Include="Administration\UsersList\UserListPresenter.cs" />
     <Compile Include="Administration\UsersList\UserListViewModel.cs" />
     <Compile Include="IViewModelFactory.cs" />
